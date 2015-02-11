@@ -22,3 +22,8 @@ body{
 	display: inline-block;
 
 }
+
+#welcome{
+	width: 30%;
+	background-color: white;
+}
