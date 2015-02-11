@@ -6,16 +6,8 @@ var ExampleView = function (container) {
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
-	this.startButton = container.find("#startButton");
-
-	this.startButton.click(function() {
-  		this.startButton.hide();
-
-});
-
-
+	
 	this.numberOfGuests.html("Hello World this is jonas speaking with ya all!").show();
-
 	
 }
  
