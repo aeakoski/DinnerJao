@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 	$("#rightDiv").hide();
 	$("#rightMenu").hide();
+  $("#leftMenu").hide();
 
 	
     $("#startButton").click(function () {
@@ -10,6 +11,7 @@ $(document).ready(function() {
        	$("#welcome").hide();
        	$("body").css("background-image", "none");
        	$("#rightDiv").fadeIn();
+        $("#leftMenu").fadeIn();
        	$("#rightMenu").fadeIn();
     });
 

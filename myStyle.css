@@ -49,18 +49,33 @@ body{
 	visibility: hidden;
 }
 
+#desc{
+	border-style: solid;
+	border-left: none;
+	border-right: none;
+}
+
 #rightDiv{
 	float: right;
 	width: 65%;
 }
 
-#rightMenu{
+#leftMenu{
+	
+}
 
+#rightTop{
+	margin-bottom: 0pt;
 }
 
 #rightBottom{
+	
 	height: 400pt;
 	overflow: scroll;
+}
+
+#rightBottomInner{
+	margin-top: 0px;
 }
 
 .foodItem{
