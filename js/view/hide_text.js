@@ -1,11 +1,14 @@
 
 $(document).ready(function() {
 
+	$("#rightDiv").hide();
+
 	
     $("#startButton").click(function () {
        	//code for what hapens when the startButton is clicked
        	$("#welcome").fadeOut();
        	$("body").css("background-image", "none");
+       	$("#rightDiv").fadeIn();
     });
 
     function getNumOfPeople () {
