@@ -55,5 +55,18 @@ body{
 }
 
 #rightMenu{
-height: 500 px;
+
+}
+
+#rightBottom{
+	height: 400pt;
+	overflow: scroll;
+}
+
+.foodItem{
+	width: 20%;
+	min-width: 140px;
+	display: inline-block;
+	margin-left: 10pt;
+	margin-right: 10pt;
 }
