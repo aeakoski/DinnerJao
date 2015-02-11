@@ -1,21 +1,23 @@
 body{
 
 	background-image: url(images/familydinner.jpg);
-	background-size: cover;
+	background-size: auto;
 	background-repeat: no-repeat;
 }
 
+
 #headder{
-	background-color: white;
-	opacity: 0.6;
+	background-color: rgba(255,255,255,0.6);
 	border-bottom-style: solid;
 	padding-left: 20pt;
+
 }
 
 #title{
 	display: inline-block;
 	font-size: 20pt;
 	padding-right: 25pt;
+
 }
 
 #subTitle{
