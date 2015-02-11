@@ -48,3 +48,8 @@ body{
 #exampleView{
 	visibility: hidden;
 }
+
+#rightDiv{
+	float: right;
+	width: 65%;
+}
