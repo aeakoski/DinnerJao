@@ -2,13 +2,15 @@
 $(document).ready(function() {
 
 	$("#rightDiv").hide();
+	$("#rightMenu").hide();
 
 	
     $("#startButton").click(function () {
        	//code for what hapens when the startButton is clicked
-       	$("#welcome").fadeOut();
+       	$("#welcome").hide();
        	$("body").css("background-image", "none");
        	$("#rightDiv").fadeIn();
+       	$("#rightMenu").fadeIn();
     });
 
     function getNumOfPeople () {
