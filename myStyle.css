@@ -61,26 +61,24 @@ body{
 }
 
 #dDesc{
-
-	margin-bottom: 10pt;
-	margin-top: 10pt;
-	margin-left: -20pt;
-	margin-right: -20pt;
+	height: 45px;
 	border-top-style: solid;
-	height:auto;
 	border-bottom-style: solid;
 	background-color: #DADADA;
+	margin: 10px 0px 10px 0px;
 
 }
 
 #dName{
 	float: left;
 	display: inline;
+	margin: 7px;
 }
 
 #dCost{
 	float: right;
 	display: inline;
+	margin: 7px;
 }
 
 .shoppingDesc{
@@ -116,6 +114,4 @@ body{
 	height: 150px;
 	border-radius: 5px;
 	
-}
-
 }
