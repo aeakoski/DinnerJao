@@ -61,6 +61,7 @@ body{
 }
 
 #dDesc{
+
 	height: 45px;
 	border-top-style: solid;
 	border-bottom-style: solid;
@@ -68,6 +69,14 @@ body{
 	margin: 10px 0px 10px 0px;
 
 }
+
+#dPending{
+	height: 45px;
+	
+	margin: 10px 0px 10px 0px;
+
+}
+
 
 #dName{
 	float: left;
