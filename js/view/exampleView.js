@@ -11,10 +11,6 @@ var ExampleView = function (container, model) {
 	
 	this.numberOfGuests.html("Hello World this is jonas speaking with ya all!");
 
-	this.foodImage = container.find("#foodImage");
-
-	this.foodImage.src = model.getDish("image");
-
 	
 }
  

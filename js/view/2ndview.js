@@ -1,0 +1,3 @@
+var MainView = function (container) {
+	
+}
