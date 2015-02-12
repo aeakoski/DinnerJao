@@ -6,5 +6,8 @@ var SndView = function (container,model) {
 
 	console.log("läser hit");
 
+	this.jao = container.find("#jao");
+
+	this.jao.html("hejsanhoppsanlillebror");
 
 }

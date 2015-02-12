@@ -8,7 +8,6 @@ var ExampleView = function (container, model) {
 	this.minusButton = container.find("#minusGuest");
 
 
-	
 	this.numberOfGuests.html("Hello World this is jonas speaking with ya all!");
 
 	
