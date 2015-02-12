@@ -60,7 +60,30 @@ body{
 	width: 65%;
 }
 
-#leftMenu{
+#dDesc{
+
+	margin-bottom: 10pt;
+	margin-top: 10pt;
+	margin-left: -20pt;
+	margin-right: -20pt;
+	border-top-style: solid;
+	height:auto;
+	border-bottom-style: solid;
+	background-color: #DADADA;
+
+}
+
+#dName{
+	float: left;
+	display: inline;
+}
+
+#dCost{
+	float: right;
+	display: inline;
+}
+
+.shoppingDesc{
 	
 }
 
