@@ -143,6 +143,11 @@ body{
 	display: inline-block;
 	margin: 10pt;
 	overflow: hidden;
+	border-style:solid;
+	border-color: #DADADA;
+	border-width: 2px;
+
+	border-radius:5px 5px 0px 0px;
 
 }
 
