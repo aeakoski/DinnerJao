@@ -45,9 +45,9 @@ var DinnerModel = function() {
 	// Returns an array of al the item names as strings
 	this.getAllIngredients = function() {
 		var allIngredients = [];
-		for (i in menu){
-			for (j in i["ingredients"]){
-				allIngredients[allIngredients.length] = j["name"];
+		for (i = 0; i < menu.length; i++){
+			for (j = 0; j < menu[i]["ingredients"]; i++){
+				allIngredients[allIngredients.length] = menu[i]["ingredients"][j]["name"];
 			}
 		}
 		return allIngredients;
