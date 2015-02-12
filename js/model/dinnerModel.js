@@ -22,9 +22,9 @@ var DinnerModel = function() {
 	//Returns the dish that is on the menu for selected type 
 	//Returns the WHOLE dish object
 	this.getSelectedDish = function(type) {
-		for (dish in menu){
-			if (dish["type"] == type){
-				return dish; //Returns the whole dish object.
+		for (i = 0; i < menu.length; i++){
+			if (menu[i]["type"] == type){
+				return menu[i]; //Returns the whole dish object.
 			}
 		}
 		//TODO Lab 2
@@ -364,5 +364,5 @@ var DinnerModel = function() {
 			}]
 		}
 	];
-	
+	this.addDishToMenu(1);
 }

@@ -7,12 +7,20 @@ var SndView = function (container,model) {
 	this.dishList = container.find("#dishList");
 	this.totalCost = container.find("#totalCost");
 	this.mealType = container.find("#mealType");
+	this.prepDish = container.find("#prepDish");
+	this.dishName = container.find("#dishName");
 	
 	this.totalCost.html(model.getTotalMenuPrice());
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
+	var selectedDish = model.getSelectedDish("starter");
+	// console.log(selectedDish);
+	// this.dishName.html(selectedDish["name"]);
 
+	this.prepDish.append('<h2>' + selectedDish['name'] + '</h2>\
+							<img src="images/'+ selectedDish['image'] +'">\
+							<p>' + selectedDish['description'] + '</p>');
 
 	console.log(this.mealType.change());
 
