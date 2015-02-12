@@ -34,7 +34,13 @@ var DinnerModel = function() {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		//TODO Lab 2
+		var totPrice = O;
+		for (i in menu){
+			for (j in i["ingredients"]){
+				totPrice = totPrice + j["price"];
+			}
+		}
+		return totPrice;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
@@ -45,7 +51,11 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		//TODO Lab 2
+		var indexToBin = menu.indexOf(dishes[id]); // Om detta index inte finns i menyn kan det cracha!
+
+		if (indexToBin > -1){
+			menu.splice(indexToBin, 1);
+		}
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
