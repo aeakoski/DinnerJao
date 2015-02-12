@@ -1,3 +1,5 @@
-var MainView = function (container) {
-	
+var SndView = function (container,model) {
+
+
+
 }

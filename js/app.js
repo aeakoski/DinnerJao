@@ -7,4 +7,6 @@ $(function() {
 
 	var mainView = new MainView($("#mainView"));
 
+	var SndVieew = new SndView($(""))
+
 });
