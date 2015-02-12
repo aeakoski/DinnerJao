@@ -15,14 +15,12 @@ var SndView = function (container,model) {
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
 	var selectedDish = model.getSelectedDish("starter");
-	// console.log(selectedDish);
-	// this.dishName.html(selectedDish["name"]);
+	this.prepDish.append('\
+		<h2>' + selectedDish['name'] + '</h2>\
+		<img src="images/'+ selectedDish['image'] +'">\
+		<p>' + selectedDish['description'] + '</p>');
 
-	this.prepDish.append('<h2>' + selectedDish['name'] + '</h2>\
-							<img src="images/'+ selectedDish['image'] +'">\
-							<p>' + selectedDish['description'] + '</p>');
-
-	console.log(this.mealType.change());
+	
 
 	var typeOfDish = model.getAllDishes(this.mealType.val());
 
