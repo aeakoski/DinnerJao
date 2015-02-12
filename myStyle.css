@@ -79,9 +79,20 @@ body{
 }
 
 .foodItem{
-	width: 20%;
+	width: 200px;
+	height: 300px;
 	min-width: 140px;
 	display: inline-block;
-	margin-left: 10pt;
-	margin-right: 10pt;
+	margin: 10pt;
+	overflow: hidden;
+
+}
+
+.foodPic img{
+	width: 200px;
+	height: 150px;
+	border-radius: 5px;
+	
+}
+
 }

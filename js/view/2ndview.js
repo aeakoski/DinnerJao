@@ -5,28 +5,29 @@ var SndView = function (container,model) {
 	
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.dishList = container.find("#dishList");
+	this.totalCost = container.find("#totalCost");
 	
-
+	this.totalCost.html(model.getTotalMenuPrice());
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
 	var starters = model.getAllDishes("starter");
 
-	for (index in starters) {
+	for (i = 0; i<starters.length; i++) {
 		console.log("i for-loopen");
 		this.dishList.append('\
 			<div class="foodItem">\
 				<div class="foodHead">\
 					<div class = "foodPic">\
-						<img src="images/'+ starters[index]['image'] +'">\
+						<img src="images/'+ starters[i]['image'] +'">\
 					</div>\
 					<div class = "foodTitle">\
-						<h4>'+ starters[index]['name'] +'</h4>\
+						<h4>'+ starters[i]['name'] +'</h4>\
 					</div>\
 				</div>\
 				\
 				<div class = "foodDesc">\
-					<p>'+ starters[index]['description'] +'</p>\
+					<p>'+ starters[i]['description'] +'</p>\
 				</div>\
 			</div><!--FoodItem-->');
 
