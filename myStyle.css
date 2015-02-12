@@ -81,6 +81,14 @@ body{
 	margin: 7px;
 }
 
+
+
+#tCost{
+	text-align: right;
+	float: right;
+}
+
+
 .shoppingDesc{
 	
 }
