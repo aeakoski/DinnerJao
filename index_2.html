@@ -22,178 +22,179 @@
 
 
 	<div class="container-fluid">
+		<div id = "SndView">
+			<div id = "leftMenu">
+				<div class = "panel panel-default col-md-4" >
+					<div class = "panel-body col-md-4">
+						<p>MY DINNER</p>
+						people: <select id = "num">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+						</select >
+						Number of guests: <span id="numberOfGuests"></span>
+					</div>
+				</div>
+			</div><!--leftMenu-->
+			
 
-		<div id = "leftMenu">
-			<div class = "panel panel-default col-md-4" >
-				<div class = "panel-body col-md-4">
-					<p>MY DINNER</p>
-					people: <select id = "num">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-					</select >
-					<span id = "showtest"></span>
+
+			<div id="rightDiv">
+
+				<div id="rightTop">
+
+					<div class="panel panel-default">
+
+						<div class="panel-heading">
+							<h3 class="panel-title" id="welcomeTitle">Select Disch</h3>
+						</div>
+
+			  			<div class="panel-body">
+			  				<div class="row">
+
+			  					<div class="col-md-8">
+								    <div class="input-group">
+								    	<input type="text" class="form-control" placeholder="Enter key words">
+								      	<span class="input-group-btn">
+								        	<button class="btn btn-default" type="button">Search!</button>
+								      	</span>
+								    </div><!-- /input-group -->
+								</div><!-- /.col-lg-6 -->
+
+			  					<div class="dropdown inline">
+									<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+								    Dropdown
+								    	<span class="caret"></span>
+								  	</button>
+
+								  	<ul class="dropdown-menu inline" role="menu" aria-labelledby="dropdownMenu1">
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Starters</a></li>
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Main Course</a></li>
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Apeteeser</a></li>
+								  	</ul>
+
+								</div>
+							</div><!-- /.row -->
+
+			  			</div>
+					</div>
+				</div> <!--RightTop-->
+
+				<div id="rightBottom">
+
+					<div class="panel panel-default" id="rightBottomInner">
+						<div class="panel-body">
+						    
+							<div class="foodItem">
+
+								<div class="foodHead">
+									<div class = "foodPic">
+										<img src="images/meatballs.jpg">
+									</div>
+									<div class = "foodTitle">
+										<h4>Lasange</h4>
+									</div>
+								</div>
+
+								<div class = "foodDesc">
+									<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
+								</div>
+
+							</div><!--FoodItem-->
+
+							<div class="foodItem">
+
+								<div class="foodHead">
+									<div class = "foodPic">
+										<img src="images/meatballs.jpg">
+									</div>
+									<div class = "foodTitle">
+										<h4>Lasange</h4>
+									</div>
+								</div>
+
+								<div class = "foodDesc">
+									<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
+								</div>
+
+							</div><!--FoodItem-->
+
+							<div class="foodItem">
+
+								<div class="foodHead">
+									<div class = "foodPic">
+										<img src="images/meatballs.jpg">
+									</div>
+									<div class = "foodTitle">
+										<h4>Lasange</h4>
+									</div>
+								</div>
+
+								<div class = "foodDesc">
+									<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
+								</div>
+
+							</div><!--FoodItem-->
+
+							<div class="foodItem">
+
+								<div class="foodHead">
+									<div class = "foodPic">
+										<img src="images/meatballs.jpg">
+									</div>
+									<div class = "foodTitle">
+										<h4>Lasange</h4>
+									</div>
+								</div>
+
+								<div class = "foodDesc">
+									<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
+								</div>
+
+							</div><!--FoodItem-->
+
+							<div class="foodItem">
+
+								<div class="foodHead">
+									<div class = "foodPic">
+										<img id = "foodImage">
+									</div>
+									<div class = "foodTitle">
+										<h4>Lasange</h4>
+									</div>
+								</div>
+
+								<div class = "foodDesc">
+									<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
+								</div>
+
+							</div><!--FoodItem-->
+
+
+
+						</div>
+					</div><!--Panel-->
+
+					
 				</div>
 			</div>
-		</div><!--leftMenu-->
-		
 
-
-		<div id="rightDiv">
-
-			<div id="rightTop">
-
-				<div class="panel panel-default">
-
-					<div class="panel-heading">
-						<h3 class="panel-title" id="welcomeTitle">Select Disch</h3>
-					</div>
-
-		  			<div class="panel-body">
-		  				<div class="row">
-
-		  					<div class="col-md-8">
-							    <div class="input-group">
-							    	<input type="text" class="form-control" placeholder="Enter key words">
-							      	<span class="input-group-btn">
-							        	<button class="btn btn-default" type="button">Search!</button>
-							      	</span>
-							    </div><!-- /input-group -->
-							</div><!-- /.col-lg-6 -->
-
-		  					<div class="dropdown inline">
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-							    Dropdown
-							    	<span class="caret"></span>
-							  	</button>
-
-							  	<ul class="dropdown-menu inline" role="menu" aria-labelledby="dropdownMenu1">
-								    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Starters</a></li>
-								    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Main Course</a></li>
-								    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Apeteeser</a></li>
-							  	</ul>
-
-							</div>
-						</div><!-- /.row -->
-
-		  			</div>
+			
+			<div id="exampleView">
+				<div>
+					Number of guests: <span id="numberOfGuests"></span>
 				</div>
-			</div> <!--RightTop-->
-
-			<div id="rightBottom">
-
-				<div class="panel panel-default" id="rightBottomInner">
-					<div class="panel-body">
-					    
-						<div class="foodItem">
-
-							<div class="foodHead">
-								<div class = "foodPic">
-									<img src="images/meatballs.jpg">
-								</div>
-								<div class = "foodTitle">
-									<h4>Lasange</h4>
-								</div>
-							</div>
-
-							<div class = "foodDesc">
-								<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
-							</div>
-
-						</div><!--FoodItem-->
-
-						<div class="foodItem">
-
-							<div class="foodHead">
-								<div class = "foodPic">
-									<img src="images/meatballs.jpg">
-								</div>
-								<div class = "foodTitle">
-									<h4>Lasange</h4>
-								</div>
-							</div>
-
-							<div class = "foodDesc">
-								<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
-							</div>
-
-						</div><!--FoodItem-->
-
-						<div class="foodItem">
-
-							<div class="foodHead">
-								<div class = "foodPic">
-									<img src="images/meatballs.jpg">
-								</div>
-								<div class = "foodTitle">
-									<h4>Lasange</h4>
-								</div>
-							</div>
-
-							<div class = "foodDesc">
-								<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
-							</div>
-
-						</div><!--FoodItem-->
-
-						<div class="foodItem">
-
-							<div class="foodHead">
-								<div class = "foodPic">
-									<img src="images/meatballs.jpg">
-								</div>
-								<div class = "foodTitle">
-									<h4>Lasange</h4>
-								</div>
-							</div>
-
-							<div class = "foodDesc">
-								<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
-							</div>
-
-						</div><!--FoodItem-->
-
-						<div class="foodItem">
-
-							<div class="foodHead">
-								<div class = "foodPic">
-									<img id = "foodImage">
-								</div>
-								<div class = "foodTitle">
-									<h4>Lasange</h4>
-								</div>
-							</div>
-
-							<div class = "foodDesc">
-								<p>Text text text text text. Text text text text text. Text text text text text. Text text text text text. Text text text text text.</p>
-							</div>
-
-						</div><!--FoodItem-->
-
-
-
-					</div>
-				</div><!--Panel-->
-
-				
-			</div>
-		</div>
-
-		
-		<div id="exampleView">
-			<div>
-				Number of guests: <span id="numberOfGuests"></span>
-			</div>
-			<div>
-          <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+				<div>
+	          <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+					<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+				</div>
 			</div>
 		</div>
 	</div>
