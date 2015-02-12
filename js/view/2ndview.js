@@ -8,7 +8,7 @@ var SndView = function (container,model) {
 	this.totalCost = container.find("#totalCost");
 	this.mealType = container.find("#mealType");
 	this.prepDish = container.find("#prepDish");
-	this.dishName = container.find("#dishName");
+	this.ingredientsTable = container.find("#ingredients");
 	
 	this.totalCost.html(model.getTotalMenuPrice());
 
@@ -20,7 +20,21 @@ var SndView = function (container,model) {
 		<img src="images/'+ selectedDish['image'] +'">\
 		<p>' + selectedDish['description'] + '</p>');
 
-	
+
+	var ingredients = model.getAllIngredients();
+
+	for (var i = 0; i < ingredients.length; i++) {
+		this.ingredientsTable.append('\
+			<tr>\
+				<td class="col-xs-2">3 dl</td>\
+				<td class="col-xs-6">'+ingredients[i]+'</td>\
+				<td>SEK</td>\
+				<td>20.00</td>\
+			</tr>');
+		
+	};
+
+
 
 	var typeOfDish = model.getAllDishes(this.mealType.val());
 
