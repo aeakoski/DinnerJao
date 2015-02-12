@@ -45,11 +45,16 @@ var DinnerModel = function() {
 	// Returns an array of al the item names as strings
 	this.getAllIngredients = function() {
 		var allIngredients = [];
-		for (i = 0; i < menu.length; i++){
-			for (j = 0; j < menu[i]["ingredients"]; i++){
+		console.log("Meny length " + menu.length);
+
+		for (i = 0; i< menu.length; i++){
+			for (j = 0; j < menu[i]["ingredients"].length; j++){
 				allIngredients[allIngredients.length] = menu[i]["ingredients"][j]["name"];
 			}
 		}
+
+
+		console.log(allIngredients + "JAOOOOO");
 		return allIngredients;
 		//TODO Lab 2
 	}
