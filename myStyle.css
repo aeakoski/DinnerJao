@@ -7,6 +7,14 @@ body{
 
 /*Bootstrap mods!*/
 
+.floatL{
+	float: left;
+}
+
+.floatR{
+	float: right;
+}
+
 #startButton{
 	border-radius: 2px;
 	box-shadow: none;
@@ -160,9 +168,15 @@ body{
 
 #rightDivRecepie{
 	float: right;
+	padding-bottom: 10pt;
 
 }
 
 #ingredients{
 	width: 100%;
+}
+
+#headLine{
+	font-size: 15pt;
+	padding-top: 10pt;
 }
