@@ -96,25 +96,30 @@ body{
 	background-color: #DADADA;
 	margin: 10px 0px 10px 0px;
 
+
 }
 
 #dPending{
-	height: 45px;
+	min-height: 45px;
 	
 	margin: 10px 0px 10px 0px;
 
 }
 
+.foodChoice{
+	width: 100%;
+	display: block;
+}
+
 
 .dName{
-	float: left;
-	display: inline;
+	display: inline-block;
 	margin: 7px;
 }
 
 .dCost{
-	float: right;
-	display: inline;
+	
+	
 	margin: 7px;
 }
 

@@ -378,4 +378,5 @@ var DinnerModel = function() {
 		}
 	];
 	this.addDishToMenu(1);
+	this.addDishToMenu(3);
 }

@@ -25,14 +25,26 @@ var SndView = function (container,model) {
 
 	var menuList = model.getFullMenu();
 
-	for (var i = 0; i < menuList.length; i++) {
+	if (menuList!=0) {
+		for (var i = 0; i < menuList.length; i++) {
 
-		console.log(menuList);
+			this.dPending.append('\
+			<div class = "col-xs-2"></div>\
+			<div class="foodChoice">\
+			<p class="dName col-xs-6"><span>'+menuList[i]+'</span></p>\
+			<p class="dName"><span>0.00</span></p>\
+			</div>');
+	 	};
+	}
 
+	else{
 		this.dPending.append('\
-			<p calss="dName"><span>'+menuList[i]+'</span></p>\
-			<p class="dCost"><span>0.00</span></p>');
-	 };
+			<div class="foodChoice">\
+			<p class="dName"><span>Pending</span></p>\
+			<p class="dName "><span>0.00</span></p></div>');
+	}
+
+	
 
 
 	var selectedDish = model.getSelectedDish("starter");
