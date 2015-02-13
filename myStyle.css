@@ -25,10 +25,6 @@ body{
 }
 
 
-#headder a {
-    color: #000000;
-}
-
 
 .inline{
 	float: left;
@@ -41,6 +37,11 @@ body{
 	border-bottom-style: solid;
 	padding-left: 20pt;
 
+}
+
+
+#headder a {
+    color: #000000;
 }
 
 
@@ -121,7 +122,7 @@ body{
 }
 
 
-.dName{
+#dName{
 	display: inline-block;
 	margin: 7px;
 }
@@ -185,4 +186,10 @@ body{
 #headLine{
 	font-size: 15pt;
 	padding-top: 10pt;
+}
+
+#subHeadder{
+	border: 1px solid black;
+	width: 100%;
+	padding: 1.5%;
 }
