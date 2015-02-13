@@ -238,4 +238,7 @@ body{
 }
 
 
-
+#upperDish{
+	display: block;
+	margin: 20px;
+}
