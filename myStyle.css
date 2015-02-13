@@ -106,13 +106,13 @@ body{
 }
 
 
-#dName{
+.dName{
 	float: left;
 	display: inline;
 	margin: 7px;
 }
 
-#dCost{
+.dCost{
 	float: right;
 	display: inline;
 	margin: 7px;

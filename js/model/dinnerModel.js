@@ -33,8 +33,8 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu as strings in a list.
 	this.getFullMenu = function() {
 		var courseList = [];
-		for(i in menu){
-			courseList[courseList.length] = i["name"];
+		for(var i = 0; i< menu.length; i++){
+			courseList[courseList.length] = menu[i]["name"];
 		}
 
 		return courseList

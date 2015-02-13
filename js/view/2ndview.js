@@ -11,7 +11,7 @@ var SndView = function (container,model) {
 	this.ingredientsTable = container.find("#ingredients");
 	//this.dishCost = container.find("#dishCost");
 
-	//this.dPending = container.find("#dPending");
+	this.dPending = container.find("#dPending");
 
 
 	
@@ -25,9 +25,14 @@ var SndView = function (container,model) {
 
 	var menuList = model.getFullMenu();
 
-	//for (var i = 0; i < menuList.length; i++) {
-	//	this.dPending.append(menuList[i]);
-	//};
+	for (var i = 0; i < menuList.length; i++) {
+
+		console.log(menuList);
+
+		this.dPending.append('\
+			<p calss="dName"><span>'+menuList[i]+'</span></p>\
+			<p class="dCost"><span>0.00</span></p>');
+	 };
 
 
 	var selectedDish = model.getSelectedDish("starter");
