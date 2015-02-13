@@ -9,18 +9,19 @@ var FourthView = function (container,model) {
 	
 	var dish = model.getFullMenu();
 	this.menuItem = container.find("#menuItem");
-	for (i = 0; i<dish.length; i++) {
-		
+	for (var g = 0; g<dish.length; g++) {
+		console.log("sdfghjkhgerftghkj")
 		this.menuItem.append('\
 					<div class="foodHead " >\
 						<div class = "foodPic">\
-							<img src="images/'+ dish[i]['image'] +'">\
+							<img src="images/'+ dish[g]['image'] +'">\
 						</div>\
 						<div class = "foodTitle">\
-							<h4>'+ dish[i]['name'] +'</h4>\
+							<h4>'+ dish[g]['name'] +'</h4>\
+							<span>SEK: '+ model.getDishCost(dish[g]['id']) +'</span>\
 						</div>\
-						<span>SEK: '+ model.getDishCost(dish[i]['id']); +'</span>\
 					</div>');
+		console.log(i);
 	
 	}
 
