@@ -25,24 +25,14 @@ var SndView = function (container,model) {
 
 	var menuList = model.getFullMenu();
 
-	if (menuList!=0) {
-		for (var i = 0; i < menuList.length; i++) {
+	for (var i = 0; i < menuList.length; i++) {
 
-			this.dPending.append('\
-			<div class = "col-xs-2"></div>\
-			<div class="foodChoice">\
-			<p class="dName col-xs-6"><span>'+menuList[i]+'</span></p>\
-			<p class="dName"><span>0.00</span></p>\
-			</div>');
-	 	};
-	}
+		console.log(menuList);
 
-	else{
 		this.dPending.append('\
 			<p class="dName"><span>'+menuList[i]+'</span></p>\
 			<p class="dCost"><span>0.00</span></p>');
 	 };
-
 
 
 	var selectedDish = model.getSelectedDish("starter");
@@ -68,31 +58,6 @@ var SndView = function (container,model) {
 		
 	};
 
-
-
-	var typeOfDish = model.getAllDishes(this.mealType.val());
-
-	for (i = 0; i<typeOfDish.length; i++) {
-		console.log("i for-loopen");
-		this.dishList.append('\
-			<div class="foodItem">\
-				<div class="foodHead">\
-					<div class = "foodPic">\
-						<img src="images/'+ typeOfDish[i]['image'] +'">\
-					</div>\
-					<div class = "foodTitle">\
-						<h4>'+ typeOfDish[i]['name'] +'</h4>\
-					</div>\
-				</div>\
-				\
-				<div class = "foodDesc">\
-					<p>'+ typeOfDish[i]['description'] +'</p>\
-				</div>\
-			</div><!--FoodItem-->');
-
-	}
-
-	console.log("i SndView.js filen");
 
 
 }
