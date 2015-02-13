@@ -26,7 +26,9 @@ var FifthView = function (container,model) {
 					<div class="col-xs-5">\
 						<h3>preparation</h3>\
 					</div>');
+
 		console.log(h);
+
 	
 	}
 

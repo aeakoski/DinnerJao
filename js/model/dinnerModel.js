@@ -44,8 +44,6 @@ var DinnerModel = function() {
 				for (j = 0; j < dishes[i]['ingredients'].length; j++){
 					dishCost = dishCost + dishes[i]['ingredients'][j]['price'];
 				}
-
-				console.log(dishCost);
 				return dishCost
 
 			};

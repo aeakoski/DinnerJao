@@ -12,7 +12,7 @@ var FourthView = function (container,model) {
 	this.menuItem = container.find("#menuItem");
 
 	for (var g = 0; g<dish.length; g++) {
-		console.log("sdfghjkhgerftghkj")
+
 
 		this.menuItem.append('\
 					<div class="foodIcons " >\
@@ -24,7 +24,7 @@ var FourthView = function (container,model) {
 							<span>SEK: '+ model.getDishCost(dish[g]['id']) +'</span>\
 						</div>\
 					</div>');
-		console.log(i);
+
 	
 	}
 
