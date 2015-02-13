@@ -225,9 +225,14 @@ body{
 
 }
 
-.foodHead{
+.foodIcons{
 	width: 200px;
 	float: left;
 	margin: 30px;
+}
+
+
+#confirmDinner{
+	margin-top: 205px;
 }
 

@@ -4,8 +4,9 @@ var FourthView = function (container,model) {
 
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.numberOfGuests.html(model.getNumberOfGuests());
+	this.totalCost = container.find("#totalCost");
 
-
+	this.totalCost.html(model.getTotalMenuPrice());
 	
 	var dish = model.getFullMenu();
 	this.menuItem = container.find("#menuItem");
@@ -14,7 +15,7 @@ var FourthView = function (container,model) {
 		console.log("sdfghjkhgerftghkj")
 
 		this.menuItem.append('\
-					<div class="foodHead " >\
+					<div class="foodIcons " >\
 						<div class = "foodPic">\
 							<img src="images/'+ dish[g]['image'] +'">\
 						</div>\
