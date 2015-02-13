@@ -6,10 +6,11 @@ var FourthView = function (container,model) {
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
 
-
+	
 	var dish = model.getFullMenu();
 	this.menuItem = container.find("#menuItem");
 	for (i = 0; i<dish.length; i++) {
+		
 		this.menuItem.append('\
 					<div class="foodHead " >\
 						<div class = "foodPic">\
@@ -18,7 +19,9 @@ var FourthView = function (container,model) {
 						<div class = "foodTitle">\
 							<h4>'+ dish[i]['name'] +'</h4>\
 						</div>\
+						<span>SEK: '+ model.getDishCost(dish[i]['id']); +'</span>\
 					</div>');
+	
 	}
 
 }
