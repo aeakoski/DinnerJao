@@ -16,7 +16,7 @@ var FourthView = function (container,model) {
 
 		this.printMenuItem.append('\
 					<div class="col-xs-3">
-					'+dish[g].imgage+'\
+					<img src="image/'+ dish[g]['imgage'] +'">\
 					</div>\
 
 					<div class="col-xs-4">\
