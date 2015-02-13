@@ -40,14 +40,17 @@ var DinnerModel = function() {
 		var dishCost=0;
 		for (i = 0; i< dishes.length; i++){
 			if (dishes[i]['id'] == id) {
-				for (j = 0; j < dishes[i]['ingredients']; j++){
+				console.log('Jag kom in!!!');
+				for (j = 0; j < dishes[i]['ingredients'].length; j++){
 					dishCost = dishCost + dishes[i]['ingredients'][j]['price'];
 				}
-				
+
+				return dishCost
+
 			};
 		}
-		
-		return dishCost
+
+		return 0;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
