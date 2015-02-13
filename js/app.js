@@ -9,6 +9,9 @@ $(function() {
 	
 	var sndView = new SndView($("#SndView"),model);
 
+	var threeView = new ThreeView($("#ThreeView"),model);
+
+	var fourthView = new FourthView($("#FourthView"),model);
 	
 
 	

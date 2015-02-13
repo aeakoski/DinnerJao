@@ -1,4 +1,4 @@
-var SndView = function (container,model) {
+var ThreeView = function (container,model) {
 
 	$("body").css("backgroung-image","none");
 
