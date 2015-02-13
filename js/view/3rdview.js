@@ -27,7 +27,7 @@ var ThreeView = function (container,model) {
 
 	for (var i = 0; i < menuList.length; i++) {
 
-		console.log(menuList);
+
 
 		this.dPending.append('\
 			<p class="dName"><span>'+menuList[i]+'</span></p>\
@@ -45,7 +45,7 @@ var ThreeView = function (container,model) {
 
 
 	var ingredients = model.getAllIngredients();
-	console.log(ingredients);
+
 
 	for (var i = 0; i < ingredients.length; i++) {
 		this.ingredientsTable.append('\

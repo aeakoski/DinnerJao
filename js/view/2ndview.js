@@ -9,7 +9,7 @@ var SndView = function (container,model) {
 	this.mealType = container.find("#mealType");
 	this.prepDish = container.find("#prepDish");
 	this.ingredientsTable = container.find("#ingredients");
-	//this.dishCost = container.find("#dishCost");
+
 
 	this.dPending = container.find("#dPending");
 
@@ -19,9 +19,6 @@ var SndView = function (container,model) {
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
-	//var totalCostForDish = model.getDishCost(model.getDish(1)); //Här ska dden valda rätten fyllas i!
-
-	//this.dishCost.append(totalCostForDish);
 
 	var menuList = model.getFullMenu();
 
@@ -39,12 +36,12 @@ var SndView = function (container,model) {
 	 	};
 	}
 
+
 	else{
 		this.dPending.append('\
 			<p class="dName col-xs-6"><span>Pending</span></p>\
 			<p class="dName"><span>0.00</span></p>');
 	 };
-
 
 
 	var selectedDish = model.getSelectedDish("starter");
@@ -55,9 +52,7 @@ var SndView = function (container,model) {
 
 
 
-
 	var ingredients = model.getAllIngredients();
-	console.log(ingredients);
 
 	for (var i = 0; i < ingredients.length; i++) {
 		this.ingredientsTable.append('\
@@ -75,7 +70,7 @@ var SndView = function (container,model) {
 	var typeOfDish = model.getAllDishes(this.mealType.val());
 
 	for (i = 0; i<typeOfDish.length; i++) {
-		console.log("i for-loopen");
+
 		this.dishList.append('\
 			<div class="foodItem">\
 				<div class="foodHead">\
@@ -93,8 +88,6 @@ var SndView = function (container,model) {
 			</div><!--FoodItem-->');
 
 	}
-
-	console.log("i SndView.js filen");
 
 
 }
