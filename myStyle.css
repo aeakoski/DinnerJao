@@ -193,3 +193,7 @@ body{
 	width: 100%;
 	padding: 1.5%;
 }
+
+#mainWindow{
+	margin-left: 30%;
+}
