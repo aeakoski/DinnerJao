@@ -13,9 +13,7 @@ $(function() {
 
 	var fourthView = new FourthView($("#FourthView"),model);
 
-	var fifthView = new fifthView($("#fifthView"),model);
-	
-
+	var fifthView = new FifthView($("#FifthView"),model);
 	
 
 });
