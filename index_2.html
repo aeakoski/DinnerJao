@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link href="myStyle.css" rel="stylesheet">
+
+  </head>
+  <body>
+  	<div id="headder">
+
+		<a href="index.html"><h1 id="title">HOMELETTE</h1></a>
+
+		<h2 id="subTitle">From the best chefs in the world directly to your kitchen</h2>
+	</div>
+
+
+
+	<div class="container-fluid">
+		<div id = "SndView">
+			<div id = "leftMenu">
+				<div class = "panel panel-default col-md-4 col-xs-4" >
+					<div class = "panel-body ">
+						<p>MY DINNER</p>
+						People: <select id = "num">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+						</select >
+
+						Number of guests: <span id="numberOfGuests"></span>
+
+						<div id= "dDesc">
+							<p id="dName">Dish Name</p>
+							<p id="dCost">Cost</p>
+						</div>
+
+						<div id= "dPending">
+							<p id="dName"><span>Pending</span></p>
+							<p id="dCost"><span>0.00</span></p>
+
+
+						</div>
+						<hr size="3">
+						<div id="tCost">
+						<p id>Total cost: <span id = "totalCost"></span></p>
+						</div>
+
+						<a href="index_3.html"><button type="button" class="btn btn-warning">Confirm Dinner</button></a>
+
+
+					</div>
+				</div>
+			</div><!--leftMenu-->
+			
+
+
+			<div id="rightDiv">
+
+				<div id="rightTop">
+
+					<div class="panel panel-default">
+
+						<div class="panel-heading">
+							<h3 class="panel-title" id="welcomeTitle">Select Disch</h3>
+						</div>
+
+			  			<div class="panel-body">
+			  				<div class="row">
+
+			  					<div class="col-md-8">
+								    <div class="input-group">
+								    	<input type="text" class="form-control" placeholder="Enter key words">
+								      	<span class="input-group-btn">
+								        	<button class="btn btn-default" type="button">Search!</button>
+								      	</span>
+								    </div><!-- /input-group -->
+								</div><!-- /.col-lg-6 -->
+
+								  	<select id = "mealType">
+								  		<option selected="selected">starter</option>
+										<option>main dish</option>
+										<option>dessert</option>
+									</select >
+							</div><!-- /.row -->
+
+			  			</div>
+					</div>
+				</div> <!--RightTop-->
+
+				<div id="rightBottom">
+
+					<div class="panel panel-default" id="rightBottomInner">
+						<div id = "dishList" class="panel-body">
+						    
+							
+
+							
+
+
+						</div>
+					</div><!--Panel-->
+
+					
+				</div>
+			</div>
+
+			
+			<!-- <div id="exampleView">
+				<div>
+					Number of guests: <span id="numberOfGuests"></span>
+				</div>
+				<div>
+	          <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+					<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+
+	<script src="js/view/mainView.js"></script>
+	<script src="js/view/2ndview.js"></script>
+
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/exampleView.js"></script>
+	<script src="js/view/exampleViewController.js"></script>
+
+	<script src="js/app.js"></script>
+	 <!-- Finns inte!!! -->
+  </body>
+</html>

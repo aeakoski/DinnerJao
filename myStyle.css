@@ -1,0 +1,186 @@
+body{
+
+	background-image: ;
+	background-size: auto;
+	background-repeat: no-repeat;
+}
+
+/*Bootstrap mods!*/
+
+.floatL{
+	float: left;
+}
+
+.floatR{
+	float: right;
+}
+
+#startButton{
+	border-radius: 2px;
+	box-shadow: none;
+	color: #fff;
+	background-color: green;
+	border-style: none;
+}
+
+#headder a {
+    color: #000000;
+}
+
+.inline{
+	float: left;
+	margin-left: 30pt;
+}
+
+#headder{
+	background-color: rgba(255,255,255,0.6);
+	border-bottom-style: solid;
+	padding-left: 20pt;
+
+}
+
+#title{
+	font-family: 'Cuprum', sans-serif;
+	font-weight: 800;
+	display: inline-block;
+	font-size: 25pt;
+	padding-right: 25pt;
+
+}
+
+#subTitle{
+	font-family: 'Cuprum', sans-serif;
+	font-size: 12pt;
+	display: inline-block;
+
+
+}
+
+#welcome{
+	background-color: rgba(255,255,255,0.6);
+	margin-top: 20%;
+	width: 30%;
+	min-width: 500px;
+}
+
+#welcome div.panel-heading{
+	background-color: rgba(255,255,255,0.6);
+	border-bottom: 2px solid black;
+}
+
+#welcomeTitle{
+	font-family: 'Cuprum', sans-serif;
+	font-size: 17pt;
+}
+
+#exampleView{
+	/*visibility: hidden;*/
+}
+
+#desc{
+	border-style: solid;
+	border-left: none;
+	border-right: none;
+}
+
+#rightDiv{
+	float: right;
+	width: 65%;
+}
+
+#dDesc{
+
+	height: 45px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	background-color: #DADADA;
+	margin: 10px 0px 10px 0px;
+
+}
+
+#dPending{
+	height: 45px;
+	
+	margin: 10px 0px 10px 0px;
+
+}
+
+
+#dName{
+	float: left;
+	display: inline;
+	margin: 7px;
+}
+
+#dCost{
+	float: right;
+	display: inline;
+	margin: 7px;
+}
+
+
+
+#tCost{
+	text-align: right;
+	float: right;
+}
+
+
+.shoppingDesc{
+	
+}
+
+#rightTop{
+	margin-bottom: 0pt;
+}
+
+#rightBottom{
+	
+	height: 400pt;
+	overflow: scroll;
+}
+
+#rightBottomInner{
+	margin-top: 0px;
+}
+
+.foodItem{
+	width: 200px;
+	height: 300px;
+	min-width: 140px;
+	display: inline-block;
+	margin: 10pt;
+	overflow: hidden;
+	border-style:solid;
+	border-color: #DADADA;
+	border-width: 2px;
+
+	border-radius:5px 5px 0px 0px;
+
+}
+
+.foodPic img{
+	width: 200px;
+	height: 150px;
+	border-radius: 5px 5px 0px 0px;
+	
+}
+
+#rightDivPrep{
+	min-width: 500px;
+}
+
+#rightDivRecepie{
+	float: right;
+	padding-bottom: 10pt;
+
+}
+
+#ingredients{
+	width: 100%;
+}
+
+#headLine{
+	font-size: 15pt;
+	padding-top: 10pt;
+}
