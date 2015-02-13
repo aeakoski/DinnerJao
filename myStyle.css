@@ -190,7 +190,18 @@ body{
 #rightDivRecepie{
 	float: right;
 	padding-bottom: 10pt;
+}
 
+.subTitle2{
+	font-size: 30pt;
+}
+
+.subMenu{
+	padding: 5pt;
+	height:35pt;
+	background-color: #FFE599;
+	border-bottom-style: solid;
+	padding-left: 20pt;
 }
 
 #ingredients{
