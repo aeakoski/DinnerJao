@@ -41,15 +41,28 @@ var DinnerModel = function() {
 		//TODO Lab 2
 	}
 
+	this.getDishCost = function(id){
+		var dishCost=0;
+		for (i = 0; i< menu.length; i++){
+			dishCost = dishCost + menu[i]['price'];
+		}
+		
+		return dishCost
+	}
+
 	//Returns all ingredients for all the dishes on the menu.
-	// Returns an array of al the item names as strings
+	// Returns an array of all the iingredientss dictionarries
 	this.getAllIngredients = function() {
 		var allIngredients = [];
-		for (i = 0; i < menu.length; i++){
-			for (j = 0; j < menu[i]["ingredients"]; i++){
-				allIngredients[allIngredients.length] = menu[i]["ingredients"][j]["name"];
+
+		for (i = 0; i< menu.length; i++){
+			for (j = 0; j < menu[i]["ingredients"].length; j++){
+				allIngredients[allIngredients.length] = menu[i]["ingredients"][j];
 			}
 		}
+
+
+		
 		return allIngredients;
 		//TODO Lab 2
 	}
@@ -63,7 +76,7 @@ var DinnerModel = function() {
 				totPrice = totPrice + menu[i]["ingredients"][j]["price"];
 			}
 		}
-		console.log(totPrice);
+		
 		return totPrice;
 	}
 

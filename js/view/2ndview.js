@@ -9,10 +9,26 @@ var SndView = function (container,model) {
 	this.mealType = container.find("#mealType");
 	this.prepDish = container.find("#prepDish");
 	this.ingredientsTable = container.find("#ingredients");
+	//this.dishCost = container.find("#dishCost");
+
+	//this.dPending = container.find("#dPending");
+
+
 	
 	this.totalCost.html(model.getTotalMenuPrice());
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
+
+	//var totalCostForDish = model.getDishCost(model.getDish(1)); //Här ska dden valda rätten fyllas i!
+
+	//this.dishCost.append(totalCostForDish);
+
+	var menuList = model.getFullMenu();
+
+	//for (var i = 0; i < menuList.length; i++) {
+	//	this.dPending.append(menuList[i]);
+	//};
+
 
 	var selectedDish = model.getSelectedDish("starter");
 	this.prepDish.append('\
@@ -21,16 +37,18 @@ var SndView = function (container,model) {
 		<p>' + selectedDish['description'] + '</p>');
 
 
+
+
 	var ingredients = model.getAllIngredients();
 	console.log(ingredients);
 
 	for (var i = 0; i < ingredients.length; i++) {
 		this.ingredientsTable.append('\
 			<tr>\
-				<td class="col-xs-2">3 dl</td>\
-				<td class="col-xs-6">'+ingredients[i]+'</td>\
+				<td class="col-xs-2">'+ingredients[i]['quantity']+' '+ ingredients[i]['unit'] +'</td>\
+				<td class="col-xs-6">'+ingredients[i]['name']+'</td>\
 				<td>SEK</td>\
-				<td>20.00</td>\
+				<td>'+ingredients[i]["price"]+'</td>\
 			</tr>');
 		
 	};

@@ -166,6 +166,10 @@ body{
 	
 }
 
+#rightDivPrep{
+	min-width: 500px;
+}
+
 #rightDivRecepie{
 	float: right;
 	padding-bottom: 10pt;
