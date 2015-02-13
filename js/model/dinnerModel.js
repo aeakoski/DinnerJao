@@ -80,7 +80,6 @@ var DinnerModel = function() {
 				totPrice = totPrice + menu[i]["ingredients"][j]["price"];
 			}
 		}
-		
 		return totPrice;
 	}
 
