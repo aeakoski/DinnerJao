@@ -11,7 +11,7 @@ var FourthView = function (container,model) {
 	this.menuItem = container.find("#menuItem");
 	for (i = 0; i<dish.length; i++) {
 		this.menuItem.append('\
-					<div class="foodHead col-xs-2" >\
+					<div class="foodHead " >\
 						<div class = "foodPic">\
 							<img src="images/'+ dish[i]['image'] +'">\
 						</div>\

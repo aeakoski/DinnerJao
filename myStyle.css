@@ -121,6 +121,20 @@ body{
 	display: block;
 }
 
+.leftSpace{
+
+}
+
+
+.rightSpace{
+	
+}
+
+.middle{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 #dName{
 	display: inline-block;
