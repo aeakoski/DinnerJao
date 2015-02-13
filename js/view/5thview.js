@@ -9,11 +9,12 @@ var FifthView = function (container,model) {
 	var dish = model.getFullMenu();
 
 
-	this.printMenuItem = container.find("#printFoodItem");
+	this.printFoodItem = container.find("#printFoodItem");
 
 
 	for (var h = 0; h<dish.length; h++) {
 		console.log("skriver ut!!!!!!");
+		
 		this.printMenuItem.append('\
 				<div id = "upperDish" class = col-xs-12>\
 					<div class="col-xs-3">\
@@ -28,6 +29,7 @@ var FifthView = function (container,model) {
 						<p>'+ dish[h]['description'] +'</p>\
 					</div>\
 				</div>');
+
 
 		console.log(h);
 
