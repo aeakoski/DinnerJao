@@ -32,19 +32,19 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu as strings in a list.
 	this.getFullMenu = function() {
-		var courseList = [];
-		for(var i = 0; i< menu.length; i++){
-			courseList[courseList.length] = menu[i]["name"];
-		}
-
-		return courseList
+		return menu
 		//TODO Lab 2
 	}
 
 	this.getDishCost = function(id){
 		var dishCost=0;
-		for (i = 0; i< menu.length; i++){
-			dishCost = dishCost + menu[i]['price'];
+		for (i = 0; i< dishes.length; i++){
+			if (dishes[i]['id'] == id) {
+				for (j = 0; j < dishes[i]['ingredients']; j++){
+					dishCost = dishCost + dishes[i]['ingredients'][j]['price'];
+				}
+				
+			};
 		}
 		
 		return dishCost
