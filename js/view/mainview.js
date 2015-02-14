@@ -1,5 +1,6 @@
 var MainView = function (container) {
+   this.welcome = container.find("#welcome");
 
-	$("#startBody").css("background-image","url(images/familydinner.jpg)");
+    this.welcome.animate({'marginLeft' : "+=26%"},800);
 
 }
