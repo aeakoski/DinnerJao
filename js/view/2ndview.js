@@ -1,6 +1,6 @@
 var SndView = function (container,model) {
 
-	$("body").css("backgroung-image","none");
+	$("body").css("background-image","url(images/darker-wood-and-vegetables.jpg)");
 
 	
 	this.numberOfGuests = container.find("#numberOfGuests");
@@ -9,6 +9,11 @@ var SndView = function (container,model) {
 	this.mealType = container.find("#mealType");
 	this.prepDish = container.find("#prepDish");
 	this.ingredientsTable = container.find("#ingredients");
+
+	this.leftMenu = container.find("#leftMenu");
+
+    this.leftMenu.animate({'marginTop' : "+=17%"},800);
+    ;
 
 
 	this.dPending = container.find("#dPending");

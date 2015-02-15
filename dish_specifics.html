@@ -23,42 +23,42 @@
 
 	<div class="container-fluid">
 		<div id = "SndView">
-			<div id = "leftMenu">
-				<div class = "panel panel-default col-xs-4" >
+			<div id = "leftMenu" class="col-xs-3">
+				<div class = "white-panel" >
 					<div class = "panel-body ">
-						<p>MY DINNER</p>
-						People: <select id = "num">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-						</select >
+						<h2>My Dinner</h2>
+							<div id = "frameLeftMenu">
+								People: <select id = "num">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select >
 
-						Number of guests: <span id="numberOfGuests"></span>
+								Number of guests: <span id="numberOfGuests"></span>
 
-						<div id= "dDesc">
-							<div class = "col-xs-2"></div>
-							<div><p><span class="dName col-xs-6">Dish Name</span><span class="dCost">Cost</span></p></div>
+								<div id= "dDesc">
+									<div class = "col-xs-2"></div>
+									<div><p><span class="dName col-xs-6">Dish Name</span><span class="dCost">Cost</span></p></div>
+								</div>
 
-						</div>
+								<div id= "dPending">
 
-						<div id= "dPending">
+								</div>
 
-						</div>
+								<hr size="3">
+								<div id="tCost">
+								<p id>Total cost: <span id = "totalCost"></span></p>
+								</div>
 
-						<hr size="3">
-						<div id="tCost">
-						<p>Total cost: <span id = "totalCost"></span></p>
-						</div>
-
-						<a href="dinner_overview.html"><button type="button" class="btn btn-warning">Confirm Dinner</button></a>
-
+								<a href="dish_specifics.html"><button type="button" id = "homeletteButton" class="btn btn-default">Confirm Dinner</button></a>
+							</div>
 
 					</div>
 				</div>
