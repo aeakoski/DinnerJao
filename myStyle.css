@@ -1,6 +1,6 @@
 html{
-	border-left: 10pt solid #fbfbfb;
-	border-right: 10pt solid #fbfbfb;
+	border-left: 7pt solid #fbfbfb;
+	border-right: 7pt solid #fbfbfb;
 }
 
 #wrapper{
@@ -17,13 +17,13 @@ html{
 
 
 .container-fluid{
-	padding-bottom: 10pt;
+	padding-bottom: 7pt;
 }
 
 
 #bottomBorder{
 	width:100%;
-	height:10pt;
+	height:7pt;
 	position:absolute;
 	bottom:0;
 	left:0;
@@ -33,9 +33,9 @@ html{
 
 #headder{
 	background-color: #fbfbfb;
-	padding: 20pt;
-	padding-left: 40pt;
-	height: 110pt;
+	padding: 10pt;
+	padding-left: 25pt;
+	height: 65pt;
 
 }
 
@@ -82,8 +82,8 @@ html{
 	font-family: 'Cuprum', sans-serif;
 	font-weight: 800;
 	display: inline-block;
-	font-size: 45pt;
-	padding-right: 40pt;
+	font-size: 27pt;
+	padding-right: 25pt;
 	color: #CABE9A;
 
 }
@@ -91,7 +91,7 @@ html{
 
 #subTitle{
 	font-family: 'Cuprum', sans-serif;
-	font-size: 15pt;
+	font-size: 10pt;
 	display: inline-block;
 	color: #CABE9A;
 
@@ -115,15 +115,15 @@ html{
 
 
 #welcome p{
-	font-size: 15pt;
+	font-size: 10pt;
 }
 
 
 #welcomeTitle{
 	font-family: 'Cuprum', sans-serif;
-	font-size: 30pt;
+	font-size: 20pt;
 	color: #CABE9A;
-	padding-top: 10pt;
+	padding-top: 7pt;
 }
 
 
