@@ -203,7 +203,9 @@ h2{
 #rightBottom{
 	
 	height: 400pt;
-	overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
 }
 
 #rightBottomInner{
