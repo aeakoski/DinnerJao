@@ -14,6 +14,8 @@ $(function() {
 	var fourthView = new FourthView($("#FourthView"),model);
 
 	var fifthView = new FifthView($("#FifthView"),model);
+
+	var controller1 = new Controller1(mainView, model);
 	
 
 });
