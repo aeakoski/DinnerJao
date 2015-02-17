@@ -10,9 +10,9 @@ var FourthView = function (container,model) {
 
 	this.totalCost.html(model.getTotalMenuPrice());
 	
-
+	var dish = model.getFullMenu();
 	for (var g = 0; g<dish.length; g++) {
-		var dish = model.getFullMenu();
+		
 		this.menuItem.append('\
 			<div class="foodIcons " >\
 				<div class = "foodPic">\
