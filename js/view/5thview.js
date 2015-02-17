@@ -5,13 +5,12 @@ var FifthView = function (container,model) {
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.printFoodItem = container.find("#printFoodItem");
 
-
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
 
 	var dish = model.getFullMenu();
 	for (i = 0; i<dish.length; i++) {
-		this.printMenuItem.append('\
+		this.printFoodItem.append('\
 			<div id = "upperDish" class = col-xs-12>\
 				<div class="col-xs-3">\
 				<img src="images/'+ dish[i]['image'] +'">\
