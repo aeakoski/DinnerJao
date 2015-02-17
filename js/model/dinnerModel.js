@@ -15,7 +15,8 @@ var DinnerModel = function() {
 
  	this.addObserver = function(observer){
  		//that will add new observer to the array
- 		
+ 		observers[observers.length] = observer;
+
  	};
 
 
@@ -25,7 +26,7 @@ var DinnerModel = function() {
 
 	this.setNumberOfGuests = function(num) {
 		nrOfGuests = num;
-		
+
 		notifyObservers(observers);
 		//TODO Lab 2
 	}
