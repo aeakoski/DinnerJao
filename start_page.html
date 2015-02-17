@@ -39,45 +39,88 @@
 
 		</div><!--mainView-->
 
-		<div id = "leftMenu" class = "col-xs-3 white-panel panel-body" >
+	<div id = "leftMenu" class = "col-xs-3 white-panel panel-body" >
 
-			<h2>My Dinner</h2>
-			<div id = "frameLeftMenu">
-				People: 
-				<select id = "num">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					<option>10</option>
-				</select >
+		<h2>My Dinner</h2>
+		<div id = "frameLeftMenu">
+			People: 
+			<select id = "num">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+			</select >
 
-				Number of guests: 
-				<span id="numberOfGuests"></span>
+			Number of guests: 
+			<span id="numberOfGuests"></span>
 
-				<div id= "dDesc">
-					<div class = "col-xs-2"></div>
-					<div><p><span class="dName col-xs-6">Dish Name</span><span class="dCost">Cost</span></p></div>
-				</div>
+			<div id= "dDesc">
+				<div class = "col-xs-2"></div>
+				<div><p><span class="dName col-xs-6">Dish Name</span><span class="dCost">Cost</span></p></div>
+			</div>
 
-				<div id= "dPending">
-				</div>
+			<div id= "dPending">
+			</div>
 
-				<hr size="3">
-				<div id="tCost">
+			<hr size="3">
+			<div id="tCost">
 				<p id>Total cost: <span id = "totalCost"></span></p>
-				</div>
+			</div>
 
-				<a href="dish_specifics.html"><button type="button" id = "homeletteButton" class="btn btn-default">Confirm Dinner</button></a>
+			<a href="dish_specifics.html"><button type="button" id = "homeletteButton" class="btn btn-default">Confirm Dinner</button></a>
 
-			</div><!--frameLeftMneu-->
+		</div><!--frameLeftMneu-->
 		
-		</div><!--leftMenu-->
+	</div><!--leftMenu-->
+
+	<!--########################################-->
+
+	<div id="rightDiv">
+
+		<div id="rightTop" class="panel panel-default">
+
+			<div class="panel-heading">
+				<h3 class="panel-title" id="welcomeTitle">Select Disch</h3>
+			</div>
+
+				<div class="row panel-body">
+					<div class="col-md-8 input-group">
+			    	<input type="text" class="form-control" placeholder="Enter key words">
+			      	<span class="input-group-btn">
+			        	<button class="btn btn-default" type="button">Search!</button>
+			      	</span>
+				</div><!-- /.col-lg-6 -->
+
+			  	<select id = "mealType">
+			  		<option selected="selected">starter</option>
+					<option>main dish</option>
+					<option>dessert</option>
+				</select >
+			</div><!-- /.row panel-body -->
+
+		</div> <!--RightTop-->
+
+
+		<div id="rightBottom">
+
+			<div class="panel panel-default" id="rightBottomInner">
+				<div id = "dishList" class="panel-body">
+					<!--Här sätter javascript in code-->  
+				</div>
+			</div><!--Panel-->
+
+		</div><!--rightBottom-->
+
+	</div><!--rightDiv-->
+
+
+	<!--########################################-->
 
 
 	</div><!--wrapper-->

@@ -143,6 +143,7 @@ h2{
 #rightDiv{
 	float: right;
 	width: 65%;
+	visibility: hidden;
 }
 
 
@@ -160,23 +161,12 @@ h2{
 
 #dPending{
 	min-height: 45px;
-	
 	margin: 10px 0px 10px 0px;
-
 }
 
 .foodChoice{
 	width: 100%;
 	display: block;
-}
-
-.leftSpace{
-
-}
-
-
-.rightSpace{
-	
 }
 
 .middle{
@@ -276,6 +266,9 @@ h2{
 	display: inline-block;
 
 }
+#mainView{
+	position: absolute;
+}
 
 .foodIcons{
 	width: 200px;
@@ -304,6 +297,9 @@ h2{
 	background-color: #fbfbfb;
 	height:20%;
 	padding: 0pt;
+	visibility: hidden;
+	
+
 }
 
 #frameLeftMenu{
