@@ -2,51 +2,38 @@ var SndView = function (container,model) {
 
 	$("body").css("background-image","url(images/darker-wood-and-vegetables.jpg)");
 
-	
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.dishList = container.find("#dishList");
 	this.totalCost = container.find("#totalCost");
 	this.mealType = container.find("#mealType");
 	this.prepDish = container.find("#prepDish");
 	this.ingredientsTable = container.find("#ingredients");
-
 	this.leftMenu = container.find("#leftMenu");
-
-    this.leftMenu.animate({'marginTop' : "+=17%"},800);
-    ;
-
-
-	this.dPending = container.find("#dPending");
+	this.leftMenu.animate({'marginTop' : "+=17%"},800);
+    this.dPending = container.find("#dPending");
 
 
-	
 	this.totalCost.html(model.getTotalMenuPrice());
-
 	this.numberOfGuests.html(model.getNumberOfGuests());
-
 
 	var menuList = model.getFullMenu();
 
-	console.log(menuList.length);
-
 	if (menuList.length > 0) {
 		for (var i = 0; i < menuList.length; i++) {
-
 			this.dPending.append('\
 			<div class = "col-xs-2"></div>\
 			<div class="foodChoice">\
 			<p class="dName col-xs-6"><span>'+menuList[i]['name']+'</span></p>\
 			<p class="dName"><span>'+model.getDishCost(menuList[i]['id'])+'</span></p>\
 			</div>');
-	 	};
+	 	}
 	}
 
-
-	else{
+	else {
 		this.dPending.append('\
 			<p class="dName col-xs-6"><span>Pending</span></p>\
 			<p class="dName"><span>0.00</span></p>');
-	 };
+	};
 
 
 	var selectedDish = model.getSelectedDish("starter");
@@ -55,11 +42,8 @@ var SndView = function (container,model) {
 		<img src="images/'+ selectedDish['image'] +'">\
 		<p>' + selectedDish['description'] + '</p>');
 
-
-
 	var ingredients = model.getAllIngredients();
-
-	for (var i = 0; i < ingredients.length; i++) {
+	for (i = 0; i < ingredients.length; i++) {
 		this.ingredientsTable.append('\
 			<tr>\
 				<td class="col-xs-2">'+ingredients[i]['quantity']+' '+ ingredients[i]['unit'] +'</td>\
@@ -67,15 +51,10 @@ var SndView = function (container,model) {
 				<td>SEK</td>\
 				<td>'+ingredients[i]["price"]+'</td>\
 			</tr>');
-		
 	};
-
-
-
+	
 	var typeOfDish = model.getAllDishes(this.mealType.val());
-
 	for (i = 0; i<typeOfDish.length; i++) {
-
 		this.dishList.append('\
 			<div class="foodItem">\
 				<div class="foodHead">\
@@ -91,8 +70,5 @@ var SndView = function (container,model) {
 					<p>'+ typeOfDish[i]['description'] +'</p>\
 				</div>\
 			</div><!--FoodItem-->');
-
 	}
-
-
 }
