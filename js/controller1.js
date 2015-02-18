@@ -1,6 +1,7 @@
-var Controller1 = function (view,model) {
+var Controller1 = function (container,model) {
 	// body...
 	$("#homeletteButton").click(function () {
-		sndView("#SndView",model);
+		console.log("button clicked");
+		
 	});
 }

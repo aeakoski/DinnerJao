@@ -1,6 +1,5 @@
 var SndView = function (container,model) {
 
-	$("body").css("background-image","url(images/darker-wood-and-vegetables.jpg)");
 
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.dishList = container.find("#dishList");

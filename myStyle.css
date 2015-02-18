@@ -9,8 +9,8 @@ html{
 }
 
 body{
+	background-image: url("images/dark-wood-and-vegetables.jpg");
 	background-color: #fbfbfb;
-	background-image: url(images/dark-wood-and-vegetables.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
