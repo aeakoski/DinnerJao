@@ -1,6 +1,6 @@
 var FifthView = function (container,model) {
 
-	$("body").css("background-image","none");
+
 
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.printFoodItem = container.find("#printFoodItem");

@@ -1,7 +1,5 @@
 var ThreeView = function (container,model) {
 
-	$("body").css("backgroung-image","none");
-
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.dishList = container.find("#dishList");
 	this.totalCost = container.find("#totalCost");

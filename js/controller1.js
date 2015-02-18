@@ -1,6 +1,9 @@
 var Controller1 = function (container,model) {
-	// body...
+	
+
 	$("#homeletteButton").click(function () {
+		$("#mainView").hide();
+		$("#SndView").show();
 		console.log("button clicked");
 		
 	});

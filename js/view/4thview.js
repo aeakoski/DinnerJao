@@ -1,6 +1,6 @@
 var FourthView = function (container,model) {
 
-	$("body").css("backgroung-image","none");
+	
 
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.numberOfGuests.html(model.getNumberOfGuests());
