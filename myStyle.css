@@ -19,6 +19,14 @@ h2{
 	color: #BFB391;
 }
 
+#SndView{
+	display:none;
+}
+
+#ThreeView{
+	display:none;
+}
+
 .container-fluid{
 	padding-bottom: 7pt;
 	padding-left: 0pt;
@@ -293,7 +301,7 @@ h2{
 }
 
 #leftMenu{
-	margin-top: -17%;
+	margin-top:0pt;
 	background-color: #fbfbfb;
 	height:20%;
 	padding: 0pt;

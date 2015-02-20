@@ -8,7 +8,7 @@ var SndView = function (container,model) {
 	this.prepDish = container.find("#prepDish");
 	this.ingredientsTable = container.find("#ingredients");
 	this.leftMenu = container.find("#leftMenu");
-	this.leftMenu.animate({'marginTop' : "+=17%"},800);
+	// this.leftMenu.animate({'marginTop' : "+=17%"},800);
     this.dPending = container.find("#dPending");
 
 
@@ -55,7 +55,7 @@ var SndView = function (container,model) {
 	var typeOfDish = model.getAllDishes(this.mealType.val());
 	for (i = 0; i<typeOfDish.length; i++) {
 		this.dishList.append('\
-			<div class="foodItem">\
+			<div rel = "'+ typeOfDish[i]['id'] +'" class="foodItem">\
 				<div class="foodHead">\
 					<div class = "foodPic">\
 						<img src="images/'+ typeOfDish[i]['image'] +'">\

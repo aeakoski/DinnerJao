@@ -16,6 +16,8 @@ $(function() {
 	var fifthView = new FifthView($("#FifthView"),model);
 
 	var controller1 = new Controller1($("#mainView"), model);
+
+	var controller2 = new Controller2($("#SndView"), model);
 	
 
 });
