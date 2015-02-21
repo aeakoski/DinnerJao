@@ -3,9 +3,7 @@ var DinnerModel = function() {
  
  	var menu = new Array();
 
-
  	var observers = new Array();
-
 
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array

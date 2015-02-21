@@ -19,13 +19,6 @@ h2{
 	color: #BFB391;
 }
 
-#SndView{
-	display:none;
-}
-
-#ThreeView{
-	display:none;
-}
 
 .container-fluid{
 	padding-bottom: 7pt;
@@ -78,6 +71,18 @@ h2{
 	padding-top: 7pt;
 	padding-right: 10pt;
 	padding-left: 10pt;
+}
+
+#confirmDinner{
+	border-radius: 2px;
+	box-shadow: none;
+	color: #fff;
+	background-color: #CABE9A;
+	border-style: none;
+	padding-top: 7pt;
+	padding-right: 10pt;
+	padding-left: 10pt;
+	margin-top: 0 !important;
 }
 
 #homeletteButton:hover{

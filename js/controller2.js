@@ -9,9 +9,7 @@ var Controller2 = function (container,model) {
 		var dishID = $(this).attr('rel');
 		
 		$("#rightDiv").hide();
-
-
-		$("#ThreeView").show();
+		$("#rightDivPrep").show();
 
 	});
 }
