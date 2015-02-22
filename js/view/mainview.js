@@ -3,6 +3,8 @@ var MainView = function (container) {
 	$("#rightDiv").hide();
 	$("#rightBottom").hide();
 	$("#rightDivPrep").hide();
+	$("#FourthView").hide();
+	$("#FifthView").hide();
 
    	this.welcome = container.find("#welcome");
 

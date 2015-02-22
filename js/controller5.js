@@ -1,13 +1,14 @@
-var Controller4 = function (container,model) {
+var Controller5 = function (container,model) {
 	
-	$("#confirmDinner").click(function () {
-		// body...
+	$("#printRecipe").click(function () {
+
 		$("#leftMenu").hide();
 		$("#rightDiv").hide();
-		$("#FourthView").show();
+		$("#FourthView").hide();
+		$("#FifthView").show();
+
 
 	});
-
 
 	$(".backToEdit").click(function () {
 
@@ -15,7 +16,8 @@ var Controller4 = function (container,model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
-		$("#FourthView").hide();
+		$("#FifthView").hide();
+
 
 	});
 

@@ -6,7 +6,7 @@ var Controller3 = function (container,model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
-		console.log("rightDivPrep borde döljas");
+
 	});
 
 }
