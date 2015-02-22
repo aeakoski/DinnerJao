@@ -8,5 +8,6 @@ var Controller1 = function (container,model) {
 		$("#rightTop").show();
 		$("#rightBottom").show();
 		
+		
 	});
 }

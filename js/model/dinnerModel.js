@@ -1,30 +1,34 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
- 
+
+	var nrOfGuests = 1
+
  	var menu = new Array();
 
  	var observers = new Array();
 
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
- 		
- 	};
+ 		for(i = 0; i < observers.length; i++) {
+ 			console.log(observers[i]);
+			observers[i].update(obj);	
+		}	
+ 	}
 
 
  	this.addObserver = function(observer){
  		//that will add new observer to the array
  		observers[observers.length] = observer;
 
- 	};
+ 	}
 
 
- 	var nrOfGuests = 1;
+ 	
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 
 	this.setNumberOfGuests = function(num) {
 		nrOfGuests = num;
-
 		notifyObservers(observers);
 		//TODO Lab 2
 	}

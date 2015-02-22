@@ -12,4 +12,12 @@ var Controller2 = function (container,model) {
 		$("#rightDivPrep").show();
 
 	});
+
+
+	$("#num").change(function () {
+		// body...
+		num = $(this).val();
+		console.log("förändrat värde! till ", num);
+		model.setNumberOfGuests(num);
+	});
 }

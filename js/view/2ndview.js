@@ -1,5 +1,8 @@
 var SndView = function (container,model) {
 
+	//add view as observer of model
+	model.addObserver(this);
+
 
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.dishList = container.find("#dishList");
@@ -8,12 +11,18 @@ var SndView = function (container,model) {
 	this.prepDish = container.find("#prepDish");
 	this.ingredientsTable = container.find("#ingredients");
 	this.leftMenu = container.find("#leftMenu");
-	// this.leftMenu.animate({'marginTop' : "+=17%"},800);
     this.dPending = container.find("#dPending");
 
 
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.numberOfGuests.html(model.getNumberOfGuests());
+
+	this.update = function(obj){
+		console.log(model.getNumberOfGuests());
+		$("#numberOfGuests").html(model.getNumberOfGuests());
+
+	}
+
 
 	var menuList = model.getFullMenu();
 
@@ -70,4 +79,22 @@ var SndView = function (container,model) {
 				</div>\
 			</div><!--FoodItem-->');
 	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
