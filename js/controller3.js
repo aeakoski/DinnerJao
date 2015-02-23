@@ -9,4 +9,14 @@ var Controller3 = function (view,model) {
 
 	});
 
+	$(".backToEdit").click(function () {
+
+		$("#leftMenu").show();
+		$("#rightDiv").show();
+		$("#rightTop").show();
+		$("#rightBottom").show();
+		$("#FourthView").hide();
+
+	});
+
 }
