@@ -1,4 +1,4 @@
-var Controller3 = function (container,model) {
+var Controller3 = function (view,model) {
 	
 	$("#confirmDish").click(function () {
 		// body...

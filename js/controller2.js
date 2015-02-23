@@ -1,23 +1,29 @@
-var Controller2 = function (container,model) {
+var Controller2 = function (view,model) {
 	
-	this.mealType = container.find("#mealType");
+	
 	var typeOfDish = model.getAllDishes();
 
-	//id av dish  ===> $(".fooditem").attr("rel")
-
-	$(".foodItem").click(function () {
+	//When clickin on a fooditem u come to the next view with dish Specifics
+	$("#dishList").on('click', '.foodItem', function () {
 		var dishID = $(this).attr('rel');
-		
+		view.update(dishID);
+
 		$("#rightDiv").hide();
 		$("#rightDivPrep").show();
 
 	});
 
-
+	//when selector changes it sends the new value to the model
 	$("#num").change(function () {
-		// body...
 		num = $(this).val();
-		console.log("förändrat värde! till ", num);
 		model.setNumberOfGuests(num);
+	});
+
+	$("#mealType").change(function () {
+		
+		type = $(this).val();
+
+		model.setMealType(type);
+
 	});
 }

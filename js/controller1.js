@@ -1,4 +1,4 @@
-var Controller1 = function (container,model) {
+var Controller1 = function (view,model) {
 	
 
 	$("#homeletteButton").click(function () {
@@ -7,7 +7,7 @@ var Controller1 = function (container,model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
-		
+
 		
 	});
 }

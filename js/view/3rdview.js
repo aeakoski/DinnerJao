@@ -1,4 +1,6 @@
 var ThreeView = function (container,model) {
+	
+	model.addObserver(this);
 
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.dishList = container.find("#dishList");
@@ -8,9 +10,19 @@ var ThreeView = function (container,model) {
 	this.ingredientsTable = container.find("#ingredients");
 	this.dPending = container.find("#dPending");
 
-	
+
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.numberOfGuests.html(model.getNumberOfGuests());
+
+	this.update = function(obj){
+		
+		$("#numberOfGuests").html(model.getNumberOfGuests());
+
+		var selDish = model.getDish(obj);
+
+		updateSelectedDish(selDish);
+		updateIngredients(selDish);
+	}
 
 	
 	var menuList = model.getFullMenu();
@@ -21,21 +33,43 @@ var ThreeView = function (container,model) {
 	}
 
 
-	var selectedDish = model.getSelectedDish("starter");
-	this.prepDish.append('\
+
+	
+	var updateSelectedDish = function (selectedDish) {
+		if (typeof(selectedDish)==='undefined') {
+			selectedDish = 1;
+		}
+
+		$("#prepDish").empty();
+
+		$("#prepDish").append('\
 		<h2>' + selectedDish['name'] + '</h2>\
 		<img src="images/'+ selectedDish['image'] +'">\
 		<p>' + selectedDish['description'] + '</p>');
-
-
-	var ingredients = model.getAllIngredients();
-	for (var i = 0; i < ingredients.length; i++) {
-		this.ingredientsTable.append('\
-			<tr>\
-				<td class="col-xs-2">'+ingredients[i]['quantity']+' '+ ingredients[i]['unit'] +'</td>\
-				<td class="col-xs-6">'+ingredients[i]['name']+'</td>\
-				<td>SEK</td>\
-				<td>'+ingredients[i]["price"]+'</td>\
-			</tr>');
 	}
+	
+
+
+	//var ingredients = model.getAllIngredients();
+	var updateIngredients = function (dish) {
+		if (typeof(dish)==='undefined') {
+			dish = model.getDish(1);
+		}
+		$("#ingredients").empty();
+
+		for (var i = 0; i < dish['ingredients'].length; i++) {
+			$("#ingredients").append('\
+				<tr>\
+					<td class="col-xs-2">'+dish['ingredients'][i]['quantity']+' '+ dish['ingredients'][i]['unit'] +'</td>\
+					<td class="col-xs-6">'+dish['ingredients'][i]['name']+'</td>\
+					<td>SEK</td>\
+					<td>'+dish['ingredients'][i]["price"]+'</td>\
+				</tr>');
+		}
+	}
+
+
+
+
+
 }

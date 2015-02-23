@@ -1,7 +1,8 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
 
-	var nrOfGuests = 1
+	var nrOfGuests = 1;
+	var type = "starter";
 
  	var menu = new Array();
 
@@ -10,7 +11,6 @@ var DinnerModel = function() {
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
  		for(i = 0; i < observers.length; i++) {
- 			console.log(observers[i]);
 			observers[i].update(obj);	
 		}	
  	}
@@ -37,6 +37,15 @@ var DinnerModel = function() {
 	this.getNumberOfGuests = function() {
 		return nrOfGuests;
 		//TODO Lab 2
+	}
+
+	this.setMealType = function (type) {
+		mealType = type;
+		notifyObservers(observers);
+	}
+
+	this.getMealType = function() {
+		return mealType;
 	}
 
 	//Returns the dish that is on the menu for selected type 
@@ -81,9 +90,6 @@ var DinnerModel = function() {
 				allIngredients[allIngredients.length] = menu[i]["ingredients"][j];
 			}
 		}
-
-
-		
 		return allIngredients;
 		//TODO Lab 2
 	}

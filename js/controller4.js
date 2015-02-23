@@ -1,10 +1,12 @@
-var Controller4 = function (container,model) {
+var Controller4 = function (view,model) {
 	
 	$("#confirmDinner").click(function () {
 		// body...
 		$("#leftMenu").hide();
 		$("#rightDiv").hide();
 		$("#FourthView").show();
+		$("#FifthView").hide();
+		$("#rightDivPrep").hide();
 
 	});
 

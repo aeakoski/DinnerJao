@@ -1,4 +1,4 @@
-var Controller5 = function (container,model) {
+var Controller5 = function (view,model) {
 	
 	$("#printRecipe").click(function () {
 

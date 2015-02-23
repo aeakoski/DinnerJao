@@ -15,11 +15,14 @@ var SndView = function (container,model) {
 
 
 	this.totalCost.html(model.getTotalMenuPrice());
-	this.numberOfGuests.html(model.getNumberOfGuests());
+	//this.numberOfGuests.html(model.getNumberOfGuests());
 
 	this.update = function(obj){
-		console.log(model.getNumberOfGuests());
+		
 		$("#numberOfGuests").html(model.getNumberOfGuests());
+
+		updateFoodItems();
+		
 
 	}
 
@@ -61,25 +64,28 @@ var SndView = function (container,model) {
 			</tr>');
 	};
 	
-	var typeOfDish = model.getAllDishes(this.mealType.val());
-	for (i = 0; i<typeOfDish.length; i++) {
-		this.dishList.append('\
-			<div rel = "'+ typeOfDish[i]['id'] +'" class="foodItem">\
-				<div class="foodHead">\
-					<div class = "foodPic">\
-						<img src="images/'+ typeOfDish[i]['image'] +'">\
-					</div>\
-					<div class = "foodTitle">\
-						<h4>'+ typeOfDish[i]['name'] +'</h4>\
-					</div>\
-				</div>\
-				\
-				<div class = "foodDesc">\
-					<p>'+ typeOfDish[i]['description'] +'</p>\
-				</div>\
-			</div><!--FoodItem-->');
-	}
+	var updateFoodItems = function(){
+		$("#dishList").empty();
 
+		var typeOfDish = model.getAllDishes(model.getMealType());
+		for (i = 0; i<typeOfDish.length; i++) {
+			$("#dishList").append('\
+				<div rel = "'+ typeOfDish[i]['id'] +'" class="foodItem">\
+					<div class="foodHead">\
+						<div class = "foodPic">\
+							<img src="images/'+ typeOfDish[i]['image'] +'">\
+						</div>\
+						<div class = "foodTitle">\
+							<h4>'+ typeOfDish[i]['name'] +'</h4>\
+						</div>\
+					</div>\
+					\
+					<div class = "foodDesc">\
+						<p>'+ typeOfDish[i]['description'] +'</p>\
+					</div>\
+				</div><!--FoodItem-->');
+		}
+	}
 	
 
 
