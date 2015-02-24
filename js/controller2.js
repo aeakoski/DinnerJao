@@ -6,6 +6,7 @@ var Controller2 = function (view,model) {
 	//When clickin on a fooditem u come to the next view with dish Specifics
 	$("#dishList").on('click', '.foodItem', function () {
 		var dishID = $(this).attr('rel');
+		model.newCurrentDish(dishID);
 		view.update(dishID);
 
 		$("#rightDiv").hide();

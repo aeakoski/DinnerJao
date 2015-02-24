@@ -14,6 +14,8 @@ var ThreeView = function (container,model) {
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
+	var menuList = model.getFullMenu();
+
 	this.update = function(obj){
 		
 		$("#numberOfGuests").html(model.getNumberOfGuests());
@@ -23,10 +25,11 @@ var ThreeView = function (container,model) {
 		updateSelectedDish(selDish);
 		updateIngredients(selDish);
 		updatePending(selDish);
+		menuList = model.getFullMenu();
 	}
 	
 	
-	var menuList = model.getFullMenu();
+	
 
 	var updatePending = function(selDish){
 
@@ -45,11 +48,6 @@ var ThreeView = function (container,model) {
 		}
 	}
 	
-
-
-
-
-	
 	var updateSelectedDish = function (selectedDish) {
 		if (typeof(selectedDish)==='undefined') {
 			selectedDish = 1;
@@ -58,7 +56,7 @@ var ThreeView = function (container,model) {
 		$("#prepDish").empty();
 
 		$("#prepDish").append('\
-		<h2>' + selectedDish['name'] + '</h2>\
+		<h2 id ="dishHeadder" rel ="'+selectedDish['id']+'">' + selectedDish['name'] + '</h2>\
 		<img src="images/'+ selectedDish['image'] +'">\
 		<p>' + selectedDish['description'] + '</p>');
 	}

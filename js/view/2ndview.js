@@ -13,8 +13,6 @@ var SndView = function (container,model) {
 	this.leftMenu = container.find("#leftMenu");
     this.dPending = container.find("#dPending");
     this.pendingCost = container.find("#pendingCost");
-    this.dAdded = container.find("dAdded");
-
 
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.pendingCost.html(model.getDishCost());
@@ -25,11 +23,7 @@ var SndView = function (container,model) {
 		updateFoodItems();
 	}
 
-
 	var menuList = model.getFullMenu();
-
-	
-
 
 	var selectedDish = model.getSelectedDish("starter");
 	if(menuList.length > 0){

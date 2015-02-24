@@ -1,6 +1,8 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
 
+	var currentDish = null;
+
 	var nrOfGuests = 1;
 
 	var type = "starter";
@@ -9,11 +11,20 @@ var DinnerModel = function() {
 
  	var observers = new Array();
 
+
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
  		for(i = 0; i < observers.length; i++) {
 			observers[i].update(obj);	
 		}	
+ 	}
+
+ 	this.newCurrentDish = function(id){
+ 		currentDish = this.getDish(id);
+ 	}
+
+ 	this.seeCurrentDish = function(){
+ 		return currentDish;
  	}
 
 

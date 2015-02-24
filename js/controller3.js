@@ -1,12 +1,16 @@
 var Controller3 = function (view,model) {
 	
 	$("#confirmDish").click(function () {
-		// body...
-		view.update();
+		model.addDishToMenu(model.seeCurrentDish()['id']);
+		
+		view.update(); //View 3 uppdateras
+
 		$("#rightDivPrep").hide();
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
+
+		console.log(model.getFullMenu());
 
 	});
 
