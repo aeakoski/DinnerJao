@@ -23,7 +23,7 @@ $(function() {
 
 	var controller4 = new Controller4(fourthView, model);
 
-	var controller5 = new Controller5($("#wrapper"), model);
+	var controller5 = new Controller5(fifthView, model);
 	
 
 });
