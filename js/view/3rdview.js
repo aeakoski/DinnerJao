@@ -16,10 +16,16 @@ var ThreeView = function (container,model) {
 
 	this.update = function(obj){
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
-		var selDish = model.getDish(obj);
-		updateSelectedDish(selDish);
-		updateIngredients(selDish);
-		updatePending(selDish);
+			var cDish = model.getCurrentDish();
+		if (cDish === null) {
+			console.log("dish is null");
+			cDish = model.getDish(obj);
+		}
+		console.log(typeof(cDish));
+
+		updateSelectedDish(cDish);
+		updateIngredients(cDish);
+		updatePending(cDish);
 		updateMenu();
 
 
@@ -57,14 +63,10 @@ var ThreeView = function (container,model) {
 	
 	var updateSelectedDish = function (selectedDish) {
 
-		if (typeof(selectedDish)==='undefined') {
-			selectedDish = 1;
-		}
-
 		$("#prepDish").empty();
 
 		$("#prepDish").append('\
-		<h2 id ="dishHeadder" rel ="'+selectedDish['id']+'">' + selectedDish['name'] + '</h2>\
+		<h2 id ="dishHeadder" rel ="'+ selectedDish['id']+'">' + selectedDish['name'] + '</h2>\
 		<img src="images/'+ selectedDish['image'] +'">\
 		<p>' + selectedDish['description'] + '</p>');
 	}
