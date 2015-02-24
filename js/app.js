@@ -21,7 +21,7 @@ $(function() {
 
 	var controller3 = new Controller3(threeView, model);
 
-	var controller4 = new Controller4($("#wrapper"), model);
+	var controller4 = new Controller4(fourthView, model);
 
 	var controller5 = new Controller5($("#wrapper"), model);
 	

@@ -14,8 +14,6 @@ var ThreeView = function (container,model) {
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
-	var menuList = model.getFullMenu();
-
 	this.update = function(obj){
 		
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
@@ -25,7 +23,7 @@ var ThreeView = function (container,model) {
 		updateSelectedDish(selDish);
 		updateIngredients(selDish);
 		updatePending(selDish);
-		menuList = model.getFullMenu();
+
 	}
 	
 	
