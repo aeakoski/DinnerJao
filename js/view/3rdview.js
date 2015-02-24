@@ -33,8 +33,10 @@ var ThreeView = function (container,model) {
 		if(model.getFullMenu().length === 0){
 			$("#confirmDinner").css("background-color", "#CABE9A"); //background-color: #CABE9A; Avslagen
 		}else{
-			$("#confirmDinner").css("background-color", "#F0AD4E"); // Vald #background-color: #F0AD4E; PÅslagen
+			$("#confirmDinner").css("background-color", "#F0AD4E"); // Vald #background-color: #F0AD4E; PÅslagen		
 		}
+
+
 	}
 	
 	
