@@ -10,8 +10,6 @@ var Controller3 = function (view,model) {
 		$("#rightTop").show();
 		$("#rightBottom").show();
 
-		console.log(model.getFullMenu());
-
 	});
 
 	$(".backToEdit").click(function () {
