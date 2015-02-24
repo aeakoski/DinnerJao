@@ -23,6 +23,9 @@ h2{
 	color: #BFB391;
 }
 
+#FourthView{
+	background-color: #fbfbfb;
+}
 
 .foodDesc{
 	height: 81pt;
@@ -136,10 +139,25 @@ h2{
 	margin-left: -26%;
 }
 
-
-#welcome div.panel-heading{
-	background-color: #fbfbfb;
+.row{
+	margin-left: 0pt !important;
 }
+
+.panel-default{
+	border:none !important;
+}
+
+.panel-body{
+	background-color: #fbfbfb !important;
+}
+
+.panel-heading{
+	background-color: #fbfbfb !important;
+}
+
+/*#welcome div.panel-heading{
+	background-color: #fbfbfb;
+}*/
 
 
 
@@ -204,6 +222,10 @@ h2{
 	text-overflow: ellipsis;
 }
 
+.foodDesc p {
+	margin: 5pt;
+}
+
 .foodChoice{
 	width: 100%;
 	display: block;
@@ -229,6 +251,9 @@ h2{
 
 #rightTop{
 	margin-bottom: 0pt;
+	border: none;
+	border-radius: 0;
+	background-color: #fbfbfb;
 }
 
 #rightBottom{
@@ -297,11 +322,11 @@ h2{
 	padding-top: 10pt;
 }
 
-#subHeadder{
-	border: 1px solid black;
+.subHeadder{
 	width: 100%;
 	padding: 1.5%;
-	background-color: #eee;
+	color: #CABE9A;
+	background-color: rgba(45, 45, 45, 0.64);
 }
 
 #mainWindow{
@@ -328,6 +353,14 @@ h2{
 #upperDish{
 	display: block;
 	margin: 20px;
+	color: #fbfbfb;
+}
+
+#upperDish img{
+	height: 150pt;
+	width: 150pt;
+	border: 2pt solid #fbfbfb;
+	border-radius: 75pt;
 }
 
 .white-panel{
