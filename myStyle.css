@@ -3,6 +3,10 @@ html{
 	border-right: 7pt solid #fbfbfb;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 #wrapper{
 	position: relative;
 	min-height: 100%;
@@ -22,7 +26,8 @@ h2{
 
 .foodDesc {
 	height: 81pt;
-  	overflow: scroll;
+  	overflow-y: scroll;
+
 }
 
 .container-fluid{
