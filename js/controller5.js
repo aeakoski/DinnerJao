@@ -16,6 +16,7 @@ var Controller5 = function (view,model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
+		$("#rightDivPrep").hide();
 		$("#FifthView").hide();
 
 

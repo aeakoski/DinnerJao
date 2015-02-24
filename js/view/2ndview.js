@@ -12,18 +12,15 @@ var SndView = function (container,model) {
 	this.ingredientsTable = container.find("#ingredients");
 	this.leftMenu = container.find("#leftMenu");
     this.dPending = container.find("#dPending");
+    this.dAdded = container.find("dAdded");
 
 
 	this.totalCost.html(model.getTotalMenuPrice());
 	//this.numberOfGuests.html(model.getNumberOfGuests());
 
 	this.update = function(obj){
-		
 		$("#numberOfGuests").html(model.getNumberOfGuests());
-
 		updateFoodItems();
-		
-
 	}
 
 
@@ -86,6 +83,8 @@ var SndView = function (container,model) {
 				</div><!--FoodItem-->');
 		}
 	}
+
+	updateFoodItems();
 	
 
 
