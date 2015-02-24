@@ -1,4 +1,10 @@
-var Controller3 = function (view,model) {
+var Controller3 = function (view, view2, model) {
+
+	$("#mainSearch").keyup(function(){
+			var inp = $("#mainSearch").val()
+			model.setInput(inp);
+			view2.update();
+		});
 	
 	$("#confirmDish").click(function () {
 		model.addDishToMenu(model.getCurrentDish()['id']);
@@ -9,7 +15,6 @@ var Controller3 = function (view,model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
-
 
 	});
 

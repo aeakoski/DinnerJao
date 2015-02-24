@@ -23,6 +23,7 @@ var SndView = function (container,model) {
 		updateFoodItems();
 	}
 
+
 	var menuList = model.getFullMenu();
 
 	var selectedDish = model.getSelectedDish("starter");
@@ -32,6 +33,7 @@ var SndView = function (container,model) {
 			<img src="images/'+ selectedDish['image'] +'">\
 			<p>' + selectedDish['description'] + '</p>');
 	}
+
 
 	var ingredients = model.getAllIngredients();
 	for (i = 0; i < ingredients.length; i++) {
@@ -45,9 +47,18 @@ var SndView = function (container,model) {
 	};
 	
 	var updateFoodItems = function(){
-		$("#dishList").empty();
 
-		var typeOfDish = model.getAllDishes(model.getMealType());
+		if(model.getInputList().length != 0 ){
+			//Om det finns saker i söklistan importera den
+			
+			typeOfDish = model.getInputList();
+
+		}else{
+			//Annars så visa alla maträtter innom vald kategori
+			
+			var typeOfDish = model.getAllDishes(model.getMealType());
+		}
+		$("#dishList").html('');
 		for (i = 0; i<typeOfDish.length; i++) {
 			$("#dishList").append('\
 				<div rel = "'+ typeOfDish[i]['id'] +'" class="foodItem">\
@@ -65,7 +76,9 @@ var SndView = function (container,model) {
 					</div>\
 				</div><!--FoodItem-->');
 		}
+		
 	}
+
 
 	updateFoodItems();
 	

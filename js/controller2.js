@@ -1,5 +1,11 @@
-var Controller2 = function (view,model) {
-	
+var Controller2 = function (view, view2, model) {
+
+	$("#mainSearch").keyup(function(){
+			var inp = $("#mainSearch").val()
+			model.setInput(inp);
+			view2.update();
+		});
+
 	
 	var typeOfDish = model.getAllDishes();
 

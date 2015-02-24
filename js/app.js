@@ -17,9 +17,9 @@ $(function() {
 
 	var controller1 = new Controller1(mainView, model);
 
-	var controller2 = new Controller2(threeView, model);
+	var controller2 = new Controller2(threeView, sndView, model);
 
-	var controller3 = new Controller3(threeView, model);
+	var controller3 = new Controller3(threeView, sndView, model);
 
 	var controller4 = new Controller4(fourthView, model);
 

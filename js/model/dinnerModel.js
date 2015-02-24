@@ -1,6 +1,10 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
 
+//--------------------------------------------------//
+//-------------------Variabler----------------------//
+//--------------------------------------------------//
+
 	var currentDish = null;
 
 	var nrOfGuests = 1;
@@ -11,6 +15,12 @@ var DinnerModel = function() {
 
  	var observers = new Array();
 
+ 	var displayList = [];
+
+
+//--------------------------------------------------//
+//---------------------Metoder----------------------//
+//--------------------------------------------------//
 
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
@@ -20,25 +30,39 @@ var DinnerModel = function() {
 		}	
  	}
 
+ 	this.setInput = function(input){
+ 		displayList = [];
+		if (input !=""){
+			for(j = 0 ; j<dishes.length ; j++){
+				if (dishes[j]['name'].toLowerCase().indexOf(input.toLowerCase()) != -1) {
+					if(this.getMealType() === dishes[j]['type'] ){
+						displayList.push(dishes[j]);
+					}
+				};
+			}	
+		}
+		//Notify observers! Nåt har änderats JAO!!!
+ 	}
+
+ 	this.getInputList = function(){
+ 		return displayList;
+ 	}
+
  	this.setCurrentDish = function(id){
  		if(id == null){
  			currentDish = null;
  		}else{
  			currentDish = this.getDish(id);
- 		}
- 		
+ 		}	
  	}
-
 
  	this.getCurrentDish = function(){
  		return currentDish;
  	}
 
-
  	this.addObserver = function(observer){
  		//that will add new observer to the array
  		observers[observers.length] = observer;
-
  	}
 
 	this.setNumberOfGuests = function(num) {
