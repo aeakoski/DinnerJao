@@ -24,6 +24,8 @@ var DinnerModel = function() {
  		currentDish = this.getDish(id);
  	}
 
+
+
  	this.seeCurrentDish = function(){
  		return currentDish;
  	}
@@ -404,6 +406,6 @@ var DinnerModel = function() {
 			}]
 		}
 	];
-	this.addDishToMenu(1);
+	//this.addDishToMenu(1);
 	// this.addDishToMenu(3);
 }

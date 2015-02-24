@@ -239,9 +239,11 @@ h2{
 
 #rightDivPrep{
 	min-width: 500px;
+	float:right;
 }
 
 #rightDivRecepie{
+	height:100%;
 	float: right;
 	padding-bottom: 10pt;
 }

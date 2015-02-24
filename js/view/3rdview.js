@@ -33,8 +33,11 @@ var ThreeView = function (container,model) {
 		for( var a = 0 ; a < model.getFullMenu().length ; a++){
 			$("#dPending").append('\
 			<p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['name'] +'</span></p>\
-			<p class="dName"><span>'+ model.getFullMenu()[a]['price'] +'</span></p>');
+			<p class="dName"><span>'+ model.getDishCost(model.getFullMenu()[a]['id']) +'</span></p>');
 		}
+
+		this.totalCost = container.find("#totalCost");
+		this.totalCost.html(model.getTotalMenuPrice());
 
 	}
 

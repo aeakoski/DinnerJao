@@ -1,13 +1,17 @@
 var Controller4 = function (view,model) {
 	
 	$("#confirmDinner").click(function () {
-		// body...
-		view.update();
-		$("#leftMenu").hide();
-		$("#rightDiv").hide();
-		$("#FourthView").show();
-		$("#FifthView").hide();
-		$("#rightDivPrep").hide();
+		if(model.getFullMenu().length>0){
+			view.update();
+			$("#leftMenu").hide();
+			$("#rightDiv").hide();
+			$("#FourthView").show();
+			$("#FifthView").hide();
+			$("#rightDivPrep").hide();	
+		}else{
+			
+		}
+		
 
 	});
 
