@@ -1,7 +1,7 @@
 var Controller3 = function (view,model) {
 	
 	$("#confirmDish").click(function () {
-		model.addDishToMenu(model.seeCurrentDish()['id']);
+		model.addDishToMenu(model.getCurrentDish()['id']);
 		
 		view.update(); //View 3 uppdateras
 
