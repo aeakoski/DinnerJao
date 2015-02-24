@@ -2,6 +2,7 @@
 var DinnerModel = function() {
 
 	var nrOfGuests = 1;
+
 	var type = "starter";
 
  	var menu = new Array();
@@ -22,21 +23,13 @@ var DinnerModel = function() {
 
  	}
 
-
- 	
-	//TODO Lab 2 implement the data structure that will hold number of guest
-	// and selected dinner options for dinner menu
-
 	this.setNumberOfGuests = function(num) {
 		nrOfGuests = num;
 		notifyObservers(observers);
-		//TODO Lab 2
 	}
 
-	// should return 
 	this.getNumberOfGuests = function() {
 		return nrOfGuests;
-		//TODO Lab 2
 	}
 
 	this.setMealType = function (type) {
@@ -56,13 +49,11 @@ var DinnerModel = function() {
 				return menu[i]; //Returns the whole dish object.
 			}
 		}
-		//TODO Lab 2
 	}
 
 	//Returns all the dishes on the menu as strings in a list.
 	this.getFullMenu = function() {
 		return menu
-		//TODO Lab 2
 	}
 
 	this.getDishCost = function(id){
@@ -73,7 +64,6 @@ var DinnerModel = function() {
 					dishCost = dishCost + dishes[i]['ingredients'][j]['price'];
 				}
 				return dishCost
-
 			};
 		}
 
@@ -91,7 +81,6 @@ var DinnerModel = function() {
 			}
 		}
 		return allIngredients;
-		//TODO Lab 2
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).

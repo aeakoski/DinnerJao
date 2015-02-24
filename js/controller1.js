@@ -7,6 +7,7 @@ var Controller1 = function (view,model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
+		model.setMealType("starter");
 
 		
 	});
