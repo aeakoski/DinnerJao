@@ -21,6 +21,7 @@ var FifthView = function (container,model) {
 
 	var menuUpdate = function (dish) {
 		// body...
+		$(printFoodItem).empty();
 		for (i = 0; i<dish.length; i++) {
 			$(printFoodItem).append('\
 				<div id = "upperDish" class = col-xs-12>\
