@@ -44,11 +44,11 @@ var ThreeView = function (container,model) {
 			
 			$("#dAdded").append('\
 			<div id="dAddedR"><p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['name'] +'</span></p>\
-			<p class="dName col-xs-1"><span>'+ model.getDishCost(model.getFullMenu()[a]['id']) +'.00</span></p>\
+			<p class="dName col-xs-1"><span>'+ model.getDishCost(model.getFullMenu()[a]['id']) * model.getNumberOfGuests() +'.00</span></p>\
 			<span rel ="'+ model.getFullMenu()[a]['id'] +'" class=" hohoho glyphicon glyphicon-remove floatR" style ="color:#BBBBBB;" aria-hidden="false"></span></div>');
 		}
 		this.totalCost = container.find("#totalCost");
-		this.totalCost.html(model.getTotalMenuPrice());
+		this.totalCost.html(model.getTotalMenuPrice() * model.getNumberOfGuests());
 	}
 
 	var updatePending = function(selDish){
@@ -64,7 +64,7 @@ var ThreeView = function (container,model) {
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="dName"><span>' + model.getDishCost(selDish['id']) +'</span></p></div>');	
+			<p class="dName"><span>' + model.getDishCost(selDish['id']) * model.getNumberOfGuests() +'</span></p></div>');	
 		}
 	}
 	
@@ -86,14 +86,14 @@ var ThreeView = function (container,model) {
 		for (var i = 0; i < dish['ingredients'].length; i++) {
 			$("#ingredients").append('\
 				<tr>\
-					<td class="col-xs-2">'+dish['ingredients'][i]['quantity']+' '+ dish['ingredients'][i]['unit'] +'</td>\
+					<td class="col-xs-2">'+dish['ingredients'][i]['quantity'] * model.getNumberOfGuests()+' '+ dish['ingredients'][i]['unit'] +'</td>\
 					<td class="col-xs-6">'+dish['ingredients'][i]['name']+'</td>\
 					<td>SEK</td>\
-					<td>'+dish['ingredients'][i]["price"]+'</td>\
+					<td>'+dish['ingredients'][i]["price"] * model.getNumberOfGuests()+'</td>\
 				</tr>');
 		}
 		$("#dishCost").empty();
-		$("#dishCost").append('Dish Cost: '+ model.getDishCost(dish['id'])+'');
+		$("#dishCost").append('Dish Cost: '+ model.getDishCost(dish['id']) * model.getNumberOfGuests()+'');
 		
 	}
 

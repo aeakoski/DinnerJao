@@ -23,32 +23,10 @@ var SndView = function (container,model) {
 		updateFoodItems();
 	}
 
-
-	var menuList = model.getFullMenu();
-
-	var selectedDish = model.getSelectedDish("starter");
-	if(menuList.length > 0){
-		this.prepDish.append('\
-			<h2>' + selectedDish['name'] + '</h2>\
-			<img src="images/'+ selectedDish['image'] +'">\
-			<p>' + selectedDish['description'] + '</p>');
-	}
-
-
-	var ingredients = model.getAllIngredients();
-	for (i = 0; i < ingredients.length; i++) {
-		this.ingredientsTable.append('\
-			<tr>\
-				<td class="col-xs-2">'+ingredients[i]['quantity']+' '+ ingredients[i]['unit'] +'</td>\
-				<td class="col-xs-6">'+ingredients[i]['name']+'</td>\
-				<td>SEK</td>\
-				<td>'+ingredients[i]["price"]+'</td>\
-			</tr>');
-	};
 	
 	var updateFoodItems = function(){
 
-		if(model.getInputList().length != 0 ){
+		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 			
 			typeOfDish = model.getInputList();

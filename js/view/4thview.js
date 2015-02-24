@@ -3,7 +3,7 @@ var FourthView = function (container,model) {
 	model.addObserver(this);
 
 	this.numberOfGuests = container.find("#numberOfGuests");
-	this.numberOfGuests.html(model.getNumberOfGuests());
+	//this.numberOfGuests.html(model.getNumberOfGuests());
 	this.totalCost = container.find("#totalCost");
 	this.menuItem = container.find("#menuItem");
 
@@ -11,8 +11,8 @@ var FourthView = function (container,model) {
 	var dish = model.getFullMenu();
 	
 	this.update = function () {
-		// body...
-		this.totalCost.html(model.getTotalMenuPrice());
+		this.numberOfGuests.html(model.getNumberOfGuests());
+		this.totalCost.html(model.getTotalMenuPrice() * model.getNumberOfGuests());
 		dish = model.getFullMenu();
 		$("#menuItem").empty();
 		for (var g = 0; g<dish.length; g++) {
@@ -24,7 +24,7 @@ var FourthView = function (container,model) {
 				</div>\
 				<div class = "foodTitle">\
 					<h4>'+ dish[g]['name'] +'</h4>\
-					<span>SEK: '+ model.getDishCost(dish[g]['id']) +'</span>\
+					<span>SEK: '+ model.getDishCost(dish[g]['id']) * model.getNumberOfGuests() +'</span>\
 				</div>\
 			</div>');
 		}
