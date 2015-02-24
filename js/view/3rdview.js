@@ -2,7 +2,7 @@ var ThreeView = function (container,model) {
 	
 	model.addObserver(this);
 
-	this.numberOfGuests = container.find("#numberOfGuests");
+	this.numberOfGuests = container.find("#numberOfGuests2");
 	this.dishList = container.find("#dishList");
 	this.totalCost = container.find("#totalCost");
 	this.mealType = container.find("#mealType");
@@ -16,7 +16,7 @@ var ThreeView = function (container,model) {
 
 	this.update = function(obj){
 		
-		$("#numberOfGuests").html(model.getNumberOfGuests());
+		$("#numberOfGuests2").html(model.getNumberOfGuests());
 
 		var selDish = model.getDish(obj);
 
@@ -46,9 +46,6 @@ var ThreeView = function (container,model) {
 	}
 	
 
-
-
-
 	
 	var updateSelectedDish = function (selectedDish) {
 		if (typeof(selectedDish)==='undefined') {
@@ -64,8 +61,6 @@ var ThreeView = function (container,model) {
 	}
 	
 
-
-	//var ingredients = model.getAllIngredients();
 	var updateIngredients = function (dish) {
 		if (typeof(dish)==='undefined') {
 			dish = model.getDish(1);
@@ -81,6 +76,9 @@ var ThreeView = function (container,model) {
 					<td>'+dish['ingredients'][i]["price"]+'</td>\
 				</tr>');
 		}
+		$("#dishCost").empty();
+		$("#dishCost").append('Dish Cost: '+ model.getDishCost(dish['id'])+'');
+		
 	}
 
 
