@@ -178,8 +178,12 @@ h2{
 }
 
 #dAddedR{
+	border: 1px solid rgb(221, 221, 221);
+	background-color: #EEEEEE;
+	border-radius: 3px;
 	min-height: 45px;
 	display: block;
+	margin-bottom: 5px;
 }
 
 #dPending{

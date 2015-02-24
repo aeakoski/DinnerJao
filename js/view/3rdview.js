@@ -53,8 +53,8 @@ var ThreeView = function (container,model) {
 		else{
 			$("#dPending").empty();
 			$("#dPending").append('\
-			<p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="dName"><span>' + model.getDishCost(selDish['id']) +'</span></p>');	
+			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
+			<p class="dName"><span>' + model.getDishCost(selDish['id']) +'</span></p></div>');	
 		}
 	}
 	
