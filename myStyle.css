@@ -24,7 +24,22 @@ h2{
 }
 
 #FourthView{
-	background-color: #fbfbfb;
+	color: #fbfbfb;
+}
+
+#FourthView img{
+	height: 150pt;
+	width: 150pt;
+	border: 2pt solid #fbfbfb;
+	border-radius: 75pt;
+}
+
+#FourthView .foodTitle{
+	text-align: center;
+}
+
+#FourthView .panel{
+	background:none;
 }
 
 .foodDesc{
@@ -143,9 +158,10 @@ h2{
 	margin-left: 0pt !important;
 }
 
-.panel-default{
+.panel-default{§
 	border:none !important;
 }
+
 
 .panel-body{
 	background-color: #fbfbfb !important;
@@ -376,12 +392,25 @@ h2{
 	padding: 10pt;
 }
 
-#fourthView{
-	background-color: white;
-}
 
 #concludeDinner{
 	border-left-style: solid;
 	
 	height: 250px;
+}
+
+#concludeDinner p{
+	margin-top: 25%;
+	text-align: center;
+	font-size: 25pt;
+}
+
+#concludeDinner #totalCost{
+	margin-left: 45%;
+	font-size: 25pt;
+}
+
+#concludeDinner #p2{
+	margin-left: 45%;
+	font-size: 25pt;
 }
