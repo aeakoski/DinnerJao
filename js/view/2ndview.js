@@ -48,7 +48,7 @@ var SndView = function (container,model) {
 	
 	var updateFoodItems = function(){
 
-		if(model.getInputList().length != 0 ){
+		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 			
 			typeOfDish = model.getInputList();
