@@ -14,7 +14,6 @@ var Controller2 = function (view, view2, model) {
 		var dishID = $(this).attr('rel');
 		model.setCurrentDish(dishID);
 		view.update(dishID);
-
 		$("#rightDiv").hide();
 		$("#rightDivPrep").show();
 
@@ -27,9 +26,7 @@ var Controller2 = function (view, view2, model) {
 	});
 
 	$("#mealType").change(function () {
-		
 		type = $(this).val();
-
 		model.setMealType(type);
 
 	});

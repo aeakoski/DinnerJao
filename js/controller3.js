@@ -15,6 +15,15 @@ var Controller3 = function (view, view2, model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
+		if(model.getFullMenu().length === 0){
+			$("#confirmDinner").css("background-color", "#CABE9A");
+		//background-color: #CABE9A; Avslagen
+		
+		}else{
+			$("#confirmDinner").css("background-color", "#F0AD4E");
+		// Vald #background-color: #F0AD4E; PÅslagen
+		}
+		
 
 	});
 
