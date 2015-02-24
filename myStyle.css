@@ -20,6 +20,11 @@ h2{
 }
 
 
+.foodDesc {
+	height: 81pt;
+  	overflow: scroll;
+}
+
 .container-fluid{
 	padding-bottom: 7pt;
 	padding-left: 0pt;
