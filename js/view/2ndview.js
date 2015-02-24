@@ -12,46 +12,33 @@ var SndView = function (container,model) {
 	this.ingredientsTable = container.find("#ingredients");
 	this.leftMenu = container.find("#leftMenu");
     this.dPending = container.find("#dPending");
+    this.pendingCost = container.find("#pendingCost");
 
 
 	this.totalCost.html(model.getTotalMenuPrice());
-	//this.numberOfGuests.html(model.getNumberOfGuests());
+	this.pendingCost.html(model.getDishCost());
+
 
 	this.update = function(obj){
 		
 		$("#numberOfGuests").html(model.getNumberOfGuests());
 
 		updateFoodItems();
-		
-
 	}
 
 
 	var menuList = model.getFullMenu();
 
-	if (menuList.length > 0) {
-		for (var i = 0; i < menuList.length; i++) {
-			this.dPending.append('\
-			<div class = "col-xs-2"></div>\
-			<div class="foodChoice">\
-			<p class="dName col-xs-6"><span>'+menuList[i]['name']+'</span></p>\
-			<p class="dName"><span>'+model.getDishCost(menuList[i]['id'])+'</span></p>\
-			</div>');
-	 	}
-	}
-
-	else {
-		this.dPending.append('\
-			<p class="dName col-xs-6"><span>Pending</span></p>\
-			<p class="dName"><span>0.00</span></p>');
-	};
+	
 
 
 	var selectedDish = model.getSelectedDish("starter");
-	this.prepDish.append('\
-		<h2>' + selectedDish['name'] + '</h2>\
-		<img src="images/'+ selectedDish['image'] +'">\
-		<p>' + selectedDish['description'] + '</p>');
+	if(menuList.length > 0){
+		this.prepDish.append('\
+			<h2>' + selectedDish['name'] + '</h2>\
+			<img src="images/'+ selectedDish['image'] +'">\
+			<p>' + selectedDish['description'] + '</p>');
+	}
 
 	var ingredients = model.getAllIngredients();
 	for (i = 0; i < ingredients.length; i++) {

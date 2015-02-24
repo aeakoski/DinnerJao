@@ -7,7 +7,7 @@ $(function() {
 	
 	var mainView = new MainView($("#wrapper"),model);
 	
-	var sndView = new SndView($("#SndView"),model);
+	var sndView = new SndView($("#wrapper"),model);
 
 	var threeView = new ThreeView($("#ThreeView"),model);
 

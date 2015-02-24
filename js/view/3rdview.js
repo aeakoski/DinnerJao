@@ -22,15 +22,32 @@ var ThreeView = function (container,model) {
 
 		updateSelectedDish(selDish);
 		updateIngredients(selDish);
+		updatePending(selDish);
 	}
-
+	
 	
 	var menuList = model.getFullMenu();
-	for (var i = 0; i < menuList.length; i++) {
-		this.dPending.append('\
-			<p class="dName"><span>'+menuList[i]+'</span></p>\
-			<p class="dCost"><span>0.00</span></p>');
+
+	var updatePending = function(selDish){
+
+		if (menuList.length > 0) {
+			for (var i = 0; i < menuList.length; i++) {
+				$("#dPending").append('\
+				<div class = "col-xs-2"></div>\
+				<div class="foodChoice">\
+				<p class="dName col-xs-6"><span>Pending: </span></p>\
+				<p class="dName"><span>'+model.getDishCost(selDish['id'])+'</span></p>\
+				</div>');
+		 	}
+
+		} else {
+			$("#dPending").append('\
+				<p class="dName col-xs-6"><span>Pending: </span></p>\
+				<p class="dName"><span>' + model.getDishCost() +'</span></p>');
+		}	
 	}
+	
+
 
 
 
