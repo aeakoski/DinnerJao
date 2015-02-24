@@ -12,11 +12,8 @@ var SndView = function (container,model) {
 	this.ingredientsTable = container.find("#ingredients");
 	this.leftMenu = container.find("#leftMenu");
     this.dPending = container.find("#dPending");
-<<<<<<< HEAD
     this.pendingCost = container.find("#pendingCost");
-=======
     this.dAdded = container.find("dAdded");
->>>>>>> 426b1cdbecf2cec7af99aaf14762a74a2c39b5dd
 
 
 	this.totalCost.html(model.getTotalMenuPrice());
