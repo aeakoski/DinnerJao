@@ -13,11 +13,9 @@ var FourthView = function (container,model) {
 	this.update = function () {
 		// body...
 		this.totalCost.html(model.getTotalMenuPrice());
-		
-		for (var g = 0; g<dish.length; g++) {
-		
 		dish = model.getFullMenu();
 		$("#menuItem").empty();
+		for (var g = 0; g<dish.length; g++) {
 
 		$("#menuItem").append('\
 			<div class="foodIcons " >\
