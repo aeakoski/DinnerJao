@@ -294,7 +294,8 @@ h2{
 }
 
 #subHeadder{
-	border: 1px solid black;
+	border: 1px solid #DDDDDD;
+	border-radius: 2px;
 	width: 100%;
 	padding: 1.5%;
 	background-color: #eee;
@@ -313,11 +314,6 @@ h2{
 	width: 200px;
 	float: left;
 	margin: 30px;
-}
-
-
-#confirmDinner{
-	margin-top: 205px;
 }
 
 
@@ -347,4 +343,10 @@ h2{
 
 #fourthView{
 	background-color: white;
+}
+
+#concludeDinner{
+	border-left-style: solid;
+	
+	height: 250px;
 }
