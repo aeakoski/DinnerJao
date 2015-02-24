@@ -110,7 +110,7 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		menu[menu.length] = dishes[id];
+		menu[menu.length] = getDish(id);
 	}
 
 	//Removes dish from menu
@@ -404,6 +404,6 @@ var DinnerModel = function() {
 			}]
 		}
 	];
-	// this.addDishToMenu(1);
+	this.addDishToMenu(1);
 	// this.addDishToMenu(3);
 }

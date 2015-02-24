@@ -17,19 +17,28 @@ var ThreeView = function (container,model) {
 	var menuList = model.getFullMenu();
 
 	this.update = function(obj){
-		
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
-
 		var selDish = model.getDish(obj);
-
 		updateSelectedDish(selDish);
 		updateIngredients(selDish);
 		updatePending(selDish);
+		updateMenu();
 		menuList = model.getFullMenu();
+
 	}
 	
 	
-	
+	var updateMenu = function(){
+		console.log("sdfghjklzxdcfvbnm");
+		$("#dAdded").empty();
+		
+		for( var a = 0 ; a < model.getFullMenu().length ; a++){
+			$("#dPending").append('\
+			<p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['name'] +'</span></p>\
+			<p class="dName"><span>'+ model.getFullMenu()[a]['price'] +'</span></p>');
+		}
+
+	}
 
 	var updatePending = function(selDish){
 
@@ -49,6 +58,7 @@ var ThreeView = function (container,model) {
 	}
 	
 	var updateSelectedDish = function (selectedDish) {
+
 		if (typeof(selectedDish)==='undefined') {
 			selectedDish = 1;
 		}
