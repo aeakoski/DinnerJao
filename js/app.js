@@ -19,7 +19,7 @@ $(function() {
 
 	var controller2 = new Controller2(threeView, model);
 
-	var controller3 = new Controller3($("#wrapper"), model);
+	var controller3 = new Controller3(threeView, model);
 
 	var controller4 = new Controller4($("#wrapper"), model);
 

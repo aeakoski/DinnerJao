@@ -30,21 +30,19 @@ var ThreeView = function (container,model) {
 
 	var updatePending = function(selDish){
 
-		if (menuList.length > 0) {
-			for (var i = 0; i < menuList.length; i++) {
-				$("#dPending").append('\
-				<div class = "col-xs-2"></div>\
-				<div class="foodChoice">\
-				<p class="dName col-xs-6"><span>Pending: </span></p>\
-				<p class="dName"><span>'+model.getDishCost(selDish['id'])+'</span></p>\
-				</div>');
-		 	}
-
-		} else {
+		if(typeof(selDish)==='undefined'){
+			$("#dPending").empty();
 			$("#dPending").append('\
-				<p class="dName col-xs-6"><span>Pending: </span></p>\
-				<p class="dName"><span>' + model.getDishCost() +'</span></p>');
-		}	
+			<p class="dName col-xs-6"><span>Pending: </span></p>\
+			<p class="dName"><span>0.0</span></p>');
+			}	
+		
+		else{
+			$("#dPending").empty();
+			$("#dPending").append('\
+			<p class="dName col-xs-6"><span>Pending: </span></p>\
+			<p class="dName"><span>' + model.getDishCost(selDish['id']) +'</span></p>');	
+		}
 	}
 	
 
