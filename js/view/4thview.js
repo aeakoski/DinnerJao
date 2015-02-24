@@ -16,7 +16,7 @@ var FourthView = function (container,model) {
 		dish = model.getFullMenu();
 		$("#menuItem").empty();
 		for (var g = 0; g<dish.length; g++) {
-
+			
 		$("#menuItem").append('\
 			<div class="foodIcons " >\
 				<div class = "foodPic">\
