@@ -26,6 +26,15 @@ var ThreeView = function (container,model) {
 		}
 		updatePending(cDish);
 		updateMenu();
+		this.colorKnapp();
+	}
+
+	this.colorKnapp = function(){
+		if(model.getFullMenu().length === 0){
+			$("#confirmDinner").css("background-color", "#CABE9A"); //background-color: #CABE9A; Avslagen
+		}else{
+			$("#confirmDinner").css("background-color", "#F0AD4E"); // Vald #background-color: #F0AD4E; PÅslagen
+		}
 	}
 	
 	
@@ -34,8 +43,9 @@ var ThreeView = function (container,model) {
 		for( var a = 0 ; a < model.getFullMenu().length ; a++){
 			
 			$("#dAdded").append('\
-			<div id = "dAddedR"><p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['name'] +'</span></p>\
-			<p class="dName"><span>'+ model.getDishCost(model.getFullMenu()[a]['id']) +'</span></p></div>');
+			<div id="dAddedR"><p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['name'] +'</span></p>\
+			<p class="dName col-xs-1"><span>'+ model.getDishCost(model.getFullMenu()[a]['id']) +'.00</span></p>\
+			<span rel ="'+ model.getFullMenu()[a]['id'] +'" class=" hohoho glyphicon glyphicon-remove floatR" style ="color:#BBBBBB;" aria-hidden="false"></span></div>');
 		}
 		this.totalCost = container.find("#totalCost");
 		this.totalCost.html(model.getTotalMenuPrice());

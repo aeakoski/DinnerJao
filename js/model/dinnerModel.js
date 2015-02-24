@@ -93,11 +93,6 @@ var DinnerModel = function() {
 		}
 	}
 
-	//Returns all the dishes on the menu as strings in a list.
-	this.getFullMenu = function() {
-		return menu
-	}
-
 	this.getDishCost = function(id){
 		var dishCost=0;
 		for (i = 0; i< dishes.length; i++){
@@ -137,6 +132,11 @@ var DinnerModel = function() {
 		return totPrice;
 	}
 
+	//Returns all the dishes on the menu as strings in a list.
+	this.getFullMenu = function() {
+		return menu
+	}
+
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
@@ -145,11 +145,18 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		var indexToBin = menu.indexOf(dishes[id]); // Om detta index inte finns i menyn kan det cracha!
-
+		
+		var indexToBin = menu.indexOf(this.getDish(id)); // Om detta index inte finns i menyn kan det cracha!
+		console.log(indexToBin);
 		if (indexToBin > -1){
 			menu.splice(indexToBin, 1);
 		}
+
+		//var fruits = ["Banana", "Orange", "Apple", "Mango"];
+ 		//fruits.splice(2, 0, "Lemon", "Kiwi");
+
+		notifyObservers();
+		console.log(menu);
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")

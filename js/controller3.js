@@ -5,6 +5,24 @@ var Controller3 = function (view, view2, model) {
 			model.setInput(inp);
 			view2.update();
 		});
+
+	$(document).on("mouseover",".glyphicon-remove",function(){	
+		//Ändra färg till röd!
+		$(this).css("color","red");
+		$(this).css("cursor","pointer")
+	});
+
+	$(document).on("mouseout",".glyphicon-remove",function(){	
+		//Ändra färg till grå!
+		$(".glyphicon").css("color","#BBBBBB");
+	});
+
+	$(document).on("click",".glyphicon-remove",function(){	
+		//Ta bort den valda måltiden från menyn
+		console.log("Klickad jao!!!");
+		model.removeDishFromMenu(parseInt($(this).attr('rel')))
+	});
+	
 	
 	$("#confirmDish").click(function () {
 		model.addDishToMenu(model.getCurrentDish()['id']);
@@ -15,16 +33,8 @@ var Controller3 = function (view, view2, model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
-		if(model.getFullMenu().length === 0){
-			$("#confirmDinner").css("background-color", "#CABE9A");
-		//background-color: #CABE9A; Avslagen
-		
-		}else{
-			$("#confirmDinner").css("background-color", "#F0AD4E");
-		// Vald #background-color: #F0AD4E; PÅslagen
-		}
-		
 
+		view.colorKnapp();
 	});
 
 	$(".backToEdit").click(function () {

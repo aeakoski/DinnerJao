@@ -76,7 +76,6 @@ var SndView = function (container,model) {
 					</div>\
 				</div><!--FoodItem-->');
 		}
-		
 	}
 
 
