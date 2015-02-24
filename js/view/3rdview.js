@@ -16,19 +16,19 @@ var ThreeView = function (container,model) {
 
 	this.update = function(obj){
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
-			var cDish = model.getCurrentDish();
-		if (cDish === null) {
-			console.log("dish is null");
-			cDish = model.getDish(obj);
-		}
-		console.log(typeof(cDish));
+		var cDish = model.getCurrentDish();
 
-		updateSelectedDish(cDish);
-		updateIngredients(cDish);
+		if (cDish != null) {
+			//console.log("CDish " + cDish['name']);
+			updateIngredients(cDish);
+			updateSelectedDish(cDish);
+			
+		}
+		
 		updatePending(cDish);
 		updateMenu();
-
-
+		
+		
 	}
 	
 	
@@ -37,9 +37,10 @@ var ThreeView = function (container,model) {
 		$("#dAdded").empty();
 		
 		for( var a = 0 ; a < model.getFullMenu().length ; a++){
-			$("#dPending").append('\
-			<p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['name'] +'</span></p>\
-			<p class="dName"><span>'+ model.getDishCost(model.getFullMenu()[a]['id']) +'</span></p>');
+			console.log("Skriver ut nu!");
+			$("#dAdded").append('\
+			<div id = "dAddedR"><p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['name'] +'</span></p>\
+			<p class="dName"><span>'+ model.getDishCost(model.getFullMenu()[a]['id']) +'</span></p></div>');
 		}
 
 		this.totalCost = container.find("#totalCost");
@@ -49,7 +50,7 @@ var ThreeView = function (container,model) {
 
 	var updatePending = function(selDish){
 
-		if(typeof(selDish)==='undefined'){
+		if(selDish === null){
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<p class="dName col-xs-6"><span>Pending: </span></p>\
@@ -62,6 +63,7 @@ var ThreeView = function (container,model) {
 			<p class="dName col-xs-6"><span>Pending: </span></p>\
 			<p class="dName"><span>' + model.getDishCost(selDish['id']) +'</span></p>');	
 		}
+
 	}
 	
 	var updateSelectedDish = function (selectedDish) {

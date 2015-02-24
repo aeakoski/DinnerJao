@@ -1,7 +1,7 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
 
-	
+	var currentDish = null;
 
 	var nrOfGuests = 1;
 
@@ -21,7 +21,12 @@ var DinnerModel = function() {
  	}
 
  	this.setCurrentDish = function(id){
- 		currentDish = this.getDish(id);
+ 		if(id == null){
+ 			currentDish = null;
+ 		}else{
+ 			currentDish = this.getDish(id);
+ 		}
+ 		
  	}
 
 
@@ -407,5 +412,5 @@ var DinnerModel = function() {
 	];
 	//this.addDishToMenu(1);
 	// this.addDishToMenu(3);
-	var currentDish = this.getDish(1);
+	
 }

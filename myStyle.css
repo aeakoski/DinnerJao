@@ -171,10 +171,21 @@ h2{
 
 }
 
+#dAdded{
+	min-height: 45px;
+	margin: 10px 0px 10px 0px;
+	display: block;
+}
+
+#dAddedR{
+	min-height: 45px;
+	display: block;
+}
 
 #dPending{
 	min-height: 45px;
 	margin: 10px 0px 10px 0px;
+	display: block;
 }
 
 .foodChoice{
@@ -191,6 +202,7 @@ h2{
 #dName{
 	display: inline-block;
 	margin: 7px;
+	
 }
 
 #tCost{

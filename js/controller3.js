@@ -2,7 +2,7 @@ var Controller3 = function (view,model) {
 	
 	$("#confirmDish").click(function () {
 		model.addDishToMenu(model.getCurrentDish()['id']);
-		
+		model.setCurrentDish(null);
 		view.update(); //View 3 uppdateras
 
 		$("#rightDivPrep").hide();
@@ -10,7 +10,7 @@ var Controller3 = function (view,model) {
 		$("#rightTop").show();
 		$("#rightBottom").show();
 
-		console.log(model.getFullMenu());
+		
 
 	});
 
