@@ -16,7 +16,9 @@ var ThreeView = function (container,model) {
 
 	this.update = function(obj){
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
+
 		var cDish = model.getCurrentDish();
+
 
 		if (cDish != null) {
 			//console.log("CDish " + cDish['name']);
@@ -27,8 +29,7 @@ var ThreeView = function (container,model) {
 		
 		updatePending(cDish);
 		updateMenu();
-		
-		
+
 	}
 	
 	

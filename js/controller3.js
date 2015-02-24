@@ -10,11 +10,11 @@ var Controller3 = function (view,model) {
 		$("#rightTop").show();
 		$("#rightBottom").show();
 
-		
 
 	});
 
 	$(".backToEdit").click(function () {
+		model.setCurrentDish(null);
 		view.update();
 		$("#leftMenu").show();
 		$("#rightDiv").show();

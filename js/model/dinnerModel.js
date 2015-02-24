@@ -16,7 +16,7 @@ var DinnerModel = function() {
  		//that will call the update method on all the observers in the array
  		for(var k = 0; k < observers.length; k++) {
 			observers[k].update(obj);
-			console.log(k);	
+
 		}	
  	}
 
