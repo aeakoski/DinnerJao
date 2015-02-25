@@ -137,17 +137,38 @@ var DinnerModel = function() {
 		return menu
 	}
 
+	this.sortMenu = function(){
+		for (var foodIndex = 0; foodIndex <menu.length; foodIndex++) {
+			if((menu[foodIndex]['type'] === "starter") && (foodIndex != 0)){
+				var be = menu[foodIndex];
+				menu[foodIndex] = menu[0];
+				menu[0] = be;
+				foodIndex = -1;
+			}
+
+			else if((menu[foodIndex]['type'] === "dessert") && (foodIndex != menu.length-1)){
+				var bu = menu[foodIndex];
+				menu[foodIndex] = menu[menu.length-1];
+				menu[menu.length-1] = bu;
+				foodIndex = -1;
+			}
+			
+		};
+	}
+
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
 		for(var dIndex = 0 ; dIndex < menu.length; dIndex++){
 			if (this.getDish(id)['type'] === menu[dIndex]['type']) {
 				menu[dIndex] = this.getDish(id)
+				this.sortMenu();
 				return;
 			};
 		}
 
 		menu[menu.length] = this.getDish(id);
+		this.sortMenu();
 	}
 
 	//Removes dish from menu

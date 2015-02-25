@@ -62,7 +62,7 @@ var ThreeView = function (container,model) {
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="dName"><span>0.00</span></p>');
+			<p class="col-xs-1 dName"><span>0.00</span></p>');
 			}	
 		
 		else{
