@@ -214,6 +214,9 @@ h2{
 	min-width: 400px;
 	margin-left: -26%;
 }
+#mealType{
+	margin-right: 2pt;
+}
 
 
 #welcome p{
@@ -310,6 +313,16 @@ h2{
 #tCost{
 	text-align: right;
 	float: right;
+}
+
+#sendSearch{
+	margin: 0pt;
+	background-color: #CABE9A;
+	color: white;
+	height:27pt;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
 }
 
 /*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 3rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/

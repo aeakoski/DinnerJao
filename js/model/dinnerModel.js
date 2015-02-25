@@ -190,40 +190,40 @@ var DinnerModel = function() {
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
-	// this.getAllDishes = function (type,filter) {
-	//   return $(dishes).filter(function(index,dish) {
-	// 	var found = true;
-	// 	if(filter){
-	// 		found = false;
-	// 		$.each(dish.ingredients,function(index,ingredient) {
-	// 			if(ingredient.name.indexOf(filter)!=-1) {
-	// 				found = true;
-	// 			}
-	// 		});
-	// 		if(dish.name.indexOf(filter) != -1)
-	// 		{
-	// 			found = true;
-	// 		}
-	// 	}
-	//   	return dish.type == type && found;
-	//   });	
-	// }
+	 this.getAllDishes = function (type,filter) {
+	   return $(dishes).filter(function(index,dish) {
+	 	var found = true;
+	 	if(filter){
+	 		found = false;
+	 		$.each(dish.ingredients,function(index,ingredient) {
+	 			if(ingredient.name.indexOf(filter)!=-1) {
+	 				found = true;
+	 			}
+	 		});
+	 		if(dish.name.indexOf(filter) != -1)
+	 		{
+	 			found = true;
+	 		}
+	 	}
+	   	return dish.type == type && found;
+	   });	
+	 }
 
-	this.getAllDishes = function () {
-		var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
-		var recipeID = 196149;
-		var url = "http://api.bigoven.com/recipe/" + recipeID + "?api_key="+apiKey;
-		$.ajax({
-		         type: "GET",
-		         dataType: 'json',
-		         cache: false,
-		         url: url,
-		         success: function (data) {
-		            alert('success');
-		            console.log(data);
-		            }
-		         });
-		       }
+	//this.getAllDishes = function () {
+	//	var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
+	//	var recipeID = 196149;
+	//	var url = "http://api.bigoven.com/recipe/" + recipeID + "?api_key="+apiKey;
+	//	$.ajax({
+	//	         type: "GET",
+	//	         dataType: 'json',
+	//	         cache: false,
+	//	         url: url,
+	//	         success: function (data) {
+	//	            alert('success');
+	//	            console.log(data);
+	//	            }
+	//	         });
+	//	       }
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
