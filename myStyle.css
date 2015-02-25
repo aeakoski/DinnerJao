@@ -215,8 +215,14 @@ h2{
 	padding-top: 7pt;
 }
 
+.dispInline{
+	display: inline;
+}
+
 #mainSearch{
-	
+	width: 350pt;
+	display: inline;
+	margin-top: 1px;
 }
 
 
