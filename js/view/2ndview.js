@@ -44,7 +44,7 @@ var SndView = function (container,model) {
 		}else{
 			//Annars så visa alla maträtter innom vald kategori
 			
-			var typeOfDish = model.getAllDishes(model.getMealType());
+			var typeOfDish = model.getAllDishes();
 		}
 		$("#dishList").html('');
 		for (i = 0; i<typeOfDish.length; i++) {

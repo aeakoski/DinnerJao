@@ -209,22 +209,20 @@ var DinnerModel = function() {
 	//   });	
 	// }
 
-	this.getAllDishes = function () {
-		var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
-		var recipeID = 196149;
-		var url = "http://api.bigoven.com/recipe/" + recipeID + "?api_key="+apiKey;
-		$.ajax({
-		         type: "GET",
-		         dataType: 'json',
-		         cache: false,
-		         url: url,
-		         success: function (data) {
-		            alert('success');
-		            console.log(data);
-		            }
-		         });
-		       }
-
+	this.getAllDishes = function (keyword, type) {
+        var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
+        var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="+ keyword + type + "&api_key=" + apiKey;
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            cache: false,
+            url: url,
+            success: function (data) {
+                alert('success');
+                console.log(data);
+            }
+        });
+    }
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
 	  for(key in dishes){
