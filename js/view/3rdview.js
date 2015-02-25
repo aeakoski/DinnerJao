@@ -32,7 +32,8 @@ var ThreeView = function (container,model) {
 
 	this.colorKnapp = function(){
 		if(model.getFullMenu().length === 0){
-			$("#confirmDinner").css("background-color", "#CABE9A"); //background-color: #CABE9A; Avslagen
+			$("#confirmDinner").removeClass('btn-warning');
+    		$("#confirmDinner").addClass('btn-default'); //background-color: #CABE9A; Avslagen
 		}else{
 			$("#confirmDinner").removeClass('btn-default');
     		$("#confirmDinner").addClass('btn-warning'); // Vald #background-color: #F0AD4E; PÅslagen		
