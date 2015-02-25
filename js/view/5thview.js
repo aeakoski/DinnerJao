@@ -33,7 +33,7 @@ var FifthView = function (container,model) {
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sodales tempus pellentesque. Vestibulum convallis ullamcorper sollicitudin. Integer ut faucibus sapien, eget feugiat risus. Aliquam nisi erat, posuere nec euismod eu, fermentum nec nisl. Aenean id ornare nunc. Nunc aliquam nisl magna. Proin id hendrerit urna..</p>\
 					</div>\
 					<div class="col-xs-5">\
-						<h3>Preparation</h3>\
+						<h2>Preparation</h2>\
 						<p>'+ dish[i]['description'] +'</p>\
 					</div>\
 				</div>');

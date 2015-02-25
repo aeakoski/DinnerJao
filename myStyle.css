@@ -309,6 +309,8 @@ h2{
 
 #rightBottomInner{
 	margin-top: 0px;
+	border: none;
+	border-radius: 0pt;
 }
 
 .foodItem{
@@ -390,7 +392,7 @@ h2{
 
 
 .subHeadder{
-
+	margin-bottom: 8%;
 	width: 100%;
 	padding: 1.5%;
 	color: #CABE9A;
@@ -445,10 +447,6 @@ h2{
 	padding: 10pt;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 37834fbc06c71b89b2a249f346181a7ed22c0c78
 #concludeDinner{
 	border-left-style: solid;
 	
