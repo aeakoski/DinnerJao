@@ -12,11 +12,11 @@ var FourthView = function (container,model) {
 	
 	this.update = function () {
 		this.numberOfGuests.html(model.getNumberOfGuests());
-		this.totalCost.html(model.getTotalMenuPrice() * model.getNumberOfGuests());
+		this.totalCost.html(model.getTotalMenuPrice() * model.getNumberOfGuests()+'.00 SEK');
 		dish = model.getFullMenu();
 		$("#menuItem").empty();
 		for (var g = 0; g<dish.length; g++) {
-			
+
 		$("#menuItem").append('\
 			<div class="foodIcons " >\
 				<div class = "foodPic">\
