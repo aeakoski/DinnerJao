@@ -20,7 +20,7 @@ body{
 }
 
 h2{
-	color: #BFB391;
+	color: #CABE9A !important;
 }
 
 .btn-warning {
@@ -63,6 +63,7 @@ h2{
 .foodDesc{
 	height: 81pt;
   	overflow-y: auto;
+
 
 }
 
@@ -241,13 +242,14 @@ h2{
 
 
 #dDesc{
-
 	height: 45px;
 	border-top-style: solid;
+	border-color: #969696;
 	border-bottom-style: solid;
-	background-color: #DADADA;
-	margin: 10px 0px 10px 0px;
+	background-color: rgba(213, 203, 175, 0.62);
+	margin: 10pt 0px 10pt 0px;
 }
+
 
 #dAdded{
 	min-height: 45px;
@@ -423,8 +425,9 @@ h2{
 
 #upperDish{
 	display: block;
-	margin: 20px;
+	margin: 20pt;
 	color: #fbfbfb;
+	margin-bottom: 5%;
 }
 
 #upperDish img{
