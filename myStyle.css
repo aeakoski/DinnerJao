@@ -101,6 +101,13 @@ h2{
 }
 
 
+
+#mealType{
+	
+	margin-left: 10pt;
+}
+
+
 #homeletteButton{
 	border-radius: 2px;
 	box-shadow: none;
@@ -427,7 +434,10 @@ h2{
 	padding: 10pt;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 37834fbc06c71b89b2a249f346181a7ed22c0c78
 #concludeDinner{
 	border-left-style: solid;
 	
