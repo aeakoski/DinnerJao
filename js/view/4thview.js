@@ -12,7 +12,7 @@ var FourthView = function (container,model) {
 	
 	this.update = function () {
 		this.numberOfGuests.html(model.getNumberOfGuests());
-		this.totalCost.html(model.getTotalMenuPrice() * model.getNumberOfGuests()+'.00 SEK');
+		this.totalCost.html(model.getTotalMenuPrice()+'.00 SEK');
 		dish = model.getFullMenu();
 		$("#menuItem").empty();
 		for (var g = 0; g<dish.length; g++) {
@@ -24,7 +24,7 @@ var FourthView = function (container,model) {
 				</div>\
 				<div class = "foodTitle">\
 					<h4>'+ dish[g]['name'] +'</h4>\
-					<span>SEK: '+ model.getDishCost(dish[g]['id']) * model.getNumberOfGuests() +'</span>\
+					<span>SEK: '+ model.getDishCost(dish[g]['id']) +'</span>\
 				</div>\
 			</div>');
 		}

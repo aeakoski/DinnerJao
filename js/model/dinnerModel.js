@@ -100,7 +100,7 @@ var DinnerModel = function() {
 				for (j = 0; j < dishes[i]['ingredients'].length; j++){
 					dishCost = dishCost + dishes[i]['ingredients'][j]['price'];
 				}
-				return dishCost
+				return dishCost*nrOfGuests
 			};
 		}
 
@@ -129,7 +129,7 @@ var DinnerModel = function() {
 				totPrice = totPrice + menu[i]["ingredients"][j]["price"];
 			}
 		}
-		return totPrice;
+		return totPrice * nrOfGuests;
 	}
 
 	//Returns all the dishes on the menu as strings in a list.
