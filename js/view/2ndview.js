@@ -30,6 +30,16 @@ var SndView = function (container,model) {
 			//Om det finns saker i söklistan importera den
 			
 			typeOfDish = model.getInputList();
+			if(typeOfDish.length===0){
+				$("#dishList").html('');
+				$("#dishList").html('\
+					<div class="jumbotron">\
+						 <h2>Did not found what you were looking for in the pantry!</h2>\
+						 <p></br>Your search for "<i>'+ $("#mainSearch").val() +'</i>" did not yeald any matches. Please type in another key word and try again.</p>\
+					</div>');
+					return;				
+
+			}
 
 		}else{
 			//Annars så visa alla maträtter innom vald kategori
