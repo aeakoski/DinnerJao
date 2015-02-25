@@ -14,6 +14,7 @@ var ThreeView = function (container,model) {
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
+
 	this.update = function(obj){
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
 		var cDish = model.getCurrentDish();
@@ -33,7 +34,8 @@ var ThreeView = function (container,model) {
 		if(model.getFullMenu().length === 0){
 			$("#confirmDinner").css("background-color", "#CABE9A"); //background-color: #CABE9A; Avslagen
 		}else{
-			$("#confirmDinner").css("background-color", "#F0AD4E"); // Vald #background-color: #F0AD4E; PÅslagen		
+			$("#confirmDinner").removeClass('btn-default');
+    		$("#confirmDinner").addClass('btn-warning'); // Vald #background-color: #F0AD4E; PÅslagen		
 		}
 
 
