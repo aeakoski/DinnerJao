@@ -3,15 +3,6 @@ html{
 	border-right: 7pt solid #fbfbfb;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
-}
-
-#wrapper{
-	position: relative;
-	min-height: 100%;
-}
-
 body{
 	background-image: url("images/dark-wood-and-vegetables.jpg");
 	background-color: #fbfbfb;
@@ -22,6 +13,38 @@ body{
 h2{
 	color: #CABE9A !important;
 }
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+#wrapper{
+	position: relative;
+	min-height: 100%;
+}
+
+#bottomBorder{
+	width:100%;
+	height:7pt;
+	position:fixed;
+	bottom:0;
+	left:0;
+	background:#fbfbfb;
+}
+
+#header{
+	background-color: #fbfbfb;
+	padding: 10pt;
+	padding-left: 25pt;
+	height: 65pt;
+	z-index: 100;
+	position: relative;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ BOOTSTRAP MODIFICATIONS ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ BOOTSTRAP MODIFICATIONS ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ BOOTSTRAP MODIFICATIONS ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
 
 .btn-warning {
 	color: #fff;
@@ -35,12 +58,125 @@ h2{
 }
 
 .btn-default{
-	color: #fff;
+	color: #fff !important;
 	background-color: #E4DFCE !important;
 	border:none !important;
 	border-radius: 2pt !important;
+	box-shadow: none;
+	border-style: none;
+	margin-top: 0 !important;
+
 }
 
+.row{
+	margin-left: 0pt !important;
+}
+
+.panel-default{
+	border:none !important;
+}
+
+.panel-body{
+	background-color: #fbfbfb !important;
+}
+
+.panel-heading{
+	background-color: #fbfbfb !important;
+}
+
+.container-fluid{
+	padding-bottom: 7pt;
+	padding-left: 0pt;
+	padding-right: 0pt;
+}
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ C ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ L ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ A ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ S ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ S ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ E ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ S ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+
+.floatL{
+	float: left;
+}
+
+.floatR{
+	float: right;
+}
+
+.dispInline{
+	display: inline;
+}
+
+.title{
+	font-family: 'Cuprum', sans-serif;
+	font-weight: 800;
+	display: inline-block;
+	font-size: 27pt;
+	padding-right: 25pt;
+	color: #CABE9A;
+}
+
+.subTitle{
+	font-family: 'Cuprum', sans-serif;
+	font-size: 10pt;
+	display: inline-block;
+	color: #CABE9A;
+}
+
+.subHeadder{
+	margin-bottom: 8%;
+	width: 100%;
+	padding: 1.5%;
+	color: #CABE9A;
+	background-color: rgba(45, 45, 45, 0.64);
+}
+
+.foodItem{
+	width: 200px;
+	height: 300px;
+	min-width: 140px;
+	display: inline-block;
+	margin: 10pt;
+	overflow: hidden;
+	border-style:solid;
+	border-color: #DADADA;
+	border-width: 2px;
+	border-radius:5px 5px 0px 0px;
+}
+
+.foodPic img{
+	width: 200px;
+	height: 150px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.foodIcons{
+	width: 200px;
+	float: left;
+	margin: 30px;
+}
+
+.foodDesc{
+	height: 81pt;
+  	overflow-y: auto;
+}
+
+.foodDesc p {
+	margin: 5pt;
+}
+
+.foodChoice{
+	width: 100%;
+	display: block;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ FourthView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ FourthView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ FourthView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
 #FourthView{
 	color: #fbfbfb;
 }
@@ -60,118 +196,16 @@ h2{
 	background:none;
 }
 
-.foodDesc{
-	height: 81pt;
-  	overflow-y: auto;
 
-
-}
-
-.container-fluid{
-	padding-bottom: 7pt;
-	padding-left: 0pt;
-	padding-right: 0pt;
-}
-
-
-#bottomBorder{
-	width:100%;
-	height:7pt;
-	position:fixed;
-	bottom:0;
-	left:0;
-	background:#fbfbfb;
-}
-
-
-#headder{
-	background-color: #fbfbfb;
-	padding: 10pt;
-	padding-left: 25pt;
-	height: 65pt;
-	z-index: 100;
-	position: relative;
-
-}
-
-
-#headder a {
-    color: #000000;
-}
-
-.floatL{
-	float: left;
-}
-
-
-.floatR{
-	float: right;
-}
-
-
-
-#mealType{
-	
-	margin-left: 10pt;
-}
-
-
-#homeletteButton{
-	border-radius: 2px;
-	box-shadow: none;
-	color: #fff;
-	background-color: #CABE9A;
-	border-style: none;
-	padding-top: 7pt;
-	padding-right: 10pt;
-	padding-left: 10pt;
-}
-
-#confirmDinner{
-	border-radius: 2px;
-	box-shadow: none;
-	color: #fff;
-	background-color: #CABE9A;
-	border-style: none;
-	padding-top: 7pt;
-	padding-right: 10pt;
-	padding-left: 10pt;
-	margin-top: 0 !important;
-}
-
-
-#homeletteButton:hover{
-	background-color: #BFB391;
-}
-
-
-
-.inline{
-	float: left;
-	margin-left: 30pt;
-}
-
-
-#title{
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ mainView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ mainView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ mainView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+#welcomeTitle{
 	font-family: 'Cuprum', sans-serif;
-	font-weight: 800;
-	display: inline-block;
-	font-size: 27pt;
-	padding-right: 25pt;
+	font-size: 20pt;
 	color: #CABE9A;
-
+	padding-top: 7pt;
 }
-
-
-#subTitle{
-	font-family: 'Cuprum', sans-serif;
-	font-size: 10pt;
-	display: inline-block;
-	color: #CABE9A;
-
-
-}
-
 
 #welcome{
 	background-color: #fbfbfb;
@@ -181,65 +215,62 @@ h2{
 	margin-left: -26%;
 }
 
-.row{
-	margin-left: 0pt !important;
-}
-
-.panel-default{§
-	border:none !important;
-}
-
-
-.panel-body{
-	background-color: #fbfbfb !important;
-}
-
-.panel-heading{
-	background-color: #fbfbfb !important;
-}
-
-/*#welcome div.panel-heading{
-	background-color: #fbfbfb;
-}*/
-
-
 
 #welcome p{
 	font-size: 10pt;
 }
 
 
-#welcomeTitle{
-	font-family: 'Cuprum', sans-serif;
-	font-size: 20pt;
-	color: #CABE9A;
-	padding-top: 7pt;
-}
-
-.dispInline{
-	display: inline;
-}
-
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 2ndView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 2ndView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 2ndView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
 #mainSearch{
 	width: 350pt;
 	display: inline;
 	margin-top: 1px;
 }
 
-
-#desc{
-	border-style: solid;
-	border-left: none;
-	border-right: none;
-}
-
-
 #rightDiv{
 	float: right;
 	width: 65%;
-
 }
 
+#rightTop{
+	margin-bottom: 0pt;
+	border: none;
+	border-radius: 0;
+	background-color: #fbfbfb;
+}
+
+#rightBottom{
+	height: 400pt;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#rightBottomInner{
+	margin-top: 0px;
+	border: none;
+	border-radius: 0pt;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ leftMenu ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ leftMenu ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ leftMenu ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+#leftMenu{
+	margin-top:0pt;
+	background-color: #fbfbfb;
+	height:20%;
+	padding: 0pt;
+}
+
+#frameLeftMenu{
+	border: 1pt solid;
+	border-color: #BFB391;
+	border-radius: 4pt;
+	padding: 10pt;
+}
 
 #dDesc{
 	height: 45px;
@@ -249,7 +280,6 @@ h2{
 	background-color: rgba(213, 203, 175, 0.62);
 	margin: 10pt 0px 10pt 0px;
 }
-
 
 #dAdded{
 	min-height: 45px;
@@ -272,26 +302,9 @@ h2{
 	display: block;
 }
 
-
-.foodDesc p {
-	margin: 5pt;
-}
-
-.foodChoice{
-	width: 100%;
-	display: block;
-}
-
-.middle{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 #dName{
 	display: inline-block;
-	margin: 7px;
-	
+	margin: 7px;	
 }
 
 #tCost{
@@ -299,50 +312,9 @@ h2{
 	float: right;
 }
 
-
-#rightTop{
-	margin-bottom: 0pt;
-	border: none;
-	border-radius: 0;
-	background-color: #fbfbfb;
-}
-
-#rightBottom{
-	
-	height: 400pt;
-	overflow-y: scroll;
-	overflow-x: hidden;
-
-}
-
-#rightBottomInner{
-	margin-top: 0px;
-	border: none;
-	border-radius: 0pt;
-}
-
-.foodItem{
-	width: 200px;
-	height: 300px;
-	min-width: 140px;
-	display: inline-block;
-	margin: 10pt;
-	overflow: hidden;
-	border-style:solid;
-	border-color: #DADADA;
-	border-width: 2px;
-
-	border-radius:5px 5px 0px 0px;
-
-}
-
-.foodPic img{
-	width: 200px;
-	height: 150px;
-	border-radius: 5px 5px 0px 0px;
-	
-}
-
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 3rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 3rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 3rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
 #rightDivPrep{
 	min-width: 500px;
 	float:right;
@@ -374,19 +346,6 @@ h2{
 	height:100%;
 	float: right;
 	padding-bottom: 10pt;
-	
-}
-
-.subTitle2{
-	font-size: 30pt;
-}
-
-.subMenu{
-	padding: 5pt;
-	height:35pt;
-	background-color: #FFE599;
-	border-bottom-style: solid;
-	padding-left: 20pt;
 }
 
 #ingredients{
@@ -394,35 +353,15 @@ h2{
 }
 
 #headLine{
+	color: #CABE9A;
 	font-size: 15pt;
 	padding-top: 10pt;
 }
 
 
-.subHeadder{
-	margin-bottom: 8%;
-	width: 100%;
-	padding: 1.5%;
-	color: #CABE9A;
-	background-color: rgba(45, 45, 45, 0.64);
-}
-
-#mainWindow{
-	margin: 0 auto;
-	display: inline-block;
-
-}
-#mainView{
-	position: absolute;
-}
-
-.foodIcons{
-	width: 200px;
-	float: left;
-	margin: 30px;
-}
-
-
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 4rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 4rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 4rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
 #upperDish{
 	display: block;
 	margin: 20pt;
@@ -437,28 +376,8 @@ h2{
 	border-radius: 75pt;
 }
 
-.white-panel{
-	background-color: #fbfbfb;
-
-}
-
-#leftMenu{
-	margin-top:0pt;
-	background-color: #fbfbfb;
-	height:20%;
-	padding: 0pt;
-}
-
-#frameLeftMenu{
-	border: 1pt solid;
-	border-color: #BFB391;
-	border-radius: 4pt;
-	padding: 10pt;
-}
-
 #concludeDinner{
 	border-left-style: solid;
-	
 	height: 250px;
 }
 
