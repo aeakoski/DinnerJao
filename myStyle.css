@@ -23,6 +23,17 @@ h2{
 	color: #BFB391;
 }
 
+.btn-warning {
+	color: #fff;
+	background-color: rgb(202, 190, 154) !important;
+	border:none !important;
+	border-radius: 2pt !important;
+}
+
+.btn-warning:hover{
+	background-color: #BFB391 !important;
+}
+
 #FourthView{
 	color: #fbfbfb;
 }
@@ -119,6 +130,7 @@ h2{
 	padding-left: 10pt;
 	margin-top: 0 !important;
 }
+
 
 #homeletteButton:hover{
 	background-color: #BFB391;
@@ -317,12 +329,35 @@ h2{
 #rightDivPrep{
 	min-width: 500px;
 	float:right;
+	border: none;
+	border-radius: 0pt;
+	background-color: #fbfbfb;
+}
+
+#rightDivPrep .panel{
+	box-shadow: none;
+	border-radius: 0pt;
+	background-color: #fbfbfb;
+}
+
+#rightDivPrep .panel-default{
+	box-shadow: none;
+	border: none;
+	border-radius: 0pt;
+	background-color: #fbfbfb;
+}
+
+#rightDivRecepie {
+	border: 1pt solid #BFB391 !important;
+	border-radius: 4pt !important;
+	padding: 10pt;
 }
 
 #rightDivRecepie{
 	height:100%;
 	float: right;
 	padding-bottom: 10pt;
+	
 }
 
 .subTitle2{
@@ -428,3 +463,4 @@ h2{
 	margin-left: 45%;
 	font-size: 25pt;
 }
+
