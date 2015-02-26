@@ -6,6 +6,7 @@ var Controller3 = function (view, view2, model) {
 			model.getAllDishes();
 		});
 
+
 	$(document).on("mouseover",".glyphicon-remove",function(){	
 		//Ändra färg till röd!
 		$(this).css("color","red");
