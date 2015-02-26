@@ -21,6 +21,8 @@ var DinnerModel = function() {
 
  	var userInp="";
 
+ 	var dishCost = 0;
+
 //--------------------------------------------------//
 //--------------------- INIT -----------------------//
 //--------------------------------------------------//
@@ -91,18 +93,30 @@ var DinnerModel = function() {
 		}
 	}
 
-	this.getDishCost = function(id){
-		var dishCost=0;
-		for (i = 0; i< dishes.length; i++){
-			if (dishes[i]['id'] == id) {
-				for (j = 0; j < dishes[i]['Ingredients'].length; j++){
-					dishCost = dishCost + dishes[i]['Ingredients'][j]['price'];
-				}
-				return dishCost*nrOfGuests
-			};
-		}
+	var setDishCost = function (data) {
+	
+		for(ii = 0; ii< data['singleDish']['Ingredients'].length; ii++){
 
-		return 0;
+			dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
+		}
+		notifyObservers({"None":null});
+		console.log(dishCost);
+	}
+
+	this.getDishCost = function(){
+		console.log(dishCost);
+		return dishCost;
+		// var dishCost = 0;
+		// for (i = 0; i< dishes['singleDish']['Ingredients'].length; i++){
+		// 	if (dishes[i]['id'] == id) {
+		// 		for (j = 0; j < dishes[i]['Ingredients'].length; j++){
+		// 			dishCost = dishCost + dishes[i]['Ingredients'][j]['price'];
+		// 		}
+		// 		return dishCost*nrOfGuests
+		// 	};
+		// }
+
+		// return 0;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
@@ -218,9 +232,10 @@ var DinnerModel = function() {
                 console.log(data);
 
                 currentDish = data;
-
                 var dataToSend = {'singleDish':data}; 
-                notifyObservers(dataToSend);                
+				setDishCost(dataToSend);  
+                notifyObservers(dataToSend);
+                              
             }
         });
     }

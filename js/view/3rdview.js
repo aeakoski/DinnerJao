@@ -76,7 +76,7 @@ var ThreeView = function (container,model) {
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="dName"><span>' +"jj"+/* + model.getDishCost(selDish['RecipeID']) +*/'.00</span></p></div>');	
+			<p class="dName"><span>' + model.getDishCost() * model.getNumberOfGuests() +'.00</span></p></div>');	
 		}
 	}
 	
@@ -93,17 +93,18 @@ var ThreeView = function (container,model) {
 		console.log(dish);
 		$("#ingredients").empty();
 		console.log(model.getNumberOfGuests()+" Såhär många gäster");
+		console.log(model.getDishCost());
 		for (var i = 0; i < dish['Ingredients'].length; i++) {
 			$("#ingredients").append('\
 				<tr>\
 					<td class="col-xs-2">'+dish['Ingredients'][i]["Quantity"] * model.getNumberOfGuests()+' '+ dish['Ingredients'][i]['Unit'] +'</td>\
 					<td class="col-xs-6">'+dish['Ingredients'][i]['Name']+'</td>\
 					<td>SEK</td>\
-					<td>'+dish['Ingredients'][i]["Quantity"]* 1 * model.getNumberOfGuests()+'</td>\
+					<td>'+dish['Ingredients'][i]['Quantity'] * model.getNumberOfGuests() +'</td>\
 				</tr>');
 		}
 		$("#dishCost").empty();
-		$("#dishCost").append('Dish Cost: '+ model.getDishCost(dish['RecipeID'])+'');
+		$("#dishCost").append('Dish Cost: '+ model.getDishCost() * model.getNumberOfGuests() +'');
 		
 	}
 
