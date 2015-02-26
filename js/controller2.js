@@ -13,8 +13,9 @@ var Controller2 = function (view, view2, model) {
 	//When clickin on a fooditem u come to the next view with dish Specifics
 	$("#dishList").on('click', '.foodItem', function () {
 		var dishID = $(this).attr('rel');
-		model.setCurrentDish(dishID);
-		//view.update(dishID);
+		model.getDish(dishID);
+		//model.setCurrentDish(model.getDish(dishID));
+		//view.update(model.getCurrentDish(dishID));
 		$("#rightDiv").hide();
 		$("#rightDivPrep").show();
 

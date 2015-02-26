@@ -21,20 +21,23 @@ var DinnerModel = function() {
 
  	var userInp="";
 
-
-
 //--------------------------------------------------//
-//---------------------Metoder----------------------//
+//--------------------- INIT -----------------------//
 //--------------------------------------------------//
 
+	this.addObserver = function(observer){
+	 		//that will add new observer to the array
+	 		observers[observers.length] = observer;
+	 	}
 
+//--------------------------------------------------//
+//-------------------- Metoder ---------------------//
+//--------------------------------------------------//
 
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
-
  		for(var k = 0; k < observers.length; k++) {
 			observers[k].update(obj);
-
 		}	
  	}
 
@@ -46,27 +49,23 @@ var DinnerModel = function() {
  		return userInp;
  	}
 
- 	this.setCurrentDish = function(id){
- 		if(id == null){
- 			currentDish = null;
- 		}else{
- 			this.getDish(id);
- 			console.log(id, "i setCurrentDish funktionen")
- 		}	
+ 	this.setCurrentDish = function(data){
+ 		if (data==null){
+ 			console.log("Stop polis");
+ 		}
+ 		currentDish = data;
+ 		console.log(data, "i setCurrentDish funktionen")	
  	}
 
  	this.getCurrentDish = function(){
+ 		console.log("Nu returnerade jag " + currentDish);
  		return currentDish;
- 	}
-
- 	this.addObserver = function(observer){
- 		//that will add new observer to the array
- 		observers[observers.length] = observer;
  	}
 
 	this.setNumberOfGuests = function(num) {
 		nrOfGuests = num;
-		this.getAllDishes();
+		var dataToSend = {'number':num}; 
+        notifyObservers(dataToSend);
 	}
 
 	this.getNumberOfGuests = function() {
@@ -203,7 +202,8 @@ var DinnerModel = function() {
                 // alert('success');
                 //console.log("sucess");
                 //console.log(data);
-                notifyObservers(data.Results);
+                var dataToSend = {'dishList':data.Results}; 
+                notifyObservers(dataToSend);
                 
             }
         });
@@ -218,14 +218,15 @@ var DinnerModel = function() {
             dataType: 'json',
             cache: false,
             url: url,
-            success: function (data) {
-                // alert('success');
+			success: function (data) {
 
                 console.log("sucess get DIsh");
                 console.log(data);
 
-                notifyObservers(data);
-                
+                currentDish = data;
+
+                var dataToSend = {'singleDish':data}; 
+                notifyObservers(dataToSend);                
             }
         });
     }

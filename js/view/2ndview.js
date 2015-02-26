@@ -19,10 +19,11 @@ var SndView = function (container,model) {
 	this.update = function(obj){
 		$("#numberOfGuests").html(model.getNumberOfGuests());
 		//console.log(obj+"i 2ndViews update-funktion");
-		if (typeof(obj) != 'undefined') {
-			updateFoodItems(obj);
+
+		if (typeof(obj['dishList']) != 'undefined') {
+			console.log(obj['dishList']+" Här kommer uppdateringen av söklistan");
+			updateFoodItems(obj['dishList']);
 		}
-		
 	}
 
 	
@@ -31,8 +32,7 @@ var SndView = function (container,model) {
 		//console.log(object, "i updateFoodItems funktionen");
 		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
-			
-			//typeOfDish = model.getAllDishes();
+
 			if(object.length===0){
 				$("#dishList").html('');
 				$("#dishList").html('\
@@ -47,7 +47,6 @@ var SndView = function (container,model) {
 		}else{
 			//Annars så visa alla maträtter innom vald kategori
 			//var typeOfDish = model.getAllDishes("cream", "dessert");
-
 		}
 
 		$("#dishList").html('');

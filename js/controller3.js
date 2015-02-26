@@ -25,7 +25,7 @@ var Controller3 = function (view, view2, model) {
 	
 	
 	$("#confirmDish").click(function () {
-		model.addDishToMenu(model.getCurrentDish()['id']);
+		model.addDishToMenu(model.getCurrentDish()['RecipieID']);
 		model.setCurrentDish(null);
 		view.update(); //View 3 uppdateras
 

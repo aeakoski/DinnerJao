@@ -10,7 +10,6 @@ var ThreeView = function (container,model) {
 	this.ingredientsTable = container.find("#ingredients");
 	this.dPending = container.find("#dPending");
 
-
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
@@ -20,15 +19,23 @@ var ThreeView = function (container,model) {
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
 		//var cDish = model.getCurrentDish(obj);
 
-		if (typeof(obj)!='number'){
-			updateIngredients(obj);
-			updateSelectedDish(obj);
+		if (typeof(obj['singleDish']) != 'undefined') {
+			console.log("Här ska maträtterna nu skrivas ut jao!!");
+			updateIngredients(obj['singleDish']);
+			updateSelectedDish(obj['singleDish']);
+			updatePending(obj['singleDish']);
 
-			updatePending(obj);
-			updateMenu();
+		}else if (typeof(obj['number'])!='undefined'){
+			
+			if(model.getCurrentDish() != null){
+				console.log("Nu var det dags att uppdatera ingredienser");	
+				updateIngredients(model.getCurrentDish());
+				updateSelectedDish(model.getCurrentDish());
+				updatePending(model.getCurrentDish());
+			}
 		}
 
-		
+		updateMenu();
 		this.colorKnapp();
 	}
 
