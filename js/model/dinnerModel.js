@@ -91,7 +91,7 @@ var DinnerModel = function() {
 	}
 
 	var setDishCost = function (data) {
-	
+		dishCost = 0;
 		for(ii = 0; ii< data['singleDish']['Ingredients'].length; ii++){
 			dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
 		}

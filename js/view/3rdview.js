@@ -88,10 +88,7 @@ var ThreeView = function (container,model) {
 	
 
 	var updateIngredients = function (dish) {
-		console.log(dish);
 		$("#ingredients").empty();
-		console.log(model.getNumberOfGuests()+" Såhär många gäster");
-		console.log(model.getDishCost());
 		for (var i = 0; i < dish['Ingredients'].length; i++) {
 			$("#ingredients").append('\
 				<tr>\
