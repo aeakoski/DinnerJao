@@ -54,7 +54,7 @@ var ThreeView = function (container,model) {
 			
 			$("#dAdded").append('\
 			<div id="dAddedR"><p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['Title'] +'</span></p>\
-			<p class="dName col-xs-1"><span>'+ model.getDishCost(model.getFullMenu()[a]['RecipeID']) +'.00</span></p>\
+			<p class="dName col-xs-1"><span>'+ model.getDishCost(model.getFullMenu()[a]['RecipeID']) +'</span></p>\
 			<span rel ="'+ model.getFullMenu()[a]['RecipeID'] +'" class=" hohoho glyphicon glyphicon-remove floatR" style ="color:#BBBBBB;" aria-hidden="false"></span></div>');
 		}
 		this.totalCost = container.find("#totalCost");
@@ -74,7 +74,7 @@ var ThreeView = function (container,model) {
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="dName"><span>' + model.getDishCost() * model.getNumberOfGuests() +'.00</span></p></div>');	
+			<p class="dName"><span>' + model.getDishCost() * model.getNumberOfGuests() +'</span></p></div>');	
 		}
 	}
 	

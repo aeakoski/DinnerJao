@@ -12,7 +12,7 @@ var FourthView = function (container,model) {
 	
 	this.update = function () {
 		this.numberOfGuests.html(model.getNumberOfGuests());
-		this.totalCost.html(model.getTotalMenuPrice()+'.00 SEK');
+		this.totalCost.html(model.getTotalMenuPrice()+' SEK');
 		dish = model.getFullMenu();
 		$("#menuItem").empty();
 		for (var g = 0; g<dish.length; g++) {
