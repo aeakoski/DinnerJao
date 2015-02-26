@@ -361,6 +361,10 @@ h2{
 	padding-bottom: 10pt;
 }
 
+#prepDish img{
+	width: 280pt;
+	height: 280pt;
+}
 #ingredients{
 	width: 100%;
 }
