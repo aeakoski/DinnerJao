@@ -19,13 +19,12 @@ var ThreeView = function (container,model) {
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
 		//var cDish = model.getCurrentDish(obj);
 
-
-		 if (typeof(obj) === 'object') {
+		if (typeof(obj['Title']) != 'undefined'){
 		 	//console.log("CDish " + cDish['name']);
 		 	console.log(obj, "innan update Ingredients körs")
 		 	updateIngredients(obj);
 		 	updateSelectedDish(obj);	
-		 }
+		}
 		updatePending(obj);
 		updateMenu();
 		this.colorKnapp();
@@ -39,8 +38,6 @@ var ThreeView = function (container,model) {
 			$("#confirmDinner").removeClass('btn-default');
     		$("#confirmDinner").addClass('btn-warning'); // Vald #background-color: #F0AD4E; PÅslagen		
 		}
-
-
 	}
 	
 	

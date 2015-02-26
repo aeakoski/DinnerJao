@@ -225,7 +225,6 @@ var DinnerModel = function() {
                 console.log(data);
 
                 notifyObservers(data);
-                console.log(data, "from RecipeID")
                 
             }
         });
