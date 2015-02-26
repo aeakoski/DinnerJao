@@ -4,6 +4,7 @@ var Controller3 = function (view, view2, model) {
 			var inp = $("#mainSearch").val()
 			model.setInput(inp);
 			model.getAllDishes();
+			
 		});
 
 	$(document).on("mouseover",".glyphicon-remove",function(){	
@@ -26,6 +27,7 @@ var Controller3 = function (view, view2, model) {
 	$("#confirmDish").click(function () {
 		model.addDishToMenu(model.getCurrentDish());
 		model.setCurrentDish(null);
+
 		view.update({"None":null}); //View 3 uppdateras
 
 		$("#rightDivPrep").hide();
@@ -38,6 +40,7 @@ var Controller3 = function (view, view2, model) {
 	$(".backToEdit").click(function () {
 		model.setCurrentDish(null);
 		model.getAllDishes();
+
 		$("#leftMenu").show();
 		$("#rightDiv").show();
 		$("#rightTop").show();

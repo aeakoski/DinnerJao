@@ -13,6 +13,15 @@ var ThreeView = function (container,model) {
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.numberOfGuests.html(model.getNumberOfGuests());
 
+	this.displayLoad = function(){
+		$("#prepDish").empty();
+		$("#prepDish").html('\
+			<img id="load" src="images/puhfood.gif">');
+
+		$("#ingredients").empty();
+		$("#ingredients").html('\
+			<img id="load2" src="images/puhfood3.gif">');
+	}
 
 	this.update = function(obj){
 

@@ -6,21 +6,22 @@ var Controller2 = function (view, view2, model) {
 		console.log("Nu har jag börjat på en ny sökning");
 		var inp = $("#mainSearch").val()
 		model.setInput(inp);
+		view2.displayLoad();//Ladda in load Skärmen!
 		model.getAllDishes();
+		
 		});
 
 
 	//When clickin on a fooditem u come to the next view with dish Specifics
 	$("#dishList").on('click', '.foodItem', function () {
 		var dishID = $(this).attr('rel');
+		view.displayLoad();//Ladda in load Skärmen!
 		model.getDish(dishID);
-
-		// Lägg Loading screenen här!!!
-		//$(load).load.show
-
+		
 
 		$("#rightDiv").hide();
 		$("#rightDivPrep").show();
+		
 
 	});
 

@@ -16,6 +16,12 @@ var SndView = function (container,model) {
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.pendingCost.html(model.getDishCost());
 
+	this.displayLoad = function(){
+		$("#dishList").html('');
+		$("#dishList").html('\
+			<img id="load" src="images/puhfood.gif">');
+	}
+
 	this.update = function(obj){
 		$("#numberOfGuests").html(model.getNumberOfGuests());
 		//console.log(obj+"i 2ndViews update-funktion");

@@ -23,6 +23,8 @@ var DinnerModel = function() {
 
  	var dishCost = 0;
 
+ 	//var loadActive = false;
+
 //--------------------------------------------------//
 //--------------------- INIT -----------------------//
 //--------------------------------------------------//
@@ -35,6 +37,18 @@ var DinnerModel = function() {
 //--------------------------------------------------//
 //-------------------- Metoder ---------------------//
 //--------------------------------------------------//
+
+	// this.startLoad = function(){
+	// 	loadActive = true;
+	// }
+
+	// this.endLoad = function(){
+	// 	loadActive = false;
+	// }
+
+	// this.statusLoad = function(){
+	// 	return loadActive;
+	// }
 
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
@@ -104,7 +118,6 @@ var DinnerModel = function() {
 	this.updateDishCost = function(d){
 		dishCost = 0;
 		for(iiii = 0; iiii < d['Ingredients'].length; iiii++){
-			console.log("sdfgjk");
 			dishCost += d['Ingredients'][iiii]['Quantity']
 		}
 	}
