@@ -20,7 +20,10 @@ var SndView = function (container,model) {
 	this.update = function(obj){
 		$("#numberOfGuests").html(model.getNumberOfGuests());
 		//console.log(obj+"i 2ndViews update-funktion");
-		updateFoodItems(obj);
+		if (typeof(obj) != 'undefined') {
+			updateFoodItems(obj);
+		}
+		
 	}
 
 	

@@ -39,7 +39,7 @@ var Controller3 = function (view, view2, model) {
 
 	$(".backToEdit").click(function () {
 		model.setCurrentDish(null);
-		view.update();
+		view2.update();
 		$("#leftMenu").show();
 		$("#rightDiv").show();
 		$("#rightTop").show();
