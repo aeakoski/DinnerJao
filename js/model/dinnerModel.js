@@ -24,6 +24,7 @@ var DinnerModel = function() {
 
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
+
  		for(var k = 0; k < observers.length; k++) {
 			observers[k].update(obj);
 
@@ -76,7 +77,7 @@ var DinnerModel = function() {
 
 	this.setMealType = function (type) {
 		mealType = type;
-		notifyObservers(observers);
+		//notifyObservers(observers);
 	}
 
 	this.getMealType = function() {
@@ -210,8 +211,12 @@ var DinnerModel = function() {
 	// }
 
 	this.getAllDishes = function (keyword, type) {
+		if(typeof(keyword) === 'undefined'){
+			keyword = "cream";
+			type = "dessert";
+		}
         var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
-        var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="+ keyword + type + "&api_key=" + apiKey;
+        var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="+ keyword +" "+ type + "&api_key=" + apiKey;
         $.ajax({
             type: "GET",
             dataType: 'json',
@@ -219,10 +224,12 @@ var DinnerModel = function() {
             url: url,
             success: function (data) {
                 alert('success');
-                console.log(data);
+                notifyObservers(data.Results);
+                //console.log(data.Results[0].Title);
             }
         });
     }
+
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
 	  for(key in dishes){
