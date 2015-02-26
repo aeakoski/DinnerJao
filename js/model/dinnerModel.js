@@ -180,7 +180,7 @@ var DinnerModel = function() {
 		}
 
 		notifyObservers();
-		console.log(menu);
+		//console.log(menu);
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -201,8 +201,8 @@ var DinnerModel = function() {
             url: url,
             success: function (data) {
                 // alert('success');
-                console.log("sucess");
-                console.log(data);
+                //console.log("sucess");
+                //console.log(data);
                 notifyObservers(data.Results);
                 
             }
@@ -221,7 +221,7 @@ var DinnerModel = function() {
             success: function (data) {
                 // alert('success');
                 console.log("sucess");
-                notifyObservers(data.Results);
+                notifyObservers(data);
                 console.log(data, "from RecipeID")
                 
             }

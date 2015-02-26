@@ -19,14 +19,14 @@ var SndView = function (container,model) {
 
 	this.update = function(obj){
 		$("#numberOfGuests").html(model.getNumberOfGuests());
-		console.log(obj+"i 2ndViews update-funktion");
+		//console.log(obj+"i 2ndViews update-funktion");
 		updateFoodItems(obj);
 	}
 
 	
 	var updateFoodItems = function(object){
 
-		console.log(object, "i updateFoodItems funktionen");
+		//console.log(object, "i updateFoodItems funktionen");
 		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 			
