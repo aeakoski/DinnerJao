@@ -89,7 +89,7 @@ var ThreeView = function (container,model) {
 				<tr>\
 					<td class="col-xs-2">'+dish['Ingredients'][i]["Quantity"] * model.getNumberOfGuests()+' '+ dish['Ingredients'][i]['Unit'] +'</td>\
 					<td class="col-xs-6">'+dish['Ingredients'][i]['Name']+'</td>\
-					<td>SEK </td>\
+					<td>SEK</td>\
 					<td>'+dish['Ingredients'][i]["Quantity"]* 1 * model.getNumberOfGuests()+'</td>\
 				</tr>');
 		}
