@@ -21,15 +21,12 @@ var SndView = function (container,model) {
 		//console.log(obj+"i 2ndViews update-funktion");
 
 		if (typeof(obj['dishList']) != 'undefined') {
-			console.log(obj['dishList']+" Här kommer uppdateringen av söklistan");
 			updateFoodItems(obj['dishList']);
 		}
 	}
 
-	
 	var updateFoodItems = function(object){
 
-		//console.log(object, "i updateFoodItems funktionen");
 		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 

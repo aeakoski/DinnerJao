@@ -53,14 +53,11 @@ var DinnerModel = function() {
 
  	this.setCurrentDish = function(data){
  		if (data==null){
- 			console.log("Stop polis");
  		}
  		currentDish = data;
- 		console.log(data, "i setCurrentDish funktionen")	
  	}
 
  	this.getCurrentDish = function(){
- 		console.log("Nu returnerade jag " + currentDish);
  		return currentDish;
  	}
 
@@ -96,28 +93,16 @@ var DinnerModel = function() {
 	var setDishCost = function (data) {
 	
 		for(ii = 0; ii< data['singleDish']['Ingredients'].length; ii++){
-
 			dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
 		}
 		notifyObservers({"None":null});
-		console.log(dishCost);
 	}
+
 
 	this.getDishCost = function(){
-		console.log(dishCost);
 		return dishCost;
-		// var dishCost = 0;
-		// for (i = 0; i< dishes['singleDish']['Ingredients'].length; i++){
-		// 	if (dishes[i]['id'] == id) {
-		// 		for (j = 0; j < dishes[i]['Ingredients'].length; j++){
-		// 			dishCost = dishCost + dishes[i]['Ingredients'][j]['price'];
-		// 		}
-		// 		return dishCost*nrOfGuests
-		// 	};
-		// }
-
-		// return 0;
 	}
+
 
 	//Returns all ingredients for all the dishes on the menu.
 	// Returns an array of all the iingredientss dictionarries
@@ -149,26 +134,7 @@ var DinnerModel = function() {
 		return menu
 	}
 
-	// this.sortMenu = function(){
-	// 	for (var foodIndex = 0; foodIndex <menu.length; foodIndex++) {
-
-	// 		if((menu[foodIndex]['type'] === "starter") && (foodIndex != 0)){
-	// 			var be = menu[foodIndex];
-	// 			menu[foodIndex] = menu[0];
-	// 			menu[0] = be;
-	// 			foodIndex = -1;
-	// 		}
-
-	// 		else if((menu[foodIndex]['type'] === "dessert") && (foodIndex != menu.length-1)){
-	// 			var bu = menu[foodIndex];
-	// 			menu[foodIndex] = menu[menu.length-1];
-	// 			menu[menu.length-1] = bu;
-	// 			foodIndex = -1;
-	// 		}
-			
-	// 	};
-	// }
-
+	
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 
@@ -210,12 +176,8 @@ var DinnerModel = function() {
             cache: false,
             url: url,
             success: function (data) {
-                // alert('success');
-                //console.log("sucess");
-                //console.log(data);
                 var dataToSend = {'dishList':data.Results}; 
-                notifyObservers(dataToSend);
-                
+                notifyObservers(dataToSend); 
             }
         });
     }
@@ -230,10 +192,6 @@ var DinnerModel = function() {
             cache: false,
             url: url,
 			success: function (data) {
-
-                console.log("sucess get DIsh");
-                console.log(data);
-
                 currentDish = data;
                 var dataToSend = {'singleDish':data}; 
 				setDishCost(dataToSend);  
