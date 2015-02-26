@@ -16,17 +16,19 @@ var ThreeView = function (container,model) {
 
 
 	this.update = function(obj){
+
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
 		//var cDish = model.getCurrentDish(obj);
 
-		if (typeof(obj['Title']) != 'undefined'){
-		 	//console.log("CDish " + cDish['name']);
-		 	console.log(obj, "innan update Ingredients körs")
-		 	updateIngredients(obj);
-		 	updateSelectedDish(obj);	
+		if (typeof(obj)!='number'){
+			updateIngredients(obj);
+			updateSelectedDish(obj);
+
+			updatePending(obj);
+			updateMenu();
 		}
-		updatePending(obj);
-		updateMenu();
+
+		
 		this.colorKnapp();
 	}
 
@@ -83,7 +85,7 @@ var ThreeView = function (container,model) {
 	var updateIngredients = function (dish) {
 		console.log(dish);
 		$("#ingredients").empty();
-
+		console.log(model.getNumberOfGuests()+" Såhär många gäster");
 		for (var i = 0; i < dish['Ingredients'].length; i++) {
 			$("#ingredients").append('\
 				<tr>\

@@ -66,7 +66,7 @@ var DinnerModel = function() {
 
 	this.setNumberOfGuests = function(num) {
 		nrOfGuests = num;
-		notifyObservers(observers);
+		this.getAllDishes();
 	}
 
 	this.getNumberOfGuests = function() {
@@ -96,8 +96,8 @@ var DinnerModel = function() {
 		var dishCost=0;
 		for (i = 0; i< dishes.length; i++){
 			if (dishes[i]['id'] == id) {
-				for (j = 0; j < dishes[i]['ingredients'].length; j++){
-					dishCost = dishCost + dishes[i]['ingredients'][j]['price'];
+				for (j = 0; j < dishes[i]['Ingredients'].length; j++){
+					dishCost = dishCost + dishes[i]['Ingredients'][j]['price'];
 				}
 				return dishCost*nrOfGuests
 			};

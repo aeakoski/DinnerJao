@@ -1,4 +1,3 @@
-
 var SndView = function (container,model) {
 
 	//add view as observer of model
@@ -10,7 +9,7 @@ var SndView = function (container,model) {
 	this.mealType = container.find("#mealType");
 	this.prepDish = container.find("#prepDish");
 	this.ingredientsTable = container.find("#ingredients");
-	//this.leftMenu = container.find("#leftMenu");
+	
     this.dPending = container.find("#dPending");
     this.pendingCost = container.find("#pendingCost");
 
@@ -44,8 +43,6 @@ var SndView = function (container,model) {
 
 		}else{
 			//Annars så visa alla maträtter innom vald kategori
-			
-
 			//var typeOfDish = model.getAllDishes("cream", "dessert");
 
 		}
