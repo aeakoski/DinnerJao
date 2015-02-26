@@ -297,6 +297,8 @@ h2{
 	min-height: 45px;
 	display: block;
 	margin-bottom: 5px;
+	max-height: 65px;
+	overflow-y: auto;
 }
 
 #dPending{

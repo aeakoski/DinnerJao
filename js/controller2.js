@@ -24,16 +24,12 @@ var Controller2 = function (view, view2, model) {
 	$(document).on("mouseover",".foodItem",function(){	
 		//Ändra musen till pointern
 		$(this).css("cursor","pointer");
-		$(this).css("height","+=5px");
-		$(this).css("width","+=5px");
 		
 	});
 
 	$(document).on("mouseout",".foodItem",function(){	
 		//Ändra musen till pointern
 		$(this).css("cursor","pointer");
-		$(this).css("height","-=5px");
-		$(this).css("width","-=5px");
 		
 	});
 

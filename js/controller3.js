@@ -25,9 +25,9 @@ var Controller3 = function (view, view2, model) {
 	
 	
 	$("#confirmDish").click(function () {
-		model.addDishToMenu(model.getCurrentDish()['RecipieID']);
+		model.addDishToMenu(model.getCurrentDish());
 		model.setCurrentDish(null);
-		view.update(); //View 3 uppdateras
+		view.update({"None":null}); //View 3 uppdateras
 
 		$("#rightDivPrep").hide();
 		$("#rightDiv").show();
@@ -39,7 +39,7 @@ var Controller3 = function (view, view2, model) {
 
 	$(".backToEdit").click(function () {
 		model.setCurrentDish(null);
-		view2.update();
+		model.getAllDishes();
 		$("#leftMenu").show();
 		$("#rightDiv").show();
 		$("#rightTop").show();
