@@ -50,7 +50,7 @@ var DinnerModel = function() {
  		if(id == null){
  			currentDish = null;
  		}else{
- 			currentDish = this.getDish(id);
+ 			this.getDish(id);
  			console.log(id, "i setCurrentDish funktionen")
  		}	
  	}
@@ -220,7 +220,10 @@ var DinnerModel = function() {
             url: url,
             success: function (data) {
                 // alert('success');
-                console.log("sucess");
+
+                console.log("sucess get DIsh");
+                console.log(data);
+
                 notifyObservers(data);
                 console.log(data, "from RecipeID")
                 

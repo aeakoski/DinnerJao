@@ -17,15 +17,16 @@ var ThreeView = function (container,model) {
 
 	this.update = function(obj){
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
-		var cDish = model.getCurrentDish();
+		//var cDish = model.getCurrentDish(obj);
 
 
-		if (cDish != null) {
-			//console.log("CDish " + cDish['name']);
-			//updateIngredients(cDish);
-			updateSelectedDish(cDish);	
-		}
-		updatePending(cDish);
+		 if (typeof(obj) === 'object') {
+		 	//console.log("CDish " + cDish['name']);
+		 	console.log(obj, "innan update Ingredients körs")
+		 	updateIngredients(obj);
+		 	updateSelectedDish(obj);	
+		 }
+		updatePending(obj);
 		updateMenu();
 		this.colorKnapp();
 	}
@@ -78,23 +79,23 @@ var ThreeView = function (container,model) {
 		$("#prepDish").append('\
 		<h2 id ="dishHeadder" rel ="'+ selectedDish['RecipeID']+'">' + selectedDish['Title'] + '</h2>\
 		<img src="'+ selectedDish['ImageURL'] +'">\
-		<p>' + selectedDish['Subcategory'] + '</p>');
+		<p>' + selectedDish['Instructions'] + '</p>');
 	}
 	
 
 	var updateIngredients = function (dish) {
-		if (typeof(dish)==='undefined') {
-			dish = model.getDish(1);
-		}
+		 if (typeof(dish)==='undefined') {
+		 	dish = model.getDish(dish);
+		 }
 		$("#ingredients").empty();
 
-		for (var i = 0; i < dish['ingredients'].length; i++) {
+		for (var i = 0; i < dish['Ingredients'].length; i++) {
 			$("#ingredients").append('\
 				<tr>\
-					<td class="col-xs-2">'+dish['ingredients'][i]['quantity'] * model.getNumberOfGuests()+' '+ dish['ingredients'][i]['unit'] +'</td>\
-					<td class="col-xs-6">'+dish['ingredients'][i]['Title']+'</td>\
+					<td class="col-xs-2">'+dish['ingredients'][i]["Quantity"] * model.getNumberOfGuests()+' '+ dish['ingredients'][i]['Unit'] +'</td>\
+					<td class="col-xs-6">'+dish['ingredients'][i]['Name']+'</td>\
 					<td>SEK</td>\
-					<td>'+dish['ingredients'][i]["price"] * model.getNumberOfGuests()+'</td>\
+					<td>'+dish['Ingredients'][i]["Quantity"]* 1 * model.getNumberOfGuests()+'</td>\
 				</tr>');
 		}
 		$("#dishCost").empty();
@@ -103,3 +104,4 @@ var ThreeView = function (container,model) {
 	}
 
 }
+
