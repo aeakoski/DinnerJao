@@ -19,14 +19,14 @@ var SndView = function (container,model) {
 
 	this.update = function(obj){
 		$("#numberOfGuests").html(model.getNumberOfGuests());
-		console.log(obj+" Heey!");
+		console.log(obj+"i 2ndViews update-funktion");
 		updateFoodItems(obj);
 	}
 
 	
 	var updateFoodItems = function(object){
 
-		console.log(object, "fghjk");
+		console.log(object, "i updateFoodItems funktionen");
 		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 			
@@ -49,6 +49,7 @@ var SndView = function (container,model) {
 			//var typeOfDish = model.getAllDishes("cream", "dessert");
 
 		}
+
 		$("#dishList").html('');
 		for (i = 0; i<object.length; i++) {
 			$("#dishList").append('\

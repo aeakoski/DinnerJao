@@ -51,6 +51,7 @@ var DinnerModel = function() {
  			currentDish = null;
  		}else{
  			currentDish = this.getDish(id);
+ 			console.log(id, "i setCurrentDish funktionen")
  		}	
  	}
 
@@ -220,21 +221,32 @@ var DinnerModel = function() {
             cache: false,
             url: url,
             success: function (data) {
-                console.log("Success in fetching data");
+                // alert('success');
+                console.log("sucess");
                 console.log(data);
                 notifyObservers(data.Results);
-                //console.log(data.Results[0].Title);
+                
             }
         });
     }
 
 	//function that returns a dish of specific ID
-	this.getDish = function (id) {
-		for(var key = 0; key<dishes.length; key++){
-			if(dishes[key]['RecipeID'] == id) {
-				return dishes[key];
-			}
-		}
-	}
+	this.getDish = function (RecipeID) {
+        var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
+        var url = "http://api.bigoven.com/recipe/" + RecipeID + "?api_key=" + apiKey;
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            cache: false,
+            url: url,
+            success: function (data) {
+                // alert('success');
+                console.log("sucess");
+                notifyObservers(data.Results);
+                console.log(data, "from RecipeID")
+                
+            }
+        });
+    }
 
 }

@@ -22,7 +22,7 @@ var ThreeView = function (container,model) {
 
 		if (cDish != null) {
 			//console.log("CDish " + cDish['name']);
-			updateIngredients(cDish);
+			//updateIngredients(cDish);
 			updateSelectedDish(cDish);	
 		}
 		updatePending(cDish);
@@ -69,7 +69,7 @@ var ThreeView = function (container,model) {
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="dName"><span>' + model.getDishCost(selDish['RecipeID']) +'.00</span></p></div>');	
+			<p class="dName"><span>' +"jj"+/* + model.getDishCost(selDish['RecipeID']) +*/'.00</span></p></div>');	
 		}
 	}
 	
