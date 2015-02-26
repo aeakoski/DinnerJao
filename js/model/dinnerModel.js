@@ -179,9 +179,6 @@ var DinnerModel = function() {
 			menu.splice(indexToBin, 1);
 		}
 
-		//var fruits = ["Banana", "Orange", "Apple", "Mango"];
- 		//fruits.splice(2, 0, "Lemon", "Kiwi");
-
 		notifyObservers();
 		console.log(menu);
 	}
@@ -189,25 +186,6 @@ var DinnerModel = function() {
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
-
-	// this.getAllDishes = function (type,filter) {
-	//   return $(dishes).filter(function(index,dish) {
-	// 	var found = true;
-	// 	if(filter){
-	// 		found = false;
-	// 		$.each(dish.ingredients,function(index,ingredient) {
-	// 			if(ingredient.name.indexOf(filter)!=-1) {
-	// 				found = true;
-	// 			}
-	// 		});
-	// 		if(dish.name.indexOf(filter) != -1)
-	// 		{
-	// 			found = true;
-	// 		}
-	// 	}
-	//   	return dish.type == type && found;
-	//   });	
-	// }
 
 	this.getAllDishes = function () {
 		keyword = this.getInput();

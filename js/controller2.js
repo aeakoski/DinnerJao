@@ -3,14 +3,11 @@ var Controller2 = function (view, view2, model) {
 	model.getAllDishes();
 
 	$("#sendSearch").click(function(){
-			var inp = $("#mainSearch").val()
-			model.setInput(inp);
-			model.getAllDishes();
-			view2.update();
+		console.log("Nu har jag börjat på en ny sökning");
+		var inp = $("#mainSearch").val()
+		model.setInput(inp);
+		model.getAllDishes();
 		});
-
-
-	//var typeOfDish = model.getAllDishes();
 
 
 	//When clickin on a fooditem u come to the next view with dish Specifics
