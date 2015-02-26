@@ -1,6 +1,6 @@
 var Controller2 = function (view, view2, model) {
 
-	$("#mainSearch").keyup(function(){
+	$("#sendSearch").click(function(){
 			var inp = $("#mainSearch").val()
 			model.setInput(inp);
 			view2.update();

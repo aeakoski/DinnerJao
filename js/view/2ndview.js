@@ -1,8 +1,8 @@
+
 var SndView = function (container,model) {
 
 	//add view as observer of model
 	model.addObserver(this);
-
 
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.dishList = container.find("#dishList");
@@ -29,7 +29,7 @@ var SndView = function (container,model) {
 		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 			
-			typeOfDish = model.getInputList();
+			typeOfDish = model.getAllDishes();
 			if(typeOfDish.length===0){
 				$("#dishList").html('');
 				$("#dishList").html('\
@@ -44,23 +44,24 @@ var SndView = function (container,model) {
 		}else{
 			//Annars så visa alla maträtter innom vald kategori
 			
-			var typeOfDish = model.getAllDishes(model.getMealType());
+			var typeOfDish = model.getAllDishes();
+			
 		}
 		$("#dishList").html('');
 		for (i = 0; i<typeOfDish.length; i++) {
 			$("#dishList").append('\
-				<div rel = "'+ typeOfDish[i]['id'] +'" class="foodItem">\
+				<div rel = "'+ typeOfDish[i]['RecipeID'] +'" class="foodItem">\
 					<div class="foodHead">\
 						<div class = "foodPic">\
-							<img src="images/'+ typeOfDish[i]['image'] +'">\
+							<img src="'+ typeOfDish[i]['ImageURL'] +'">\
 						</div>\
 						<div class = "foodTitle">\
-							<h4>'+ typeOfDish[i]['name'] +'</h4>\
+							<h4>'+ typeOfDish[i]['Title'] +'</h4>\
 						</div>\
 					</div>\
 					\
 					<div class = "foodDesc">\
-						<p>'+ typeOfDish[i]['description'] +'</p>\
+						<p>'+ typeOfDish[i]['Subcategory'] +'</p>\
 					</div>\
 				</div><!--FoodItem-->');
 		}

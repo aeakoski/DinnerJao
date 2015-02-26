@@ -20,11 +20,11 @@ var FourthView = function (container,model) {
 		$("#menuItem").append('\
 			<div class="foodIcons " >\
 				<div class = "foodPic">\
-					<img src="images/'+ dish[g]['image'] +'">\
+					<img src="'+ dish[g]['ImageURL'] +'">\
 				</div>\
 				<div class = "foodTitle">\
-					<h4>'+ dish[g]['name'] +'</h4>\
-					<span>SEK: '+ model.getDishCost(dish[g]['id']) +'</span>\
+					<h4>'+ dish[g]['Title'] +'</h4>\
+					<span>SEK: '+ model.getDishCost(dish[g]['RecipeID']) +'</span>\
 				</div>\
 			</div>');
 		}

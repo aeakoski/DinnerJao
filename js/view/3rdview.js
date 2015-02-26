@@ -48,9 +48,9 @@ var ThreeView = function (container,model) {
 		for( var a = 0 ; a < model.getFullMenu().length ; a++){
 			
 			$("#dAdded").append('\
-			<div id="dAddedR"><p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['name'] +'</span></p>\
-			<p class="dName col-xs-1"><span>'+ model.getDishCost(model.getFullMenu()[a]['id']) +'.00</span></p>\
-			<span rel ="'+ model.getFullMenu()[a]['id'] +'" class=" hohoho glyphicon glyphicon-remove floatR" style ="color:#BBBBBB;" aria-hidden="false"></span></div>');
+			<div id="dAddedR"><p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['Title'] +'</span></p>\
+			<p class="dName col-xs-1"><span>'+ model.getDishCost(model.getFullMenu()[a]['RecipeID']) +'.00</span></p>\
+			<span rel ="'+ model.getFullMenu()[a]['RecipeID'] +'" class=" hohoho glyphicon glyphicon-remove floatR" style ="color:#BBBBBB;" aria-hidden="false"></span></div>');
 		}
 		this.totalCost = container.find("#totalCost");
 		this.totalCost.html(model.getTotalMenuPrice());
@@ -69,16 +69,16 @@ var ThreeView = function (container,model) {
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="dName"><span>' + model.getDishCost(selDish['id']) +'.00</span></p></div>');	
+			<p class="dName"><span>' + model.getDishCost(selDish['RecipeID']) +'.00</span></p></div>');	
 		}
 	}
 	
 	var updateSelectedDish = function (selectedDish) {
 		$("#prepDish").empty();
 		$("#prepDish").append('\
-		<h2 id ="dishHeadder" rel ="'+ selectedDish['id']+'">' + selectedDish['name'] + '</h2>\
-		<img src="images/'+ selectedDish['image'] +'">\
-		<p>' + selectedDish['description'] + '</p>');
+		<h2 id ="dishHeadder" rel ="'+ selectedDish['RecipeID']+'">' + selectedDish['Title'] + '</h2>\
+		<img src="'+ selectedDish['ImageURL'] +'">\
+		<p>' + selectedDish['Subcategory'] + '</p>');
 	}
 	
 
@@ -92,13 +92,13 @@ var ThreeView = function (container,model) {
 			$("#ingredients").append('\
 				<tr>\
 					<td class="col-xs-2">'+dish['ingredients'][i]['quantity'] * model.getNumberOfGuests()+' '+ dish['ingredients'][i]['unit'] +'</td>\
-					<td class="col-xs-6">'+dish['ingredients'][i]['name']+'</td>\
+					<td class="col-xs-6">'+dish['ingredients'][i]['Title']+'</td>\
 					<td>SEK</td>\
 					<td>'+dish['ingredients'][i]["price"] * model.getNumberOfGuests()+'</td>\
 				</tr>');
 		}
 		$("#dishCost").empty();
-		$("#dishCost").append('Dish Cost: '+ model.getDishCost(dish['id'])+'');
+		$("#dishCost").append('Dish Cost: '+ model.getDishCost(dish['RecipeID'])+'');
 		
 	}
 

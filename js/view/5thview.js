@@ -26,15 +26,15 @@ var FifthView = function (container,model) {
 			$(printFoodItem).append('\
 				<div id = "upperDish" class = col-xs-12>\
 					<div class="col-xs-3">\
-					<img src="images/'+ dish[i]['image'] +'">\
+					<img src="'+ dish[i]['ImageURL'] +'">\
 					</div>\
 					<div class="col-xs-4">\
-						<h2>'+ dish[i]['name'] + '</h2>\
+						<h2>'+ dish[i]['Title'] + '</h2>\
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sodales tempus pellentesque. Vestibulum convallis ullamcorper sollicitudin. Integer ut faucibus sapien, eget feugiat risus. Aliquam nisi erat, posuere nec euismod eu, fermentum nec nisl. Aenean id ornare nunc. Nunc aliquam nisl magna. Proin id hendrerit urna..</p>\
 					</div>\
 					<div class="col-xs-5">\
 						<h2>Preparation</h2>\
-						<p>'+ dish[i]['description'] +'</p>\
+						<p>'+ dish[i]['Subcategory'] +'</p>\
 					</div>\
 				</div>');
 		}
