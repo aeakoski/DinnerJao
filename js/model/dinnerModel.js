@@ -211,6 +211,7 @@ var DinnerModel = function() {
 	this.getAllDishes = function () {
 		keyword = this.getInput();
 		type = this.getMealType();
+		console.log(keyword,type);
         var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="+ keyword +" "+ type + "&api_key=" + apiKey;
         $.ajax({

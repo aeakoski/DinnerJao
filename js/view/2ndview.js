@@ -49,7 +49,6 @@ var SndView = function (container,model) {
 			//var typeOfDish = model.getAllDishes("cream", "dessert");
 
 		}
-			console.log(object[1].ImageURL);
 		$("#dishList").html('');
 		for (i = 0; i<object.length; i++) {
 			$("#dishList").append('\
