@@ -139,8 +139,8 @@ var DinnerModel = function() {
 	//it is removed from the menu and the new one added.
 
 	this.addDishToMenu = function(dish) {
-	menu[menu.length] = dish;
-		
+		if (menu.length <= 2) {
+			menu[menu.length] = dish;}
 	}
 
 	//Removes dish from menu
