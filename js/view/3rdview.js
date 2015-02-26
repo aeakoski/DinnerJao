@@ -20,7 +20,7 @@ var ThreeView = function (container,model) {
 		//var cDish = model.getCurrentDish(obj);
 
 		if (typeof(obj['singleDish']) != 'undefined') {
-			console.log("Här ska maträtterna nu skrivas ut jao!!");
+
 			updateIngredients(obj['singleDish']);
 			updateSelectedDish(obj['singleDish']);
 			updatePending(obj['singleDish']);
@@ -28,13 +28,11 @@ var ThreeView = function (container,model) {
 		}else if (typeof(obj['number'])!='undefined'){
 			
 			if(model.getCurrentDish() != null){
-				console.log("Nu var det dags att uppdatera ingredienser");	
 				updateIngredients(model.getCurrentDish());
 				updateSelectedDish(model.getCurrentDish());
-				updatePending(model.getCurrentDish());
 			}
 		}
-
+		updatePending(model.getCurrentDish());
 		updateMenu();
 		this.colorKnapp();
 	}
