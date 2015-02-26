@@ -145,16 +145,13 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		console.log(menu);
 		for(var indexToBin = 0; indexToBin<menu.length; indexToBin++){
 			if(menu[indexToBin]['RecipeID'] === id){
-				console.log(indexToBin);
 				if (indexToBin > -1){
 					menu.splice(indexToBin, 1);
 				}
 			}
 		}
-		console.log(menu);
 		notifyObservers({"None":null});
 		
 	}
@@ -166,7 +163,6 @@ var DinnerModel = function() {
 	this.getAllDishes = function () {
 		keyword = this.getInput();
 		type = this.getMealType();
-		console.log(keyword,type);
         var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="+ keyword +" "+ type + "&api_key=" + apiKey;
         
