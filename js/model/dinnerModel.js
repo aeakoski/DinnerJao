@@ -179,9 +179,6 @@ var DinnerModel = function() {
 			menu.splice(indexToBin, 1);
 		}
 
-		//var fruits = ["Banana", "Orange", "Apple", "Mango"];
- 		//fruits.splice(2, 0, "Lemon", "Kiwi");
-
 		notifyObservers();
 		console.log(menu);
 	}
@@ -190,28 +187,10 @@ var DinnerModel = function() {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 
-	// this.getAllDishes = function (type,filter) {
-	//   return $(dishes).filter(function(index,dish) {
-	// 	var found = true;
-	// 	if(filter){
-	// 		found = false;
-	// 		$.each(dish.ingredients,function(index,ingredient) {
-	// 			if(ingredient.name.indexOf(filter)!=-1) {
-	// 				found = true;
-	// 			}
-	// 		});
-	// 		if(dish.name.indexOf(filter) != -1)
-	// 		{
-	// 			found = true;
-	// 		}
-	// 	}
-	//   	return dish.type == type && found;
-	//   });	
-	// }
-
 	this.getAllDishes = function () {
 		keyword = this.getInput();
 		type = this.getMealType();
+		console.log(keyword,type);
         var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="+ keyword +" "+ type + "&api_key=" + apiKey;
         
