@@ -17,15 +17,19 @@ var SndView = function (container,model) {
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.pendingCost.html(model.getDishCost());
 
-
+	//model.getAllDishes("cream", "dessert");
 	this.update = function(obj){
+
 		$("#numberOfGuests").html(model.getNumberOfGuests());
-		updateFoodItems();
+
+		updateFoodItems(obj);
 	}
 
 	
-	var updateFoodItems = function(){
+	var updateFoodItems = function(object){
 
+
+		console.log(object, "fghjk");
 		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 			
@@ -44,31 +48,31 @@ var SndView = function (container,model) {
 		}else{
 			//Annars så visa alla maträtter innom vald kategori
 			
-			var typeOfDish = model.getAllDishes();
-			
+
+			//var typeOfDish = model.getAllDishes("cream", "dessert");
+
 		}
+			console.log(object[1].ImageURL);
 		$("#dishList").html('');
-		for (i = 0; i<typeOfDish.length; i++) {
+		for (i = 0; i<object.length; i++) {
 			$("#dishList").append('\
-				<div rel = "'+ typeOfDish[i]['RecipeID'] +'" class="foodItem">\
+				<div rel = "'+ object[i]['RecipeID'] +'" class="foodItem">\
 					<div class="foodHead">\
 						<div class = "foodPic">\
-							<img src="'+ typeOfDish[i]['ImageURL'] +'">\
+							<img src="'+ object[i]['ImageURL'] +'">\
 						</div>\
 						<div class = "foodTitle">\
-							<h4>'+ typeOfDish[i]['Title'] +'</h4>\
+							<h4>'+ object[i]['Title'] +'</h4>\
 						</div>\
 					</div>\
 					\
 					<div class = "foodDesc">\
-						<p>'+ typeOfDish[i]['Subcategory'] +'</p>\
+						<p>'+ object[i]['Subcategory'] +'</p>\
 					</div>\
 				</div><!--FoodItem-->');
 		}
 	}
 
-
-	updateFoodItems();
 	
 
 

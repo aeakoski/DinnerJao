@@ -31,6 +31,7 @@ var DinnerModel = function() {
 
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
+
  		for(var k = 0; k < observers.length; k++) {
 			observers[k].update(obj);
 
@@ -73,7 +74,7 @@ var DinnerModel = function() {
 
 	this.setMealType = function (type) {
 		mealType = type;
-		notifyObservers(observers);
+		//notifyObservers(observers);
 	}
 
 	this.getMealType = function() {
@@ -188,35 +189,44 @@ var DinnerModel = function() {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 
-	this.getAllDishes = function () {
-		dishes=[];
-		var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
-		var titleKeyword = this.getInput();
-        var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
-                  + titleKeyword 
-                  + "&api_key="+apiKey;
-		$.ajax({
-	        type: "GET",
-	        dataType: 'json',
-	        async: false,//Jg tror att detta är ett extremt fulfix!!!!!
-	        cache: false,
-	        url: url,
-	        success: function(data){
-	        	//console.log(data);
- 				//console.log(data['Results'].length);
- 				for(var ind = 0; ind<data['Results'].length; ind++){
- 					
- 					dishes[dishes.length]=data['Results'][ind];
- 				}
- 				
- 				
- 			},
- 			error: function(jqXHR, textStatus, errorThrown) {
-  				console.log(textStatus, errorThrown);
-			}
-		});
-		return dishes;
-	}
+	// this.getAllDishes = function (type,filter) {
+	//   return $(dishes).filter(function(index,dish) {
+	// 	var found = true;
+	// 	if(filter){
+	// 		found = false;
+	// 		$.each(dish.ingredients,function(index,ingredient) {
+	// 			if(ingredient.name.indexOf(filter)!=-1) {
+	// 				found = true;
+	// 			}
+	// 		});
+	// 		if(dish.name.indexOf(filter) != -1)
+	// 		{
+	// 			found = true;
+	// 		}
+	// 	}
+	//   	return dish.type == type && found;
+	//   });	
+	// }
+
+	this.getAllDishes = function (keyword, type) {
+		if(typeof(keyword) === 'undefined'){
+			keyword = "cream";
+			type = "dessert";
+		}
+        var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
+        var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="+ keyword +" "+ type + "&api_key=" + apiKey;
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            cache: false,
+            url: url,
+            success: function (data) {
+                alert('success');
+                notifyObservers(data.Results);
+                //console.log(data.Results[0].Title);
+            }
+        });
+    }
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
