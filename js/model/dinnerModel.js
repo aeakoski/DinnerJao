@@ -95,6 +95,7 @@ var DinnerModel = function() {
 		dishCost = 0;
 		for(ii = 0; ii < data['singleDish']['Ingredients'].length; ii++){
 			console.log("sdfgjk");
+
 			dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
 		}
 		notifyObservers({"None":null});
@@ -133,10 +134,10 @@ var DinnerModel = function() {
 		var totPrice = 0;
 		for (i = 0; i< menu.length; i++){
 			for (j = 0; j < menu[i]["Ingredients"].length; j++){
-				totPrice = totPrice + menu[i]["Ingredients"][j]["price"];
+				totPrice = totPrice + menu[i]["Ingredients"][j]["Quantity"];
 			}
 		}
-		return totPrice * nrOfGuests;
+		return (totPrice * nrOfGuests).toFixed(2);
 	}
 
 	//Returns all the dishes on the menu.

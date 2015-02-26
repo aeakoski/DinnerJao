@@ -74,7 +74,11 @@ var ThreeView = function (container,model) {
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
+<<<<<<< HEAD
 			<p class="dName"><span>' + (model.getDishCost() * model.getNumberOfGuests()).toFixed(2) +'</span></p></div>');	
+=======
+			<p class="dName"><span>' + model.getDishCost() * model.getNumberOfGuests() +'</span></p></div>');	
+>>>>>>> 24e0784b482f9a43d19f10067c44935c4d6f9a4b
 		}
 	}
 	
@@ -88,10 +92,7 @@ var ThreeView = function (container,model) {
 	
 
 	var updateIngredients = function (dish) {
-		console.log(dish);
 		$("#ingredients").empty();
-		console.log(model.getNumberOfGuests()+" Såhär många gäster");
-		console.log(model.getDishCost());
 		for (var i = 0; i < dish['Ingredients'].length; i++) {
 			$("#ingredients").append('\
 				<tr>\
