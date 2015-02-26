@@ -32,7 +32,6 @@ var Controller3 = function (view, view2, model) {
 		$("#rightDiv").show();
 		$("#rightTop").show();
 		$("#rightBottom").show();
-
 		view.colorKnapp();
 	});
 

@@ -90,12 +90,22 @@ var DinnerModel = function() {
 		}
 	}
 
-	var setDishCost = function (data) {
 	
-		for(ii = 0; ii< data['singleDish']['Ingredients'].length; ii++){
+	var setDishCost = function (data) {
+		dishCost = 0;
+		for(ii = 0; ii < data['singleDish']['Ingredients'].length; ii++){
+			console.log("sdfgjk");
 			dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
 		}
 		notifyObservers({"None":null});
+	}
+
+	this.updateDishCost = function(d){
+		dishCost = 0;
+		for(iiii = 0; iiii < d['Ingredients'].length; iiii++){
+			console.log("sdfgjk");
+			dishCost += d['Ingredients'][iiii]['Quantity']
+		}
 	}
 
 
