@@ -10,7 +10,7 @@ var Controller2 = function (view, view2, model) {
 		model.getAllDishes();
 		
 		});
-
+	
 
 	//When clickin on a fooditem u come to the next view with dish Specifics
 	$("#dishList").on('click', '.foodItem', function () {
