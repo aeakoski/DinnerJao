@@ -17,16 +17,13 @@ var ThreeView = function (container,model) {
 	this.update = function(obj){
 
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
-		//var cDish = model.getCurrentDish(obj);
 
 		if (typeof(obj['singleDish']) != 'undefined') {
-
 			updateIngredients(obj['singleDish']);
 			updateSelectedDish(obj['singleDish']);
 			updatePending(obj['singleDish']);
 
 		}else if (typeof(obj['number'])!='undefined'){
-			
 			if(model.getCurrentDish() != null){
 				updateIngredients(model.getCurrentDish());
 				updateSelectedDish(model.getCurrentDish());
@@ -54,7 +51,7 @@ var ThreeView = function (container,model) {
 			model.updateDishCost(model.getFullMenu()[a]);
 			$("#dAdded").append('\
 			<div id="dAddedR"><p class="dName col-xs-6"><span>'+ model.getFullMenu()[a]['Title'] +'</span></p>\
-			<p class="dName col-xs-1"><span>'+ (model.getDishCost()).toFixed(2) +'</span></p>\
+			<p class="dName col-xs-1"><span>'+ (model.getDishCost()* model.getNumberOfGuests()).toFixed(2) +'</span></p>\
 			<span rel ="'+ model.getFullMenu()[a]['RecipeID'] +'" class=" hohoho glyphicon glyphicon-remove floatR" style ="color:#BBBBBB;" aria-hidden="false"></span></div>');
 		}
 		this.totalCost = container.find("#totalCost");
@@ -71,6 +68,7 @@ var ThreeView = function (container,model) {
 			}	
 		
 		else{
+			model.updateDishCost(selDish);
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
@@ -93,14 +91,15 @@ var ThreeView = function (container,model) {
 		for (var i = 0; i < dish['Ingredients'].length; i++) {
 			$("#ingredients").append('\
 				<tr>\
-					<td class="col-xs-2">'+dish['Ingredients'][i]["Quantity"] * model.getNumberOfGuests()+' '+ dish['Ingredients'][i]['Unit'] +'</td>\
+					<td class="col-xs-2">'+(dish['Ingredients'][i]["Quantity"]).toFixed(2) * model.getNumberOfGuests()+' '+ dish['Ingredients'][i]['Unit'] +'</td>\
 					<td class="col-xs-6">'+dish['Ingredients'][i]['Name']+'</td>\
 					<td>SEK</td>\
-					<td>'+dish['Ingredients'][i]['Quantity'] * model.getNumberOfGuests() +'</td>\
+					<td>'+(dish['Ingredients'][i]['Quantity'] * model.getNumberOfGuests()).toFixed(2) +'</td>\
 				</tr>');
 		}
+		model.updateDishCost(dish);
 		$("#dishCost").empty();
-		$("#dishCost").append('Dish Cost: '+ model.getDishCost() * model.getNumberOfGuests() +'');
+		$("#dishCost").append('Dish Cost: '+ (model.getDishCost() * model.getNumberOfGuests()).toFixed(2) +'');
 		
 	}
 
