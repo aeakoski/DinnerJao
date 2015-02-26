@@ -14,8 +14,11 @@ var Controller2 = function (view, view2, model) {
 	$("#dishList").on('click', '.foodItem', function () {
 		var dishID = $(this).attr('rel');
 		model.getDish(dishID);
-		//model.setCurrentDish(model.getDish(dishID));
-		//view.update(model.getCurrentDish(dishID));
+
+		// Lägg Loading screenen här!!!
+		//$(load).load.show
+
+
 		$("#rightDiv").hide();
 		$("#rightDivPrep").show();
 
