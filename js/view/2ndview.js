@@ -21,7 +21,6 @@ var SndView = function (container,model) {
 	this.update = function(obj){
 
 		$("#numberOfGuests").html(model.getNumberOfGuests());
-
 		updateFoodItems(obj);
 	}
 

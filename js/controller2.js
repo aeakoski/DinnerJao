@@ -7,7 +7,7 @@ var Controller2 = function (view, view2, model) {
 		});
 
 	
-	var typeOfDish = model.getAllDishes();
+	//var typeOfDish = model.getAllDishes();
 
 	//When clickin on a fooditem u come to the next view with dish Specifics
 	$("#dishList").on('click', '.foodItem', function () {
