@@ -179,15 +179,18 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		
-		var indexToBin = menu.indexOf(this.getDish(id));
-		console.log(indexToBin);
-		if (indexToBin > -1){
-			menu.splice(indexToBin, 1);
+		console.log(menu);
+		for(var indexToBin = 0; indexToBin<menu.length; indexToBin++){
+			if(menu[indexToBin]['RecipeID'] === id){
+				console.log(indexToBin);
+				if (indexToBin > -1){
+					menu.splice(indexToBin, 1);
+				}
+			}
 		}
-
-		notifyObservers();
-		//console.log(menu);
+		console.log(menu);
+		notifyObservers({"None":null});
+		
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")

@@ -19,7 +19,6 @@ var Controller3 = function (view, view2, model) {
 
 	$(document).on("click",".glyphicon-remove",function(){	
 		//Ta bort den valda måltiden från menyn
-		console.log("Klickad jao!!!");
 		model.removeDishFromMenu(parseInt($(this).attr('rel')))
 	});
 	
