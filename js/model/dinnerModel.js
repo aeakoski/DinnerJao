@@ -209,11 +209,9 @@ var DinnerModel = function() {
 	//   });	
 	// }
 
-	this.getAllDishes = function (keyword, type) {
-		if(typeof(keyword) === 'undefined'){
-			keyword = "cream";
-			type = "dessert";
-		}
+	this.getAllDishes = function () {
+		keyword = this.getInput();
+		type = this.getMealType();
         var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="+ keyword +" "+ type + "&api_key=" + apiKey;
         $.ajax({
@@ -224,6 +222,7 @@ var DinnerModel = function() {
             success: function (data) {
                 // alert('success');
                 console.log("sucess");
+                console.log(data);
                 notifyObservers(data.Results);
                 
             }

@@ -3,7 +3,7 @@ var Controller3 = function (view, view2, model) {
 	$("#sendSearch").click(function(){
 			var inp = $("#mainSearch").val()
 			model.setInput(inp);
-			view2.update();
+			model.getAllDishes();
 		});
 
 	$(document).on("mouseover",".glyphicon-remove",function(){	

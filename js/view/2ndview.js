@@ -17,23 +17,21 @@ var SndView = function (container,model) {
 	this.totalCost.html(model.getTotalMenuPrice());
 	this.pendingCost.html(model.getDishCost());
 
-	//model.getAllDishes("cream", "dessert");
 	this.update = function(obj){
-
 		$("#numberOfGuests").html(model.getNumberOfGuests());
+		console.log(obj+" Heey!");
 		updateFoodItems(obj);
 	}
 
 	
 	var updateFoodItems = function(object){
 
-
 		console.log(object, "fghjk");
 		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 			
-			typeOfDish = model.getAllDishes();
-			if(typeOfDish.length===0){
+			//typeOfDish = model.getAllDishes();
+			if(object.length===0){
 				$("#dishList").html('');
 				$("#dishList").html('\
 					<div class="jumbotron">\
@@ -71,21 +69,6 @@ var SndView = function (container,model) {
 				</div><!--FoodItem-->');
 		}
 	}
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
