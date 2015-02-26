@@ -81,17 +81,15 @@ var ThreeView = function (container,model) {
 	
 
 	var updateIngredients = function (dish) {
-		 if (typeof(dish)==='undefined') {
-		 	dish = model.getDish(dish);
-		 }
+		console.log(dish);
 		$("#ingredients").empty();
 
 		for (var i = 0; i < dish['Ingredients'].length; i++) {
 			$("#ingredients").append('\
 				<tr>\
-					<td class="col-xs-2">'+dish['ingredients'][i]["Quantity"] * model.getNumberOfGuests()+' '+ dish['ingredients'][i]['Unit'] +'</td>\
-					<td class="col-xs-6">'+dish['ingredients'][i]['Name']+'</td>\
-					<td>SEK</td>\
+					<td class="col-xs-2">'+dish['Ingredients'][i]["Quantity"] * model.getNumberOfGuests()+' '+ dish['Ingredients'][i]['Unit'] +'</td>\
+					<td class="col-xs-6">'+dish['Ingredients'][i]['Name']+'</td>\
+					<td>SEK </td>\
 					<td>'+dish['Ingredients'][i]["Quantity"]* 1 * model.getNumberOfGuests()+'</td>\
 				</tr>');
 		}

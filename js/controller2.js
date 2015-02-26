@@ -23,18 +23,17 @@ var Controller2 = function (view, view2, model) {
 	$(document).on("mouseover",".foodItem",function(){	
 		//Ändra musen till pointern
 		$(this).css("cursor","pointer");
-		$(this).css("position","relative");
-		$(this).css("bottom","2px");
-		$(this).css("right","2px");
-		$(this).css("box-shadow","3px 3px 3px #888888");
+		$(this).css("height","+=5px");
+		$(this).css("width","+=5px");
+		
 	});
 
 	$(document).on("mouseout",".foodItem",function(){	
 		//Ändra musen till pointern
 		$(this).css("cursor","pointer");
-		$(this).css("right","0px");
-		$(this).css("bottom","0px");
-		$(this).css("box-shadow","0px 0px 0px #888888");
+		$(this).css("height","-=5px");
+		$(this).css("width","-=5px");
+		
 	});
 
 	// $(document).on("mouseover",".foodItem",function(){	
