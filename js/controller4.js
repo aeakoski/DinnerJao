@@ -7,6 +7,9 @@ var Controller4 = function (view,model) {
 			$("#leftMenu").hide();
 			$("#rightDiv").hide();
 			$("#FourthView").show();
+			$("#mainWindow").show();
+			$("#printRecipe").show();
+			$("#concludeDinner").show();
 			$("#FifthView").hide();
 			$("#rightDivPrep").hide();	
 		}else{
