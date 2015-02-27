@@ -38,18 +38,6 @@ var DinnerModel = function() {
 //-------------------- Metoder ---------------------//
 //--------------------------------------------------//
 
-	// this.startLoad = function(){
-	// 	loadActive = true;
-	// }
-
-	// this.endLoad = function(){
-	// 	loadActive = false;
-	// }
-
-	// this.statusLoad = function(){
-	// 	return loadActive;
-	// }
-
  	var notifyObservers = function(obj) {
  		//that will call the update method on all the observers in the array
  		for(var k = 0; k < observers.length; k++) {
@@ -108,8 +96,6 @@ var DinnerModel = function() {
 	var setDishCost = function (data) {
 		dishCost = 0;
 		for(ii = 0; ii < data['singleDish']['Ingredients'].length; ii++){
-			console.log("sdfgjk");
-
 			dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
 		}
 		notifyObservers({"None":null});
@@ -163,6 +149,13 @@ var DinnerModel = function() {
 	//it is removed from the menu and the new one added.
 
 	this.addDishToMenu = function(dish) {
+		for (var matIndex = 0; matIndex<menu.length; matIndex++){
+			if (menu[matIndex]['dishType'] === dish['dishType']) {
+				//console.log(menu[matIndex]['Title'],menu[matIndex]['dishType'] + " and " + dish['Title'],dish['dishType']);
+				menu[matIndex] = dish;
+				return;
+			};
+		}
 		if (menu.length <= 2) {
 			menu[menu.length] = dish;}
 	}
@@ -212,6 +205,11 @@ var DinnerModel = function() {
             cache: false,
             url: url,
 			success: function (data) {
+				console.log(data['Title'] + " " + mealType);
+				data["dishType"]=mealType; // Egen tag för att se vad det är föt mattyp.
+
+                console.log(data.length + "  " +data['dishType']+" sdfghjgfdsasdfghjkjfds");
+
                 currentDish = data;
                 var dataToSend = {'singleDish':data}; 
 				setDishCost(dataToSend);  

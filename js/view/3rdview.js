@@ -87,6 +87,7 @@ var ThreeView = function (container,model) {
 	}
 	
 	var updateSelectedDish = function (selectedDish) {
+		$('#backButton').css("visibility", "visible");
 		$("#prepDish").empty();
 		$("#prepDish").append('\
 		<h2 id ="dishHeadder" rel ="'+ selectedDish['RecipeID']+'">' + selectedDish['Title'] + '</h2>\
@@ -96,6 +97,7 @@ var ThreeView = function (container,model) {
 	
 
 	var updateIngredients = function (dish) {
+		$('#confirmDish').css("visibility", "visible");
 		$("#ingredients").empty();
 		for (var i = 0; i < dish['Ingredients'].length; i++) {
 			$("#ingredients").append('\
@@ -106,6 +108,7 @@ var ThreeView = function (container,model) {
 					<td>'+(dish['Ingredients'][i]['Quantity'] * model.getNumberOfGuests()).toFixed(2) +'</td>\
 				</tr>');
 		}
+		$('#dishCost').css("visibility", "visible");
 		model.updateDishCost(dish);
 		$("#dishCost").empty();
 		$("#dishCost").append('Dish Cost: '+ (model.getDishCost() * model.getNumberOfGuests()).toFixed(2) +'');
