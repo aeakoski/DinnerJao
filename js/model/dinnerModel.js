@@ -144,6 +144,19 @@ var DinnerModel = function() {
 		return menu
 	}
 
+	this.sortMenu = function(menuItem){
+		var sortedMenu = [];
+		var l = ["starter", "main dish", "dessert"];
+		for(var li = 0; li < 3; li++){
+			for(var lii = 0; lii< menuItem.length; lii++){
+				if (menuItem[lii]['dishType'] === l[li] ){
+					sortedMenu[sortedMenu.length] = menuItem[lii];
+				}
+			}
+		}
+		return sortedMenu;
+	}
+
 	
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
@@ -157,7 +170,9 @@ var DinnerModel = function() {
 			};
 		}
 		if (menu.length <= 2) {
-			menu[menu.length] = dish;}
+			menu[menu.length] = dish;
+		}
+		menu = this.sortMenu(menu);
 	}
 
 	//Removes dish from menu
@@ -205,12 +220,9 @@ var DinnerModel = function() {
             cache: false,
             url: url,
 			success: function (data) {
-				console.log(data['Title'] + " " + mealType);
 				data["dishType"]=mealType; // Egen tag för att se vad det är föt mattyp.
-
-                console.log(data.length + "  " +data['dishType']+" sdfghjgfdsasdfghjkjfds");
-
                 currentDish = data;
+                
                 var dataToSend = {'singleDish':data}; 
 				setDishCost(dataToSend);  
                 notifyObservers(dataToSend);
