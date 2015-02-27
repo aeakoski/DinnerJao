@@ -3,7 +3,6 @@ var FourthView = function (container,model) {
 	model.addObserver(this);
 
 	this.numberOfGuests = container.find("#numberOfGuests");
-	//this.numberOfGuests.html(model.getNumberOfGuests());
 	this.totalCost = container.find("#totalCost");
 	this.menuItem = container.find("#menuItem");
 

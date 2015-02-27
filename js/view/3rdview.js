@@ -1,13 +1,9 @@
 var ThreeView = function (container,model) {
-	
 	model.addObserver(this);
 
 	this.numberOfGuests = container.find("#numberOfGuests2");
-	this.dishList = container.find("#dishList");
 	this.totalCost = container.find("#totalCost");
-	this.mealType = container.find("#mealType");
 	this.prepDish = container.find("#prepDish");
-	this.ingredientsTable = container.find("#ingredients");
 	this.dPending = container.find("#dPending");
 
 	this.totalCost.html(model.getTotalMenuPrice());
@@ -24,7 +20,6 @@ var ThreeView = function (container,model) {
 	}
 
 	this.update = function(obj){
-
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
 
 		if (typeof(obj['singleDish']) != 'undefined') {
@@ -81,8 +76,7 @@ var ThreeView = function (container,model) {
 			$("#dPending").empty();
 			$("#dPending").append('\
 			<div id="dAddedR"> <p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="dName"><span>' + (model.getDishCost() * model.getNumberOfGuests()).toFixed(2) +'</span></p></div>');	
-
+			<p class="dName"><span>' + (model.getDishCost() * model.getNumberOfGuests()).toFixed(2) +'</span></p></div>');
 		}
 	}
 	
@@ -112,8 +106,6 @@ var ThreeView = function (container,model) {
 		model.updateDishCost(dish);
 		$("#dishCost").empty();
 		$("#dishCost").append('Dish Cost: '+ (model.getDishCost() * model.getNumberOfGuests()).toFixed(2) +'');
-		
 	}
-
 }
 

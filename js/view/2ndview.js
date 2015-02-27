@@ -1,16 +1,10 @@
 var SndView = function (container,model) {
-
 	//add view as observer of model
 	model.addObserver(this);
 
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.dishList = container.find("#dishList");
 	this.totalCost = container.find("#totalCost");
-	this.mealType = container.find("#mealType");
-	this.prepDish = container.find("#prepDish");
-	this.ingredientsTable = container.find("#ingredients");
-	
-    this.dPending = container.find("#dPending");
     this.pendingCost = container.find("#pendingCost");
 
 	this.totalCost.html(model.getTotalMenuPrice());
@@ -24,15 +18,12 @@ var SndView = function (container,model) {
 
 	this.update = function(obj){
 		$("#numberOfGuests").html(model.getNumberOfGuests());
-		//console.log(obj+"i 2ndViews update-funktion");
-
 		if (typeof(obj['dishList']) != 'undefined') {
 			updateFoodItems(obj['dishList']);
 		}
 	}
 
 	var updateFoodItems = function(object){
-
 		if($("#mainSearch").val().length != 0  ){
 			//Om det finns saker i söklistan importera den
 
@@ -44,12 +35,7 @@ var SndView = function (container,model) {
 						 <p></br>Your search for "<i>'+ $("#mainSearch").val() +'</i>" did not yeald any matches. Please type in another key word and try again.</p>\
 					</div>');
 					return;				
-
 			}
-
-		}else{
-			//Annars så visa alla maträtter innom vald kategori
-			//var typeOfDish = model.getAllDishes("cream", "dessert");
 		}
 
 		$("#dishList").html('');
@@ -71,7 +57,4 @@ var SndView = function (container,model) {
 				</div><!--FoodItem-->');
 		}
 	}
-
-
-
 }
