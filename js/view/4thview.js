@@ -15,7 +15,8 @@ var FourthView = function (container,model) {
 		dish = model.getFullMenu();
 		$("#menuItem").empty();
 		for (var g = 0; g<dish.length; g++) {
-
+		console.log(model.menu)
+		model.updateDishCost(model.getFullMenu()[g]);
 		$("#menuItem").append('\
 			<div class="foodIcons " >\
 				<div class = "foodPic">\
@@ -23,7 +24,7 @@ var FourthView = function (container,model) {
 				</div>\
 				<div class = "foodTitle">\
 					<h4>'+ dish[g]['Title'] +'</h4>\
-					<span>SEK: '+ model.getDishCost(dish[g]['RecipeID']) +'</span>\
+					<span>SEK: '+ model.getDishCost(dish[g]['RecipeID']) * model.getNumberOfGuests() +'</span>\
 				</div>\
 			</div>');
 		}

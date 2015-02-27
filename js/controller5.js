@@ -4,7 +4,9 @@ var Controller5 = function (view,model) {
 		view.update();
 		$("#leftMenu").hide();
 		$("#rightDiv").hide();
-		$("#FourthView").hide();
+		$("#mainWindow").hide();
+		$("#printRecipe").hide();
+		$("#concludeDinner").hide();
 		$("#FifthView").show();
 
 

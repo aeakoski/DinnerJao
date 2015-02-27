@@ -221,9 +221,11 @@ var DinnerModel = function() {
             url: url,
 			success: function (data) {
 				data["dishType"]=mealType; // Egen tag för att se vad det är föt mattyp.
+
                 currentDish = data;
                 
                 var dataToSend = {'singleDish':data}; 
+
 				setDishCost(dataToSend);  
                 notifyObservers(dataToSend);
                               
