@@ -204,7 +204,7 @@ var DinnerModel = function() {
             cache: false,
             url: url,
             error: function(){
-            	var dataToSend = {'SearchError':true}
+            	var dataToSend = {'searchError':true};
             	notifyObservers(dataToSend);
             },
             success: function (data) {

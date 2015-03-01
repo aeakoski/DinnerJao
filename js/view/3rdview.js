@@ -19,6 +19,20 @@ var ThreeView = function (container,model) {
 			<img id="load2" src="images/puhfood3.gif">');
 	}
 
+	var recipieError = function(){
+		$("#load").remove();
+		$("#leftDivRecepie").css("visibility","visible");
+		$("#rightDivRecepie").css("visibility", "hidden")
+		$(".jumbotron").remove();
+		$("#rightDivPrep").prepend('\
+		<div class="jumbotron" style="margin:10pt;">\
+			 <h2>Something wierd happened!</h2>\
+			 <p></br>The food-server yeald an error. Please check your internet connection and/or go back to the previous page and try again.</p>\
+		</div>\
+		');
+		$('#backButton').css("visibility", "visible");
+	}
+
 	this.update = function(obj){
 		$("#numberOfGuests2").html(model.getNumberOfGuests());
 
@@ -32,6 +46,8 @@ var ThreeView = function (container,model) {
 				updateIngredients(model.getCurrentDish());
 				updateSelectedDish(model.getCurrentDish());
 			}
+		}else if (typeof(obj['SingleError'])!='undefined'){
+			recipieError();
 		}
 		updatePending(model.getCurrentDish());
 		updateMenu();
