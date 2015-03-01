@@ -15,7 +15,6 @@ var FourthView = function (container,model) {
 		dish = model.getFullMenu();
 		$("#menuItem").empty();
 		for (var g = 0; g<dish.length; g++) {
-		console.log(model.menu)
 		model.updateDishCost(model.getFullMenu()[g]);
 		$("#menuItem").append('\
 			<div class="foodIcons " >\
