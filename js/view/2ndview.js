@@ -21,6 +21,18 @@ var SndView = function (container,model) {
 		if (typeof(obj['dishList']) != 'undefined') {
 			updateFoodItems(obj['dishList']);
 		}
+		else if (typeof(obj['searchError'] != 'undefined')) {
+			displaySearchError();
+		};
+	}
+
+	var displaySearchError = function(){
+		$("#dishList").html('');
+		$("#dishList").html('\
+			<div class="jumbotron">\
+				 <h2>Something wierd happened!</h2>\
+				 <p></br>The food-server yeald an error. Please check your internet connection and try again.</p>\
+			</div>');
 	}
 
 	var updateFoodItems = function(object){

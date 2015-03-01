@@ -203,6 +203,10 @@ var DinnerModel = function() {
             dataType: 'json',
             cache: false,
             url: url,
+            error: function(){
+            	var dataToSend = {'SearchError':true}
+            	notifyObservers(dataToSend);
+            },
             success: function (data) {
                 var dataToSend = {'dishList':data.Results}; 
                 notifyObservers(dataToSend); 
@@ -219,6 +223,10 @@ var DinnerModel = function() {
             dataType: 'json',
             cache: false,
             url: url,
+            error: function(){
+            	var dataToSend = {'SingleError':true}
+            	notifyObservers(dataToSend);
+            },
 			success: function (data) {
 				data["dishType"]=mealType; // Egen tag för att se vad det är föt mattyp.
 
