@@ -230,6 +230,10 @@ var DinnerModel = function() {
                 notifyObservers(dataToSend);
                               
             }
+            // error: function (error) { borde fixas här en error funktion så om internet dör försvinner katten
+            // 	// body...
+            // 	notifyObservers
+            // }
         });
     }
 
