@@ -1,5 +1,7 @@
 var MainView = function (container) {
-	$("#leftMenu").hide();
+	this.leftMenu = container.find("#leftMenu")
+
+	this.leftMenu.hide();
 	$("#rightDiv").hide();
 	$("#rightBottom").hide();
 	$("#rightDivPrep").hide();
