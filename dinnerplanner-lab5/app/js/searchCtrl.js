@@ -30,7 +30,7 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 			for (i = 0; i<data.Results.length; i++) {
 				var dishID = data.Results[i]['RecipeID'];
 				$("#dishList").append('\
-					<a href="#/dish/'+ dishID + '"><div rel = "'+ data.Results[i]['RecipeID'] +'" class="foodItem ">\
+					<a href="#/dish/'+ dishID + '" ng-click="selectedDish()"><div rel = "'+ data.Results[i]['RecipeID'] +'" class="foodItem ">\
 						<div class="foodHead">\
 							<div class = "foodPic">\
 								<img src="'+ data.Results[i]['ImageURL'] +'">\
