@@ -17,37 +17,43 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 	    	console.log($scope.status);
 
 	    	if (data.Results.length === 0) {
-	    	$("#dishList").html('');
-				$("#dishList").html('\
-					<div class="jumbotron">\
-						 <h2>Did not found what you were looking for in the pantry!</h2>\
-						 <p></br>Your search for "<i>'+ Dinner.getInput() +'</i>" did not yeald any matches. Please type in another key word and try again.</p>\
-					</div>');
-					return;
+		    	$("#dishList").html('');
+					$("#dishList").html('\
+						<div class="jumbotron">\
+							 <h2>Did not found what you were looking for in the pantry!</h2>\
+							 <p></br>Your search for "<i>'+ Dinner.getInput() +'</i>" did not yeald any matches. Please type in another key word and try again.</p>\
+						</div>');
+						return;
 			}
 
 	    	$("#dishList").html('');
 			for (i = 0; i<data.Results.length; i++) {
-			$("#dishList").append('\
-				<div rel = "'+ data.Results[i]['RecipeID'] +'" class="foodItem">\
-					<div class="foodHead">\
-						<div class = "foodPic">\
-							<img src="'+ data.Results[i]['ImageURL'] +'">\
+				$("#dishList").append('\
+					<div rel = "'+ data.Results[i]['RecipeID'] +'" class="foodItem">\
+						<div class="foodHead">\
+							<div class = "foodPic">\
+								<img src="'+ data.Results[i]['ImageURL'] +'">\
+							</div>\
+							<div class = "foodTitle">\
+								<h4>'+ data.Results[i]['Title'] +'</h4>\
+							</div>\
 						</div>\
-						<div class = "foodTitle">\
-							<h4>'+ data.Results[i]['Title'] +'</h4>\
+						\
+						<div class = "foodDesc">\
+							<p>'+ data.Results[i]['Subcategory'] +'</p>\
 						</div>\
-					</div>\
-					\
-					<div class = "foodDesc">\
-						<p>'+ data.Results[i]['Subcategory'] +'</p>\
-					</div>\
-				</div><!--FoodItem-->');
-		}
+					</div><!--FoodItem-->');
+			}
 
 	   },function(data){
-	   		console.log($scope.status);
+
 	    	$scope.status = "There was an error";
+			console.log($scope.status);
+	    	$("#dishList").html('\
+			<div class="jumbotron">\
+				 <h2>Something wierd happened!</h2>\
+				 <p></br>The food-server yeald an error. Please check your internet connection and try again.</p>\
+			</div>');
 	    	
 	   });
 	}
