@@ -58,6 +58,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   this.setNumberOfGuests = function(num) {
     nrOfGuests = num;
+    console.log("Jag sket på mig!!!!")
     var dataToSend = {'number':num}; 
   }
 
