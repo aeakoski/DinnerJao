@@ -11,10 +11,10 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
     return Dinner.getNumberOfGuests();
   }
 
-  	$scope.status = "Searching...";
+	$scope.status = "Searching...";
 
-	   	$("#prepDish").empty();
-		$("#prepDish").html('\
+	$("#prepDish").empty();
+	$("#prepDish").html('\
 			<img id="load" src="images/puhfood.gif">');
   
 

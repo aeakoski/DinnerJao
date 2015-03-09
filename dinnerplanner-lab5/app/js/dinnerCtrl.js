@@ -12,6 +12,7 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	}
 
 	$scope.setNumberOfGuest = function(number){
+		console.log("HAATAAA");
 	Dinner.setNumberOfGuests(number);
 	}
 
