@@ -10,14 +10,14 @@ Instructions, Ingredients and total cost. -->
 			<div id="prepDish">
 				<!--Preparation instructions for dish is shown here-->
 			</div>
-			<a href="#/search" ng-click="search(Dinner.getInput())" type="button" id ="backButton" class="backToEdit btn btn-warning">Back to Select Dish</a>
+			<a href="#/search" type="button" id ="backButton" class="backToEdit btn btn-warning">Back to Select Dish</a>
 			
 		</div><!--rightDivPrep-->
 		
 	
 		<div id= "rightDivRecepie" class = "panel panel-default col-xs-6">
 			
-			<p id="headLine">Ingredients For {{getNumberOfGuests()}} People</p> <!--View ska styra över Nolan-->
+			<p id="headLine">Ingredients For {{getNumberOfGuests()}} People</p>
 
 			<hr>
 
@@ -28,7 +28,8 @@ Instructions, Ingredients and total cost. -->
 
 			<hr>
 			<div>
-				<a href="" type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</a>
+
+				<a ng-click="addDishToMeny()" ng-href="#/search" type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</a>
 
 				<span  id ="dishCost" class="floatR">{{getIngCost}}</span> <!--View ska styra över totalkostnaden-->
 			

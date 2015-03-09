@@ -1,10 +1,13 @@
 // Dinner controller that we use whenever we have view that needs to 
 // display or modify the dinner menu
 dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
-
+	$scope.addDishToMeny = function(){
+		console.log("AddDish to menu ska exikveras nu!");
+		Dinner.addDishToMeny();
+	}
 	$scope.numberOfGuests = Dinner.getNumberOfGuests();
 
-	$scope.getIngCost = function(d){
+	$scope.getIngCost = function(){
 		Dinner.getDishCost();
 	}
 
@@ -29,9 +32,11 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	}
 
 	$scope.updateMenu = function(){
+		console.log("Updaterar menyn")
+		console.log(Dinner.getFullMenu().length);
 		$("#dAdded").empty();
 		for( var a = 0 ; a < Dinner.getFullMenu().length ; a++){
-			Dinner.updateDishCost(model.getFullMenu()[a]);
+			Dinner.updateDishCost(Dinner.getFullMenu()[a]);
 			$("#dAdded").append('\
 			<div id="dAddedR"><p class="dName col-xs-6"><span>'+ Dinner.getFullMenu()[a]['Title'] +'</span></p>\
 			<p class="dName col-xs-1"><span>'+ (Dinner.getDishCost()* Dinner.getNumberOfGuests()).toFixed(2) +'</span></p>\
@@ -49,6 +54,5 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	$scope.getInput = function () {
 		return Dinner.getInput();
 	}
-
 
 });

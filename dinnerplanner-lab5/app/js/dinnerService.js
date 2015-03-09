@@ -52,7 +52,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   this.setCurrentDish = function(data){
     if (data==null){
     }
+    
     currentDish = data;
+    console.log(currentDish['Title']);
   }
 
   this.getCurrentDish = function(){
@@ -156,8 +158,10 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
 
-  this.addDishToMenu = function(dish) {
-    for (var matIndex = 0; matIndex<menu.length; matIndex++){
+  this.addDishToMenu = function() {
+    console.log(currentDish['Title']+" till menyn");
+    menu[menu.length] = currentDish;
+    /*for (var matIndex = 0; matIndex<menu.length; matIndex++){
       if (menu[matIndex]['dishType'] === dish['dishType']) {
         //console.log(menu[matIndex]['Title'],menu[matIndex]['dishType'] + " and " + dish['Title'],dish['dishType']);
         menu[matIndex] = dish;
@@ -167,7 +171,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     if (menu.length <= 2) {
       menu[menu.length] = dish;
     }
-    menu = this.sortMenu(menu);
+    menu = this.sortMenu(menu);*/
   }
 
   //Removes dish from menu

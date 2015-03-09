@@ -11,7 +11,6 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
     return Dinner.getNumberOfGuests();
   }
 
-
   	$scope.status = "Searching...";
 
 	   	$("#prepDish").empty();
@@ -22,6 +21,8 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 	Dinner.Dish.get({id:$routeParams['dishId']},function(data){
     	$scope.dish = data;
     	$scope.status = "found " + data.Results + " result";
+
+    		Dinner.setCurrentDish(data);
 
 	    	$("#prepDish").empty();
 			$("#prepDish").append('\
