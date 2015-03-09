@@ -1,0 +1,441 @@
+html{
+	border-left: 7pt solid #fbfbfb;
+	border-right: 7pt solid #fbfbfb;
+}
+
+body{
+	background-image: url("images/dark-wood-and-vegetables.jpg");
+	background-color: #fbfbfb;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+h2{
+	color: #CABE9A !important;
+}
+
+#load{
+	width: 50%;
+	height: 50%;
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#load2{
+	width: 10%;
+	height: 10%;
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+#wrapper{
+	position: relative;
+	min-height: 100%;
+}
+
+#bottomBorder{
+	width:100%;
+	height:7pt;
+	position:fixed;
+	bottom:0;
+	left:0;
+	background:#fbfbfb;
+}
+
+#header{
+	background-color: #fbfbfb;
+	padding: 10pt;
+	padding-left: 25pt;
+	height: 65pt;
+	z-index: 100;
+	position: relative;
+}
+
+#subHeader-back-button{
+	margin-top: -33pt;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ BOOTSTRAP MODIFICATIONS ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ BOOTSTRAP MODIFICATIONS ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ BOOTSTRAP MODIFICATIONS ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+
+.btn-warning {
+	color: #fff;
+	background-color: rgb(202, 190, 154) !important;
+	border:none !important;
+	border-radius: 2pt !important;
+}
+
+.btn-warning:hover{
+	background-color: #BFB391 !important;
+}
+
+.btn-default{
+	color: #fff !important;
+	background-color: #E4DFCE !important;
+	border:none !important;
+	border-radius: 2pt !important;
+	box-shadow: none;
+	border-style: none;
+	margin-top: 0 !important;
+
+}
+
+.row{
+	margin-left: 0pt !important;
+}
+
+.panel-default{
+	border:none !important;
+}
+
+.panel-body{
+	background-color: #fbfbfb !important;
+}
+
+.panel-heading{
+	background-color: #fbfbfb !important;
+}
+
+.container-fluid{
+	padding-bottom: 7pt;
+	padding-left: 0pt;
+	padding-right: 0pt;
+}
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ C ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ L ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ A ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ S ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ S ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ E ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ S ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+
+.floatL{
+	float: left;
+}
+
+.floatR{
+	float: right;
+}
+
+.dispInline{
+	display: inline;
+}
+
+.title{
+	font-family: 'Cuprum', sans-serif;
+	font-weight: 800;
+	display: inline-block;
+	font-size: 27pt;
+	padding-right: 25pt;
+	color: #CABE9A;
+}
+
+.subTitle{
+	font-family: 'Cuprum', sans-serif;
+	font-size: 10pt;
+	display: inline-block;
+	color: #CABE9A;
+}
+
+.subHeadder{
+	margin-bottom: 8%;
+	width: 100%;
+	padding: 1.5%;
+	color: #CABE9A;
+	background-color: rgba(45, 45, 45, 0.64);
+}
+
+.foodItem{
+	width: 200px;
+	height: 300px;
+	min-width: 140px;
+	display: inline-block;
+	margin: 10pt;
+	overflow: hidden;
+	border-style:solid;
+	border-color: #DADADA;
+	border-width: 2px;
+	border-radius:5px 5px 0px 0px;
+}
+
+.foodPic img{
+	width: 200px;
+	height: 150px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.foodIcons{
+	width: 200px;
+	float: left;
+	margin: 30px;
+}
+
+.foodDesc{
+	height: 81pt;
+  	overflow-y: auto;
+}
+
+.foodDesc p {
+	margin: 5pt;
+}
+
+.foodChoice{
+	width: 100%;
+	display: block;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ FourthView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ FourthView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ FourthView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+#FourthView{
+	color: #fbfbfb;
+}
+
+#FourthView img{
+	height: 150pt;
+	width: 150pt;
+	border: 2pt solid #fbfbfb;
+	border-radius: 75pt;
+}
+
+#FourthView .foodTitle{
+	text-align: center;
+}
+
+#FourthView .panel{
+	background:none;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ mainView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ mainView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ mainView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+#welcomeTitle{
+	font-family: 'Cuprum', sans-serif;
+	font-size: 20pt;
+	color: #CABE9A;
+	padding-top: 7pt;
+}
+
+#welcome{
+	background-color: #fbfbfb;
+	margin-top: 20%;
+	width: 25%;
+	min-width: 400px;
+	margin-left: -26%;
+}
+#mealType{
+	margin-right: 2pt;
+}
+
+
+#welcome p{
+	font-size: 10pt;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 2ndView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 2ndView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 2ndView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+#mainSearch{
+	width: 350pt;
+	display: inline;
+	margin-top: 1px;
+}
+
+#rightDiv{
+	float: right;
+	width: 65%;
+}
+
+#rightTop{
+	margin-bottom: 0pt;
+	border: none;
+	border-radius: 0;
+	background-color: #fbfbfb;
+}
+
+#rightBottom{
+	height: 400pt;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#rightBottomInner{
+	margin-top: 0px;
+	border: none;
+	border-radius: 0pt;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ leftMenu ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ leftMenu ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ leftMenu ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+#leftMenu{
+	margin-top:0pt;
+	background-color: #fbfbfb;
+	height:20%;
+	padding: 0pt;
+}
+
+#frameLeftMenu{
+	border: 1pt solid;
+	border-color: #BFB391;
+	border-radius: 4pt;
+	padding: 10pt;
+}
+
+#dDesc{
+	height: 45px;
+	border-top-style: solid;
+	border-color: #969696;
+	border-bottom-style: solid;
+	background-color: rgba(213, 203, 175, 0.62);
+	margin: 10pt 0px 10pt 0px;
+}
+
+#dAdded{
+	min-height: 45px;
+	margin: 10px 0px 10px 0px;
+	display: block;
+}
+
+#dAddedR{
+	border: 1px solid rgb(221, 221, 221);
+	background-color: #EEEEEE;
+	border-radius: 3px;
+	min-height: 45px;
+	display: block;
+	margin-bottom: 5px;
+	max-height: 65px;
+	overflow-y: auto;
+}
+
+#dPending{
+	min-height: 45px;
+	margin: 10px 0px 10px 0px;
+	display: block;
+}
+
+#dName{
+	display: inline-block;
+	margin: 7px;	
+}
+
+#tCost{
+	text-align: right;
+	float: right;
+}
+
+#sendSearch{
+	margin: 0pt;
+	background-color: #CABE9A;
+	color: white;
+	height:27pt;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+}
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 3rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 3rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 3rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+#rightDivPrep{
+	min-width: 500px;
+	float:right;
+	border: none;
+	border-radius: 0pt;
+	background-color: #fbfbfb;
+}
+
+#rightDivPrep .panel{
+	box-shadow: none;
+	border-radius: 0pt;
+	background-color: #fbfbfb;
+}
+
+#rightDivPrep .panel-default{
+	box-shadow: none;
+	border: none;
+	border-radius: 0pt;
+	background-color: #fbfbfb;
+}
+
+#rightDivRecepie {
+	border: 1pt solid #BFB391 !important;
+	border-radius: 4pt !important;
+	padding: 10pt;
+}
+
+#rightDivRecepie{
+	height:100%;
+	float: right;
+	padding-bottom: 10pt;
+}
+
+#prepDish img{
+	width: 280pt;
+	height: 280pt;
+}
+#ingredients{
+	width: 100%;
+}
+
+#headLine{
+	color: #CABE9A;
+	font-size: 15pt;
+	padding-top: 10pt;
+}
+
+
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 4rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 4rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+/*≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠ 4rdView ≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠*/
+#upperDish{
+	display: block;
+	margin: 20pt;
+	color: #fbfbfb;
+	margin-bottom: 5%;
+}
+
+#upperDish img{
+	height: 150pt;
+	width: 150pt;
+	border: 2pt solid #fbfbfb;
+	border-radius: 75pt;
+}
+
+#concludeDinner{
+	border-left-style: solid;
+	height: 250px;
+}
+
+#concludeDinner p{
+	margin-top: 25%;
+	text-align: center;
+	font-size: 25pt;
+}
+
+#concludeDinner #totalCost{
+	margin-left: 31%;
+	font-size: 25pt;
+
+}
+
+#concludeDinner #p2{
+	margin-left: 45%;
+	font-size: 25pt;
+}
+
