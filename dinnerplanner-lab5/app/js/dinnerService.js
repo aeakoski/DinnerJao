@@ -39,10 +39,12 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   //--------------------------------------------------//
 
   this.setInput = function(input){
+    console.log(userInp);
     userInp = input;
   }
 
   this.getInput = function(){
+    console.log(userInp);
     return userInp;
   }
 

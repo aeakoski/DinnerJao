@@ -3,21 +3,34 @@
 
 <!-- TODO in Lab 5: Display the input box for search (you can ignore the type dropdown since BigOven does
 not support it in free version) and list all the dishes that match the search. -->
+<div id="rightDiv">
+	<div id="rightTop" class="panel panel-default">
 
-<div id="rightTop" class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title" id="welcomeTitle">Select Disch</h3>
+		</div>
 
-	<div class="panel-heading">
-		<h3 class="panel-title" id="welcomeTitle">Select Disch</h3>
-	</div>
+		<div class="row panel-body">
 
-	<div class="row panel-body">
+			<input type="text" ng-model="usrInput" ng-change="setInput(usrInput)" id ="mainSearch" class="form-control" maxlength="30" placeholder="Enter key words">
+				    		
+			<button ng-click="search(getInput)" id="sendSearch">Search Jao!</button>
 
-		<input type="text" ng-model="userInp" ng-change="Dinner.setInput(userInp)" id ="mainSearch" class="form-control" maxlength="30" placeholder="Enter key words">
+		</div>
 
-		JAOJAOJAO!!!{{Dinner.getInput()}}
-			    		
-		<button id="sendSearch">Search Jao!</button>
+	</div> <!--RightTop-->
 
-	</div>
 
-</div> <!--RightTop-->
+
+		<div id="rightBottom">
+
+			<div class="panel panel-default" id="rightBottomInner">
+				<div id = "dishList" class="panel-body">
+					<!--Här sätter javascript in code-->  
+				</div>
+			</div><!--Panel-->
+
+		</div><!--rightBottom-->
+
+</div> <!--rightDiv-->
+		

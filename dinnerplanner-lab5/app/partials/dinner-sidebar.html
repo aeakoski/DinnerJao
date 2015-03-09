@@ -11,23 +11,18 @@
 
 			Number of guests: {{getNumberOfGuests()}}
 
+			<div id= "dDesc">
+				<div><p><span class="dName col-xs-6">Dish Name</span><span class="dCost">Cost</span></p></div>
+			</div>
 
-						<div id= "dDesc">
-							<div><p><span class="dName col-xs-6">Dish Name</span><span class="dCost">Cost</span></p></div>
-						</div>
-
-						<div id ="dAdded">
-							<!-- Här kommer de tilaggda rätterna -->
-							{{updateMenu()}}
-						</div>
-
-						<div id= "dPending">
-							<!-- Här kommer den pendingande rätten -->
-							{{updatePending()}}
-						</div>
+			<div id ="dAdded">
+				<!-- Här kommer de tilaggda rätterna -->
+				{{updateMenu()}}
+			</div>
 
 			<div id= "dPending">
 				<!-- Här kommer den pendingande rätten -->
+				{{updatePending()}}
 			</div>
 
 			<hr size="3">
@@ -39,7 +34,6 @@
 		</div>
 	</div>
 </div><!--leftMenu-->
-
 
 <!-- Displaying number of guests both in input box and here is redundant. It is here only for the example
 purpose so you can see how some information from the model can be retrieved. In Lab 5 you will replace 
