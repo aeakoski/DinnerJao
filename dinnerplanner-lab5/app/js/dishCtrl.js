@@ -6,4 +6,38 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
   // $routingParams.paramName
   // Check the app.js to figure out what is the paramName in this case
   //'/dish/:dishId'
-});
+
+  $scope.getNumberOfGuests = function() {
+    return Dinner.getNumberOfGuests();
+  }
+
+	Dinner.Dish.get({id:$routeParams['dishId']},function(data){
+    	$scope.dish = data;
+    	$scope.status = "found " + data.Results + " result";
+
+	    	$("#prepDish").empty();
+			$("#prepDish").append('\
+			<h2 id ="dishHeadder" rel ="'+ data['dishId']+'">' + data['Title'] + '</h2>\
+			<img src="'+ data['ImageURL'] +'">\
+			<p>' + data['Instructions'] + '</p>');
+
+			$("#ingredients").empty();
+			for (var i = 0; i < data['Ingredients'].length; i++) {
+				$("#ingredients").append('\
+					<tr>\
+						<td class="col-xs-2">'+(data['Ingredients'][i]["Quantity"]).toFixed(2) * Dinner.getNumberOfGuests()+' '+ data['Ingredients'][i]['Unit'] +'</td>\
+						<td class="col-xs-6">'+data['Ingredients'][i]['Name']+'</td>\
+						<td>SEK</td>\
+						<td>'+(data['Ingredients'][i]['Quantity'] * Dinner.getNumberOfGuests()).toFixed(2) +'</td>\
+					</tr>');
+			}
+
+			$("#dishCost").empty();
+			$("#dishCost").append('Dish Cost: '+ (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2) +'');
+
+		},function(data){
+
+	    	$scope.status = "There was an error";
+	    	
+	   });
+	});

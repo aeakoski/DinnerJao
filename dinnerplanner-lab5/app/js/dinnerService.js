@@ -34,6 +34,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey}); 
 
+
   //--------------------------------------------------//
   //-------------------- Metoder ---------------------//
   //--------------------------------------------------//

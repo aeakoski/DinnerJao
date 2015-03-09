@@ -10,11 +10,9 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 		$("#dishList").html('\
 			<img id="load" src="images/puhfood.gif">');
 	
-	   	console.log($scope.status);
 	   	Dinner.DishSearch.get({title_kw:query},function(data){
 	    	$scope.dishes = data.Results;
 	    	$scope.status = "Showing " + data.Results.length + " results";
-	    	console.log($scope.status);
 
 	    	if (data.Results.length === 0) {
 		    	$("#dishList").html('');
@@ -28,8 +26,9 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 
 	    	$("#dishList").html('');
 			for (i = 0; i<data.Results.length; i++) {
+				var dishID = data.Results[i]['RecipeID'];
 				$("#dishList").append('\
-					<div rel = "'+ data.Results[i]['RecipeID'] +'" class="foodItem">\
+					<a href="#/dish/'+ dishID + '"><div rel = "'+ data.Results[i]['RecipeID'] +'" class="foodItem ">\
 						<div class="foodHead">\
 							<div class = "foodPic">\
 								<img src="'+ data.Results[i]['ImageURL'] +'">\
@@ -42,13 +41,13 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 						<div class = "foodDesc">\
 							<p>'+ data.Results[i]['Subcategory'] +'</p>\
 						</div>\
-					</div><!--FoodItem-->');
+					</div></a><!--FoodItem-->');
 			}
 
 	   },function(data){
 
 	    	$scope.status = "There was an error";
-			console.log($scope.status);
+
 	    	$("#dishList").html('\
 			<div class="jumbotron">\
 				 <h2>Something wierd happened!</h2>\

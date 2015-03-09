@@ -38,14 +38,11 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	}
 
 	$scope.setInput = function (inp) {
-		// body...
-		console.log("den setter inpo)");
 		return Dinner.setInput(inp);
 
 	}
 
 	$scope.getInput = function () {
-		// body...
 		return Dinner.getInput();
 	}
 
