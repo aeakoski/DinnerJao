@@ -28,6 +28,12 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   var dishCost = 0;
 
+  var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
+    
+  this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey});
+
+  this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey}); 
+
   //--------------------------------------------------//
   //-------------------- Metoder ---------------------//
   //--------------------------------------------------//
@@ -174,21 +180,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
-
-  this.getAllDishes = function () {
-    keyword = this.getInput();
-    type = this.getMealType();
-    var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
-    var url = "http://api.bigoven.com/recipes?pg=1&rpp=10&title_kw="+ keyword +" "+ type + "&api_key=" + apiKey;
-    
-  }
-
-  //function that returns a dish of specific ID
-  this.getDish = function (RecipeID) {
-    var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
-    var url = "http://api.bigoven.com/recipe/" + RecipeID + "?api_key=" + apiKey;
-    
-  }
 
 }
 
