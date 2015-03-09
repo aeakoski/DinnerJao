@@ -2,15 +2,19 @@
 // display or modify the dinner menu
 dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
-  $scope.numberOfGuests = Dinner.getNumberOfGuests();
+	$scope.numberOfGuests = Dinner.getNumberOfGuests();
 
-  $scope.setNumberOfGuest = function(number){
-    Dinner.setNumberOfGuests(number);
-  }
+	$scope.getIngCost = function(d){
+		Dinner.getDishCost();
+	}
 
-  $scope.getNumberOfGuests = function() {
-    return Dinner.getNumberOfGuests();
-  }
+	$scope.setNumberOfGuest = function(number){
+	Dinner.setNumberOfGuests(number);
+	}
+
+	$scope.getNumberOfGuests = function() {
+	return Dinner.getNumberOfGuests();
+	}
 
   // TODO in Lab 5: Implement the methods to get the dinner menu
   // add dish to menu and get total menu price
@@ -18,10 +22,10 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
 	$scope.updatePending = function(){
 		
-			$("#dPending").empty();
-			$("#dPending").append('\
-			<p class="dName col-xs-6"><span>Pending: </span></p>\
-			<p class="col-xs-1 dName"><span>0.00</span></p>');
+		$("#dPending").empty();
+		$("#dPending").append('\
+		<p class="dName col-xs-6"><span>Pending: </span></p>\
+		<p class="col-xs-1 dName"><span>0.00</span></p>');
 	}
 
 	$scope.updateMenu = function(){
@@ -45,5 +49,6 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	$scope.getInput = function () {
 		return Dinner.getInput();
 	}
+
 
 });

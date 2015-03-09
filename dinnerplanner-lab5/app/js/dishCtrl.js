@@ -30,10 +30,10 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 						<td>SEK</td>\
 						<td>'+(data['Ingredients'][i]['Quantity'] * Dinner.getNumberOfGuests()).toFixed(2) +'</td>\
 					</tr>');
-			}
-
+			};
+			Dinner.updateDishCost(data);
 			$("#dishCost").empty();
-			$("#dishCost").append('Dish Cost: '+ (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2) +'');
+			$("#dishCost").append('Dish Cost:'+ (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2) +'');
 
 		},function(data){
 

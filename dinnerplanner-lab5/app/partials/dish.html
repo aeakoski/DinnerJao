@@ -10,7 +10,7 @@ Instructions, Ingredients and total cost. -->
 			<div id="prepDish">
 				<!--Preparation instructions for dish is shown here-->
 			</div>
-			<button type="button" id ="backButton" class="backToEdit btn btn-warning">Back to Select Dish</button>
+			<a href="#/search" type="button" id ="backButton" class="backToEdit btn btn-warning">Back to Select Dish</a>
 			
 		</div><!--rightDivPrep-->
 		
@@ -28,9 +28,9 @@ Instructions, Ingredients and total cost. -->
 
 			<hr>
 			<div>
-				<button type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</button>
+				<a href="" type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</a>
 
-				<span  id ="dishCost" class="floatR"></span> <!--View ska styra över totalkostnaden-->
+				<span  id ="dishCost" class="floatR">{{getIngCost}}</span> <!--View ska styra över totalkostnaden-->
 			
 			</div>
 	
