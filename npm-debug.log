@@ -1,22 +1,17 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
-1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'install' ]
-2 info using npm@2.5.1
-3 info using node@v0.12.0
-4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
-5 error install Couldn't read dependencies
-6 verbose stack Error: ENOENT, open 'C:\Users\Alexander\Documents\GitHub\DinnerJao\package.json'
-6 verbose stack     at Error (native)
-7 verbose cwd C:\Users\Alexander\Documents\GitHub\DinnerJao
-8 error Windows_NT 6.3.9600
-9 error argv "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
-10 error node v0.12.0
-11 error npm  v2.5.1
-12 error path C:\Users\Alexander\Documents\GitHub\DinnerJao\package.json
-13 error code ENOPACKAGEJSON
-14 error errno -4058
-15 error package.json ENOENT, open 'C:\Users\Alexander\Documents\GitHub\DinnerJao\package.json'
-15 error package.json This is most likely not a problem with npm itself.
-15 error package.json npm can't find a package.json file in your current directory.
-16 verbose exit [ -4058, true ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 error install Couldn't read dependencies
+5 error package.json ENOENT, open '/Users/Jonas/Documents/Git/DinnerJao/package.json'
+5 error package.json This is most likely not a problem with npm itself.
+5 error package.json npm can't find a package.json file in your current directory.
+6 error System Darwin 14.1.0
+7 error command "node" "/usr/local/bin/npm" "install"
+8 error cwd /Users/Jonas/Documents/Git/DinnerJao
+9 error node -v v0.10.33
+10 error npm -v 1.4.28
+11 error path /Users/Jonas/Documents/Git/DinnerJao/package.json
+12 error code ENOPACKAGEJSON
+13 error errno 34
+14 verbose exit [ 34, true ]
