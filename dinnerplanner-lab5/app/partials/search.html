@@ -6,20 +6,18 @@ not support it in free version) and list all the dishes that match the search. -
 
 <div id="rightTop" class="panel panel-default">
 
-			<div class="panel-heading">
-				<h3 class="panel-title" id="welcomeTitle">Select Disch</h3>
-			</div>
+	<div class="panel-heading">
+		<h3 class="panel-title" id="welcomeTitle">Select Disch</h3>
+	</div>
 
-					<div class="row panel-body">
-						<select id = "mealType">
-			  				<option>starter</option>
-							<option>main dish</option>
-							<option>dessert</option>
-						</select >
+	<div class="row panel-body">
 
-			    		<input type="text" id ="mainSearch" class="form-control" maxlength="30" placeholder="Enter key words">
+		<input type="text" ng-model="usrInput" ng-change="setInput(usrInput)" id ="mainSearch" class="form-control" maxlength="30" placeholder="Enter key words">
+
+		JAOJAOJAO!!!{{getInput()}}
 			    		
-			    		<button id="sendSearch">Search Jao!</button>
+		<button id="sendSearch">Search Jao!</button>
 
-					</div>
+	</div>
+
 </div> <!--RightTop-->

@@ -181,8 +181,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
 
-}
-
 
   // TODO in Lab 5: Add your model code from previous labs
   // feel free to remove above example code
