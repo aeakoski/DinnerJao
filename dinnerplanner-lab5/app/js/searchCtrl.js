@@ -4,6 +4,8 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 
 	$scope.search = function(query) {
 
+		console.log("Söker Jao!");
+
 	   	$scope.status = "Searching...";
 
 	   	$("#dishList").html('');
