@@ -12,9 +12,9 @@ not support it in free version) and list all the dishes that match the search. -
 
 		<div class="row panel-body">
 
-			<input type="text" ng-model="usrInput" ng-change="setInput(usrInput)" id ="mainSearch" class="form-control" maxlength="30" placeholder="Enter key words">
+			<input type="text" ng-model="usrInput" id ="mainSearch" class="form-control" maxlength="30" placeholder="Enter key words"/>
 				    		
-			<button ng-click="search(getInput)" id="sendSearch">Search Jao!</button>
+			<button ng-click="search(usrInput)" id="sendSearch">Search Jao!</button>
 
 		</div>
 

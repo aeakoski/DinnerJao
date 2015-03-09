@@ -3,3 +3,36 @@
 
 <!-- TODO in Lab 5: Display the dish information including image, Description, 
 Instructions, Ingredients and total cost. -->
+
+<div id = "rightDivPrep" class="panel panel-default col-xs-8">
+
+		<div id= "leftDivRecepie" class = "panel panel-default col-md-6 col-xs-6">
+			<div id="prepDish">
+				<!--Preparation instructions for dish is shown here-->
+			</div>
+			<button type="button" id ="backButton" class="backToEdit btn btn-warning">Back to Select Dish</button>
+			
+		</div><!--rightDivPrep-->
+		
+	
+		<div id= "rightDivRecepie" class = "panel panel-default col-xs-6">
+			
+			<p id="headLine">Ingredients For {{getNumberOfGuests()}} People</p> <!--View ska styra över Nolan-->
+
+			<hr>
+
+			<table id = "ingredients">
+				
+
+			</table>
+
+			<hr>
+			<div>
+				<button type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</button>
+
+				<span  id ="dishCost" class="floatR"></span> <!--View ska styra över totalkostnaden-->
+			
+			</div>
+	
+		</div>
+	</div>

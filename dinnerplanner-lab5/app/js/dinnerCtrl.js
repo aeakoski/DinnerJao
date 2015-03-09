@@ -37,4 +37,13 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 		this.totalCost.html(Dinner.getTotalMenuPrice());
 	}
 
+	$scope.setInput = function (inp) {
+		return Dinner.setInput(inp);
+
+	}
+
+	$scope.getInput = function () {
+		return Dinner.getInput();
+	}
+
 });
