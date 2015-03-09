@@ -3,11 +3,28 @@
 dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 
 	$scope.search = function(query) {
-		
+
 	   	$scope.status = "Searching...";
+
+	   	$("#dishList").html('');
+		$("#dishList").html('\
+			<img id="load" src="images/puhfood.gif">');
+	
+	   	console.log($scope.status);
 	   	Dinner.DishSearch.get({title_kw:query},function(data){
 	    	$scope.dishes = data.Results;
 	    	$scope.status = "Showing " + data.Results.length + " results";
+	    	console.log($scope.status);
+
+	    	if (data.Results.length === 0) {
+	    	$("#dishList").html('');
+				$("#dishList").html('\
+					<div class="jumbotron">\
+						 <h2>Did not found what you were looking for in the pantry!</h2>\
+						 <p></br>Your search for "<i>'+ Dinner.getInput() +'</i>" did not yeald any matches. Please type in another key word and try again.</p>\
+					</div>');
+					return;
+			}
 
 	    	$("#dishList").html('');
 			for (i = 0; i<data.Results.length; i++) {
@@ -29,7 +46,9 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 		}
 
 	   },function(data){
+	   		console.log($scope.status);
 	    	$scope.status = "There was an error";
+	    	
 	   });
 	}
 	
