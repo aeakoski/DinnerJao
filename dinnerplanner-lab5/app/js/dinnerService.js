@@ -42,14 +42,11 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   this.setInput = function(input){
     console.log(userInp);
     userInp = input;
-    
-
   }
 
   this.getInput = function(){
     console.log(userInp);
     return userInp;
-
   }
 
   this.setCurrentDish = function(data){
@@ -64,6 +61,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   this.setNumberOfGuests = function(num) {
     nrOfGuests = num;
+    console.log("Jag sket på mig!!!!")
     var dataToSend = {'number':num}; 
   }
 
