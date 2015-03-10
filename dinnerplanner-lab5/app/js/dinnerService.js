@@ -11,7 +11,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
   //--------------- INIT - Variabler -----------------//
   //--------------------------------------------------//
 
-  var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
+  //var apiKey = "dvxveCJB1QugC806d29k1cE6x23Nt64O"; //En stackares API Nycke
+
+  var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1"; //Vår API Nyckel
 
   this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey});
 
@@ -36,8 +38,10 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
 
   var dishCost = 0;
 
-  
 
+  
+  
+  
 
   //--------------------------------------------------//
   //-------------------- Metoder ---------------------//
