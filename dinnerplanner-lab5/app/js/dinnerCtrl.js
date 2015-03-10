@@ -1,6 +1,6 @@
 // Dinner controller that we use whenever we have view that needs to 
 // display or modify the dinner menu
-dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
+dinnerPlannerApp.controller('DinnerCtrl', function ($scope,$cookieStore,$routeParams,Dinner) {
 
 	$scope.numberOfGuests = Dinner.getNumberOfGuests();
 
@@ -31,6 +31,7 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	$scope.updateMenu = function(){
 
 		$("#dAdded").empty();
+		console.log(Dinner.getFullMenu()[1]);
 		for( var a = 0 ; a < Dinner.getFullMenu().length ; a++){
 			Dinner.updateDishCost(Dinner.getFullMenu()[a]);
 			$("#dAdded").append('\

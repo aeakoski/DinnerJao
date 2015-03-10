@@ -4,11 +4,18 @@
 // service is created first time it is needed and then just reuse it
 // the next time.
 
-dinnerPlannerApp.factory('Dinner',function ($resource) {
+dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore) {
+  
 
   //--------------------------------------------------//
-  //-------------------Variabler----------------------//
+  //--------------- INIT - Variabler -----------------//
   //--------------------------------------------------//
+
+  var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
+
+  this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey});
+
+  this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey}); 
 
   var currentDish = null;
 
@@ -18,7 +25,8 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   var menu = new Array();
 
-  var observers = new Array();
+
+  //var observers = new Array();
 
   var displayList = [];
 
@@ -28,16 +36,29 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   var dishCost = 0;
 
-  var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1";
-    
-  this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey});
-
-  this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey}); 
+  
 
 
   //--------------------------------------------------//
   //-------------------- Metoder ---------------------//
   //--------------------------------------------------//
+
+  var storeMenuInCookie = function(){
+    // Removing a cookie
+    $cookieStore.remove('menu');
+
+    arr = new Array();
+
+    for(coItem = 0; coItem < menu.length; coItem++){
+      arr[arr.length] = menu[coItem]['RecipeID'];
+    }
+
+    console.log(arr);
+
+    // Put cookie
+    $cookieStore.put('menu',arr);
+    
+  }
 
   this.setInput = function(input){
     console.log(userInp);
@@ -89,7 +110,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     }
   }
 
-  
   // var setDishCost = function (data) {
   //   dishCost = 0;
   //   for(ii = 0; ii < data['singleDish']['Ingredients'].length; ii++){
@@ -140,7 +160,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     return menu
   }
 
-  this.sortMenu = function(menuItem){
+/*  this.sortMenu = function(menuItem){
     var sortedMenu = [];
     var l = ["starter", "main dish", "dessert"];
     for(var li = 0; li < 3; li++){
@@ -151,13 +171,14 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
       }
     }
     return sortedMenu;
-  }
+  }*/
 
   
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
 
   this.addDishToMenu = function() {
+
     console.log(currentDish['Title']+" till menyn");
     menu[menu.length] = currentDish;
     console.log(menu);
@@ -172,6 +193,8 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
       menu[menu.length] = dish;
     }
     menu = this.sortMenu(menu);*/
+
+    storeMenuInCookie();
   }
 
   //Removes dish from menu
@@ -182,7 +205,8 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
           menu.splice(indexToBin, 1);
         }
       }
-    }   
+    }
+    storeMenuInCookie(); 
   }
 
   //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -200,6 +224,22 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   // methods created in it. You can consider that this is instead
   // of calling var model = new DinnerModel() we did in the previous labs
   // This is because Angular takes care of creating it when needed.
+  
+  var menuArr = $cookieStore.get('menu');
+
+  if(menuArr != undefined){
+
+    for( menuArrIndex = 0; menuArrIndex < menuArr.length; menuArrIndex++){
+      
+      this.Dish.get({id:menuArr[menuArrIndex]},function(data){
+      menu[menu.length] = data;
+
+      
+      },function(data){});
+    }
+
+  }
+
   return this;
 
 });

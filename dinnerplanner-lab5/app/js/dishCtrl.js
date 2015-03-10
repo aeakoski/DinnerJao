@@ -1,6 +1,6 @@
 // Dinner controller that we use whenever we want to display detailed
 // information for one dish
-dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
+dinnerPlannerApp.controller('DishCtrl', function ($scope,$cookieStore,$routeParams,Dinner) {
   
   // TODO in Lab 5: you need to get the dish according to the routing parameter
   // $routingParams.paramName
@@ -9,8 +9,10 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 	$scope.numberOfGuests = Dinner.getNumberOfGuests();
 
 	$scope.getIngCost = function(){
-		Dinner.updateDishCost(Dinner.getCurrentDish())
-		return Dinner.getDishCost();
+		if(Dinner.getCurrentDish() != null){
+			Dinner.updateDishCost(Dinner.getCurrentDish())
+			return Dinner.getDishCost();
+		}
 	}
 
 	$scope.setNumberOfGuest = function(number){
@@ -21,9 +23,9 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 	return Dinner.getNumberOfGuests();
 	}
 
-  $scope.addDishToMenu = function() {
+  	$scope.addDishToMenu = function() {
   		Dinner.addDishToMenu(); 
-  }
+  	}
 
   	$scope.setCurrentDish = function () {
   		return Dinner.setCurrentDish(null);

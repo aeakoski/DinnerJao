@@ -1,4 +1,4 @@
-dinnerPlannerApp.controller('PrintCtrl', function ($scope,Dinner) {
+dinnerPlannerApp.controller('PrintCtrl', function ($scope,$cookieStore,$routeParams,Dinner) {
 
 	$scope.menuForPrint = function(){
 		return Dinner.getFullMenu();
