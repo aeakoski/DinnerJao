@@ -2,7 +2,7 @@
 
 <div class = "subHeadder">
 		<h3>MY DINNER: {{getNumberOfGuests()}} people</h3>
-		<button  id = "subHeader-back-button" class=" backToEdit floatR btn btn-warning">Go back and edit dinner</button>
+		<a href="#/search"><button  id = "subHeader-back-button" class=" backToEdit floatR btn btn-warning">Go back and edit dinner</button></a>
 	</div>
 
 	<div>
@@ -17,7 +17,7 @@
 
 					<div class = "foodTitle">
 						<h4>{{menuDish.Title}}</h4>
-						<span>SEK: {{dishCost()}}</span>
+						<span>SEK: {{dishCost(menuDish)}}</span>
 					</div>
 
 				</div>
@@ -29,7 +29,7 @@
 			<span id = "totalCost"></span>
 		</div>
 
-		<div class="panel col-xs-12">
+		<div class="panel-default col-xs-12">
 
 			<button type="button" id = "printRecipe" class="btn btn-warning" style="margin-left: 35.5%;height: 50pt;width: 355pt;">Print Recipe</button>
 		</div>
