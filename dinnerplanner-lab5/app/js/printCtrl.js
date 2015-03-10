@@ -5,6 +5,10 @@ dinnerPlannerApp.controller('PrintCtrl', function ($scope,Dinner) {
 	}
 
 	//Exempel function hämtad från en annan controller för inspiration
+	$scope.getNumberOfGuests = function() {
+		return Dinner.getNumberOfGuests();
+	}
+
 	$scope.getIngCost = function(){
 		Dinner.getDishCost();
 	}
