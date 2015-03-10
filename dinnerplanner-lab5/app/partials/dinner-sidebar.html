@@ -22,7 +22,9 @@
 
 			<div id= "dPending">
 				<!-- Här kommer den pendingande rätten -->
-				{{updatePending()}}
+				<p class="dName col-xs-6"><span>Pending: </span></p>
+				<p class="col-xs-1 dName">{{getIngCost() * getNumberOfGuests()}}</p>
+				
 			</div>
 
 			<hr size="3">

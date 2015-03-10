@@ -63,7 +63,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   this.setNumberOfGuests = function(num) {
     nrOfGuests = num;
-    console.log("Jag sket på mig!!!!")
     var dataToSend = {'number':num}; 
   }
 
@@ -91,12 +90,12 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   }
 
   
-  var setDishCost = function (data) {
-    dishCost = 0;
-    for(ii = 0; ii < data['singleDish']['Ingredients'].length; ii++){
-      dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
-    }
-  }
+  // var setDishCost = function (data) {
+  //   dishCost = 0;
+  //   for(ii = 0; ii < data['singleDish']['Ingredients'].length; ii++){
+  //     dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
+  //   }
+  // }
 
   this.updateDishCost = function(d){
     dishCost = 0;

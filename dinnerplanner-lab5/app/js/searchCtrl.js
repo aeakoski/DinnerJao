@@ -2,49 +2,29 @@
 // and search results
 dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
 
-	$scope.search = function(query) {
 
-		console.log("Söker Jao!");
+	$scope.search = function(query) {
 
 	   	$scope.status = "Searching...";
 
-	   	$("#dishList").html('');
-		$("#dishList").html('\
-			<img id="load" src="images/puhfood.gif">');
+	  //  	$("#dishList").html('');
+		 // $("#dishList").html('\
+		 // 	<img id="load" src="images/puhfood.gif">');
 	
 	   	Dinner.DishSearch.get({title_kw:query},function(data){
 	    	$scope.dishes = data.Results;
 	    	$scope.status = "Showing " + data.Results.length + " results";
 
-	    	if (data.Results.length === 0) {
-		    	$("#dishList").html('');
-					$("#dishList").html('\
-						<div class="jumbotron">\
-							 <h2>Did not found what you were looking for in the pantry!</h2>\
-							 <p></br>Your search for "<i>'+ Dinner.getInput() +'</i>" did not yeald any matches. Please type in another key word and try again.</p>\
-						</div>');
-						return;
-			}
 
-	    	$("#dishList").html('');
-			for (i = 0; i<data.Results.length; i++) {
-				var dishID = data.Results[i]['RecipeID'];
-				$("#dishList").append('\
-					<a href="#/dish/'+ dishID + '" ng-click=""><div rel = "'+ data.Results[i]['RecipeID'] +'" class="foodItem ">\
-						<div class="foodHead">\
-							<div class = "foodPic">\
-								<img src="'+ data.Results[i]['ImageURL'] +'">\
-							</div>\
-							<div class = "foodTitle">\
-								<h4>'+ data.Results[i]['Title'] +'</h4>\
-							</div>\
-						</div>\
-						\
-						<div class = "foodDesc">\
-							<p>'+ data.Results[i]['Subcategory'] +'</p>\
-						</div>\
-					</div></a><!--FoodItem-->');
-			}
+	    	//FÖRSVINNER INTE SÅ OM MAN SÖKT FEL EN GÅNG KAN MAN INTE SÖKA IGEN ....
+	  //   	if (data.Results.length === 0) {
+		 //    	$("#dishList").html('');
+			// 		$("#dishList").html('\
+			// 			<div class="jumbotron">\
+			// 				 <h2>Did not found what you were looking for in the pantry!</h2>\
+			// 				 <p></br>Your search for "<i> what you typed </i>" did not yeald any matches. Please type in another key word and try again.</p>\
+			// 			</div>');
+			// }
 
 	   },function(data){
 

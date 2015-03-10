@@ -27,7 +27,24 @@ not support it in free version) and list all the dishes that match the search. -
 			<div class="panel panel-default" id="rightBottomInner">
 				<div id = "dishList" class="panel-body">
 					<!--Här sätter javascript in code-->  
-				</div>
+					<a ng-repeat="food in dishes" ng-href="#/dish/{{food.RecipeID}}"><div rel = "{{food.RecipeID}}" class="foodItem">
+						<div class="foodHead">
+							<div class = "foodPic">
+								<img ng-src="{{food.ImageURL}}">
+							</div>
+
+							<div class = "foodTitle">
+								<h4>{{food.Title}}</h4>
+							</div>
+
+						</div>
+						
+						<div class = "foodDesc">
+							<p>{{food.Subcategory}}</p>
+						</div>
+					</div></a><!--FoodItem-->
+
+				</div> 
 			</div><!--Panel-->
 
 		</div><!--rightBottom-->

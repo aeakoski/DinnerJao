@@ -1,10 +1,7 @@
 // Dinner controller that we use whenever we have view that needs to 
 // display or modify the dinner menu
 dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
-	$scope.addDishToMeny = function(){
-		console.log("AddDish to menu ska exikveras nu!");
-		Dinner.addDishToMeny();
-	}
+
 	$scope.numberOfGuests = Dinner.getNumberOfGuests();
 
 	$scope.getIngCost = function(){
@@ -12,7 +9,6 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	}
 
 	$scope.setNumberOfGuest = function(number){
-		console.log("HAATAAA");
 	Dinner.setNumberOfGuests(number);
 	}
 
@@ -20,21 +16,15 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	return Dinner.getNumberOfGuests();
 	}
 
+	$scope.getIngCost = function () {
+  	return (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2);
+  	}
+
   // TODO in Lab 5: Implement the methods to get the dinner menu
   // add dish to menu and get total menu price
 
-
-	$scope.updatePending = function(){
-		
-		$("#dPending").empty();
-		$("#dPending").append('\
-		<p class="dName col-xs-6"><span>Pending: </span></p>\
-		<p class="col-xs-1 dName"><span>0.00</span></p>');
-	}
-
 	$scope.updateMenu = function(){
-		console.log("Updaterar menyn")
-		console.log(Dinner.getFullMenu().length);
+
 		$("#dAdded").empty();
 		for( var a = 0 ; a < Dinner.getFullMenu().length ; a++){
 			Dinner.updateDishCost(Dinner.getFullMenu()[a]);

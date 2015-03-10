@@ -9,7 +9,13 @@ Instructions, Ingredients and total cost. -->
 		<div id= "leftDivRecepie" class = "panel panel-default col-md-6 col-xs-6">
 			<div id="prepDish">
 				<!--Preparation instructions for dish is shown here-->
+
+				<h2 id ="dishHeadder" rel ="'+ data['dishId']+'">{{dish.Title}}</h2>
+				<img ng-src="{{dish.ImageURL}}">
+				<p>{{dish.Instructions}}</p>
+
 			</div>
+
 			<a href="#/search" type="button" id ="backButton" class="backToEdit btn btn-warning">Back to Select Dish</a>
 			
 		</div><!--rightDivPrep-->
@@ -22,16 +28,21 @@ Instructions, Ingredients and total cost. -->
 			<hr>
 
 			<table id = "ingredients">
-				
-
+				<tr ng-repeat = "ingredients in dish.Ingredients">
+					<td class="col-xs-2">{{ingredients.Quantity * getNumberOfGuests()}} {{ingredients.Unit}}</td>
+					<td class="col-xs-6">{{ingredients.Name}}</td>
+					<td>SEK</td>
+					<td>{{ingredients.Quantity * getNumberOfGuests()}}</td>
+				</tr>
 			</table>
 
 			<hr>
+			
 			<div>
 
-				<button ng-click="addDishToMeny()" type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</button>
+				<button ng-click="addDishToMenu()" type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</button>
 
-				<span  id ="dishCost" class="floatR">{{getIngCost}}</span> <!--View ska styra över totalkostnaden-->
+				<span  id ="dishCost" class="floatR">Dish Cost: {{getIngCost() * getNumberOfGuests()}}</span> <!--View ska styra över totalkostnaden-->
 			
 			</div>
 	
