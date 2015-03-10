@@ -7,7 +7,8 @@ dinnerPlannerApp.controller('OverviewCtrl', function ($scope,Dinner) {
 	$scope.getMenuDishes = Dinner.getFullMenu();
 
 	$scope.dishCost = function (dish) {
-		return Dinner.getDishCost(dish) * getNumberOfGuests();
+		Dinner.updateDishCost(dish);
+		return Dinner.getDishCost() * Dinner.getNumberOfGuests();
 	}
 
 
