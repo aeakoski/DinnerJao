@@ -23,7 +23,7 @@
 			<div id= "dPending">
 				<!-- Här kommer den pendingande rätten -->
 				<p class="dName col-xs-6"><span>Pending: </span></p>
-				<p class="col-xs-1 dName">{{getIngCost() * getNumberOfGuests()}}</p>
+				<p class="col-xs-1 dName">{{getIngCost()}}</p>
 				
 			</div>
 
@@ -32,7 +32,7 @@
 				<p id>SEK <span id = "totalCost"></span></p>
 			</div>
 
-			<button type="button" id = "confirmDinner" class="btn btn-default">Confirm Dinner</button>
+			<a ng-href="{{link}}"><button ng-click="confirmDinner()" type="button" id = "confirmDinner" class="btn btn-default">Confirm Dinner</button></a>
 		</div>
 	</div>
 </div><!--leftMenu-->

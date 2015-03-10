@@ -20,6 +20,11 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
   	return (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2);
   	}
 
+  	$scope.confirmDinner = function () {
+  		if(Dinner.getFullMenu().length != 0){
+  			$scope.link = '#/overview';
+  		}
+  	}
   // TODO in Lab 5: Implement the methods to get the dinner menu
   // add dish to menu and get total menu price
 
@@ -35,6 +40,7 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 		}
 		this.totalCost = $("#totalCost");
 		this.totalCost.html(Dinner.getTotalMenuPrice());
+
 	}
 
 	$scope.setInput = function (inp) {

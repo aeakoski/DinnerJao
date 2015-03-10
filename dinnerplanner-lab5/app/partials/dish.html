@@ -37,10 +37,10 @@ Instructions, Ingredients and total cost. -->
 			</table>
 
 			<hr>
-			
+
 			<div>
 
-				<button ng-click="addDishToMenu()" type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</button>
+				<a href="#/search"><button ng-click="addDishToMenu()" type="button" id = "confirmDish" class="floatL btn btn-warning">Confirm Dish</button></a>
 
 				<span  id ="dishCost" class="floatR">Dish Cost: {{getIngCost() * getNumberOfGuests()}}</span> <!--View ska styra över totalkostnaden-->
 			

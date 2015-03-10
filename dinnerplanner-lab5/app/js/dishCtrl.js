@@ -22,7 +22,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 	}
 
   $scope.addDishToMenu = function() {
-    return Dinner.addDishToMenu();
+  		Dinner.addDishToMenu(); 
   }
 
   	$scope.setCurrentDish = function () {

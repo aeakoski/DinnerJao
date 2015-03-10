@@ -160,6 +160,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   this.addDishToMenu = function() {
     console.log(currentDish['Title']+" till menyn");
     menu[menu.length] = currentDish;
+    console.log(menu);
     /*for (var matIndex = 0; matIndex<menu.length; matIndex++){
       if (menu[matIndex]['dishType'] === dish['dishType']) {
         //console.log(menu[matIndex]['Title'],menu[matIndex]['dishType'] + " and " + dish['Title'],dish['dishType']);
