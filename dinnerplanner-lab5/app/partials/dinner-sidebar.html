@@ -18,7 +18,12 @@
 			<div id ="dAdded">
 				<!-- Här kommer de tilaggda rätterna -->
 				{{updateMenu()}}
-			</div>
+				<div id="dAddedR" ng-repeat="dish in getMenu()" ng-style="removeS">
+					<p class="dName col-xs-6"><span>{{dish.Title}}</span></p>
+					<p class="dName col-xs-1"><span>{{dishCost(dish)}}</span></p>
+					<span ng-click = "remove(dish);removeS={display: 'none'}" ng-mouseover="hover={color: 'red', cursor: 'pointer'}" ng-mouseleave = "hover={color: '#BBBBBB'}" ng-rel ="{{dish.RecipeID}}" class=" glyphicon glyphicon-remove floatR" style ="color:#BBBBBB;" aria-hidden="false" ng-style="hover"></span></div>
+				</div>
+
 
 			<div id= "dPending">
 				<!-- Här kommer den pendingande rätten -->
