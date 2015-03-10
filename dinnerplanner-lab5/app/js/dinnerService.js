@@ -64,6 +64,14 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
     
   }
 
+  var storeGuestsInCookie = function(){
+    // Removing a cookie
+    $cookieStore.remove('guests');
+
+    // Put cookie
+    $cookieStore.put('guests',nrOfGuests);
+  }
+
   this.setInput = function(input){
     console.log(userInp);
     userInp = input;
@@ -88,7 +96,10 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
 
   this.setNumberOfGuests = function(num) {
     nrOfGuests = num;
-    var dataToSend = {'number':num}; 
+    var dataToSend = {'number':num};
+
+    storeGuestsInCookie();
+
   }
 
   this.getNumberOfGuests = function() {
@@ -241,8 +252,14 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
       
       },function(data){});
     }
-
   }
+
+  var guestC = $cookieStore.get('guests');
+  if (guestC != undefined) {
+    console.log("Hittade en gäst kaka!");
+    console.log(guestC);
+    this.setNumberOfGuests(guestC);
+  };
 
   return this;
 
