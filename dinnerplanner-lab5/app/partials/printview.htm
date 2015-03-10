@@ -7,21 +7,23 @@
 <div id = "FifthView">
 
  	<div id="printFoodItem">
- 		<div id = "upperDish" class = col-xs-12>
+
+ 		<div ng-repeat ="item in menuForPrint()" id = "upperDish" class = col-xs-12>
 			<div class="col-xs-3">
-				<img src="dish[i]['ImageURL']"><!-- Här ska ändras bla-->
+				<img ng-src="{{item['ImageURL']}}"><!-- Här ska ändras bla-->
 			</div>
 
 			<div class="col-xs-4">
-				<h2></h2>
+				<h2>{{item['Title']}}</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sodales tempus pellentesque. Vestibulum convallis ullamcorper sollicitudin. Integer ut faucibus sapien, eget feugiat risus. Aliquam nisi erat, posuere nec euismod eu, fermentum nec nisl. Aenean id ornare nunc. Nunc aliquam nisl magna. Proin id hendrerit urna..</p>
 			</div>
 
 			<div class="col-xs-5">
 				<h2>Preparation</h2>
-				<p>dish[i]['Instructions']</p>
+				<p>{{item['Instructions']}}</p>
 			</div>
 
 		</div>
+
 	</div>
 </div><!--FifthView-->
