@@ -1,9 +1,10 @@
 dinnerPlannerApp.controller('PrintCtrl', function ($scope,Dinner) {
 
-	console.log("hello, halva inne (Controllern alltså)!!");
+	$scope.menuForPrint = function(){
+		return Dinner.getFullMenu();
+	}
 
 	//Exempel function hämtad från en annan controller för inspiration
-	
 	$scope.getIngCost = function(){
 		Dinner.getDishCost();
 	}
