@@ -11,5 +11,8 @@ dinnerPlannerApp.controller('OverviewCtrl', function ($scope,Dinner) {
 		return Dinner.getDishCost() * Dinner.getNumberOfGuests();
 	}
 
+	$scope.totalMenuPrice = function () {
+		return Dinner.getTotalMenuPrice();
+	}
 
 });
