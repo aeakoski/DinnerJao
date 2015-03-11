@@ -9,6 +9,7 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,$cookieStore,$routePa
 	$scope.getNumberOfGuests = function() {
 	return Dinner.getNumberOfGuests();
 	}
+	
 	$scope.getIngCost = function () {
   	return (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2);
   	}
