@@ -31,6 +31,11 @@ not support it in free version) and list all the dishes that match the search. -
 				 			<p></br>The food-server yeald an error. Please check your internet connection and try again.</p>
 					</div>
 
+					<div id = "notFOund" class="ng-hide jumbotron">
+				 		<h2>Something wierd happened!</h2>
+				 			<p></br>We couldn't find what you were looking fore, please try again!</p>
+					</div>
+
 					<a ng-repeat="food in dishes" ng-href="#/dish/{{food.RecipeID}}"><div rel = "{{food.RecipeID}}" ng-click="setCurrentDish(food)" class="foodItem">
 						<div class="foodHead">
 							<div class = "foodPic">

@@ -22,6 +22,7 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routePa
 	   	$scope.status = "Searching...";
 
 		$scope.showLoad = function () {
+			$(".foodItem").addClass("ng-hide");
 			$(".jumbotron").addClass("ng-hide");
 			$("#load").removeClass("ng-hide");
 		}
@@ -29,6 +30,7 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routePa
 		$scope.hide = function () {
 
 			if (status != "Searching...") {
+				$(".jumbotron").addClass("ng-hide");
 				$("#load").addClass("ng-hide");
 			}
 		}
@@ -40,11 +42,21 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routePa
 			$(".jumbotron").removeClass("ng-hide");
 		}
 
+		$scope.notFound = function () {
+			$("#load").addClass("ng-hide");
+			$("#notFOund").removeClass("ng-hide");
+		}
 	
 	   	Dinner.DishSearch.get({title_kw:query},function(data){
 	    	$scope.dishes = data.Results;
 	    	$scope.status = "Showing " + data.Results.length + " results";
-	    	$scope.hide();
+	    	
+	    	if (data.Results.length === 0) {
+	    		$scope.notFound();
+	    	}
+
+	    	else{$scope.hide();}
+
 
 	   },function(data){
 
