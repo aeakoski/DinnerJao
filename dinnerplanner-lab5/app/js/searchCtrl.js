@@ -8,7 +8,6 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routePa
 	   	$scope.status = "Searching...";
 
 		$scope.showLoad = function () {
-	
 			$("#load").removeClass("ng-hide");
 		}
 

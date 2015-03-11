@@ -11,15 +11,16 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
   //--------------- INIT - Variabler -----------------//
   //--------------------------------------------------//
 
-  //var apiKey = "dvxveCJB1QugC806d29k1cE6x23Nt64O"; //En stackares API Nycke
+  var apiKey = "dvxveCJB1QugC806d29k1cE6x23Nt64O"; //En stackares API Nyckel
 
   //var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1"; //Vår API Nyckel
 
-    var apiKey = "dvxc3XrgajiC58dHf9lJHbgvZI27GI4O";
+  //var apiKey = "dvxc3XrgajiC58dHf9lJHbgvZI27GI4O";
   //var apiKey = "dvx57U1rV45liM502t9pBah61xr3X39h";
   //var apiKey = "dvxfGMr57Q0E7d2rm6HZDY07Xtu63e9Y";
   //var apiKey = "dvx7fKf6N67hzDI13rDB0k508X7haqCR";
   //var apiKey = "dvxvL4Ep74ixye3pJGTTNv8USu2J28lP";
+
 
   this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey});
 
@@ -29,32 +30,20 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
 
   var nrOfGuests = 1;
 
-  var mealType = "starter";
-
   var menu = new Array();
-
-
-  //var observers = new Array();
-
-  var displayList = [];
-
-  var dishes = [];
 
   var userInp="";
 
   var dishCost = 0;
 
 
-  
-  
-  
 
   //--------------------------------------------------//
   //-------------------- Metoder ---------------------//
   //--------------------------------------------------//
 
   var storeMenuInCookie = function(){
-    // Removing a cookie
+    // Remove cookie
     $cookieStore.remove('menu');
 
     arr = new Array();
@@ -63,35 +52,19 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
       arr[arr.length] = menu[coItem]['RecipeID'];
     }
 
-    console.log(arr);
-
     // Put cookie
     $cookieStore.put('menu',arr);
-    
   }
 
   var storeGuestsInCookie = function(){
-    // Removing a cookie
+    // Remove cookie
     $cookieStore.remove('guests');
 
     // Put cookie
     $cookieStore.put('guests',nrOfGuests);
   }
 
-  this.setInput = function(input){
-    console.log(userInp);
-    userInp = input;
-  }
-
-  this.getInput = function(){
-    console.log(userInp);
-    return userInp;
-  }
-
   this.setCurrentDish = function(data){
-    if (data==null){
-    }
-    
     currentDish = data;
   }
 
@@ -104,38 +77,11 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
     var dataToSend = {'number':num};
 
     storeGuestsInCookie();
-
   }
 
   this.getNumberOfGuests = function() {
     return nrOfGuests;
   }
-
-  this.setMealType = function (type) {
-    mealType = type;
-    //notifyObservers(observers);
-  }
-
-  this.getMealType = function() {
-    return mealType;
-  }
-
-  //Returns the dish that is on the menu for selected type 
-  //Returns the WHOLE dish object
-  this.getSelectedDish = function(type) {
-    for (i = 0; i < menu.length; i++){
-      if (menu[i]["type"] == type){
-        return menu[i]; //Returns the whole dish object.
-      }
-    }
-  }
-
-  // var setDishCost = function (data) {
-  //   dishCost = 0;
-  //   for(ii = 0; ii < data['singleDish']['Ingredients'].length; ii++){
-  //     dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
-  //   }
-  // }
 
   this.updateDishCost = function(d){
     dishCost = 0;
@@ -144,11 +90,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
     }
   }
 
-
   this.getDishCost = function(){
-    return dishCost;
+    return dishCost.toFixed(2);
   }
-
 
   //Returns all ingredients for all the dishes on the menu.
   // Returns an array of all the iingredientss dictionarries
@@ -190,7 +134,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
     }else{
       menu[menu.length-1] = currentDish;
     }
-
+    this.setCurrentDish(null);
     storeMenuInCookie();
   }
 
@@ -210,7 +154,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
 
-
   // TODO in Lab 5: Add your model code from previous labs
   // feel free to remove above example code
   // you will need to modify the model (getDish and getAllDishes) 
@@ -223,22 +166,17 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
   // This is because Angular takes care of creating it when needed.
   
   var menuArr = $cookieStore.get('menu');
-
   if(menuArr != undefined){
-
     for( menuArrIndex = 0; menuArrIndex < menuArr.length; menuArrIndex++){
-      
       this.Dish.get({id:menuArr[menuArrIndex]},function(data){
       menu[menu.length] = data;
 
-      
       },function(data){});
     }
   }
 
   var guestC = $cookieStore.get('guests');
   if (guestC != undefined) {
-    
     this.setNumberOfGuests(guestC);
   };
 
