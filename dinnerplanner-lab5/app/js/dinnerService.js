@@ -48,7 +48,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
   //--------------------------------------------------//
 
   var storeMenuInCookie = function(){
-    // Removing a cookie
+    // Remove cookie
     $cookieStore.remove('menu');
 
     arr = new Array();
@@ -57,15 +57,13 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
       arr[arr.length] = menu[coItem]['RecipeID'];
     }
 
-    console.log(arr);
-
     // Put cookie
     $cookieStore.put('menu',arr);
     
   }
 
   var storeGuestsInCookie = function(){
-    // Removing a cookie
+    // Remove cookie
     $cookieStore.remove('guests');
 
     // Put cookie
@@ -83,9 +81,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
   }
 
   this.setCurrentDish = function(data){
-    if (data==null){
-    }
-    
     currentDish = data;
   }
 
@@ -98,21 +93,12 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
     var dataToSend = {'number':num};
 
     storeGuestsInCookie();
-
   }
 
   this.getNumberOfGuests = function() {
     return nrOfGuests;
   }
 
-  this.setMealType = function (type) {
-    mealType = type;
-    //notifyObservers(observers);
-  }
-
-  this.getMealType = function() {
-    return mealType;
-  }
 
   //Returns the dish that is on the menu for selected type 
   //Returns the WHOLE dish object
@@ -123,13 +109,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
       }
     }
   }
-
-  // var setDishCost = function (data) {
-  //   dishCost = 0;
-  //   for(ii = 0; ii < data['singleDish']['Ingredients'].length; ii++){
-  //     dishCost += data['singleDish']['Ingredients'][ii]['Quantity']
-  //   }
-  // }
 
   this.updateDishCost = function(d){
     dishCost = 0;
