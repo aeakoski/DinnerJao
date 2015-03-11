@@ -3,13 +3,12 @@
 dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routeParams,Dinner) {
 	
 	$scope.setCurrentDish = function(di){
-		console.log(di);
+
 		Dinner.Dish.get({id:di.RecipeID},function(data){
     	$scope.dish = data;
     	$scope.status = "found " + data.Results + " result";
     	$scope.hide();
     		Dinner.setCurrentDish(data);
-			//Dinner.updateDishCost(data);
 
 		},function(data){
 

@@ -119,7 +119,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
         totPrice = totPrice + menu[i]["Ingredients"][j]["Quantity"];
       }
     }
-    return (totPrice * nrOfGuests).toFixed(2);
+    return (totPrice * nrOfGuests).toFixed(1);
   }
 
   //Returns all the dishes on the menu.
