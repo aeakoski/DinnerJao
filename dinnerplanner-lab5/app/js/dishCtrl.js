@@ -10,7 +10,6 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$cookieStore,$routePara
 
 	$scope.getIngCost = function(){
 		if(Dinner.getCurrentDish() != null){
-			console.log("Hur går det med skit");
 			Dinner.updateDishCost(Dinner.getCurrentDish())
 			return Dinner.getDishCost();
 		}
@@ -40,6 +39,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$cookieStore,$routePara
 
 
 	$scope.hide = function () {
+		$(".jumbotron").addClass("ng-hide");
 		$("#load").addClass("ng-hide");
 		$("#leftDivRecepie").removeClass("ng-hide");
 		$("#rightDivRecepie").removeClass("ng-hide");
