@@ -9,9 +9,15 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,$cookieStore,$routePa
 	$scope.getNumberOfGuests = function() {
 	return Dinner.getNumberOfGuests();
 	}
-	
+
 	$scope.getIngCost = function () {
-  	return (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2);
+		if (Dinner.getCurrentDish() != null) {
+			console.log(Dinner.getCurrentDish());
+			Dinner.updateDishCost(Dinner.getCurrentDish())
+			return (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2);
+		}else{
+			return 0.00;
+		};
   	}
 
   	$scope.confirmDinner = function () {
@@ -40,7 +46,6 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,$cookieStore,$routePa
 		for( var a = 0 ; a < Dinner.getFullMenu().length ; a++){
 			Dinner.updateDishCost(Dinner.getFullMenu()[a]);
 		}
-
 		this.totalCost = $("#totalCost");
 		this.totalCost.html(Dinner.getTotalMenuPrice());
 
@@ -48,7 +53,6 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,$cookieStore,$routePa
 
 	$scope.setInput = function (inp) {
 		return Dinner.setInput(inp);
-
 	}
 
 	$scope.getInput = function () {

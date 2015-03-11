@@ -10,6 +10,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$cookieStore,$routePara
 
 	$scope.getIngCost = function(){
 		if(Dinner.getCurrentDish() != null){
+			console.log("Hur går det med skit");
 			Dinner.updateDishCost(Dinner.getCurrentDish())
 			return Dinner.getDishCost();
 		}
@@ -28,7 +29,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$cookieStore,$routePara
   	}
 
   	$scope.setCurrentDish = function () {
-  		return Dinner.setCurrentDish(null);
+  		Dinner.setCurrentDish();
   	}
 
 	$scope.status = "Searching...";

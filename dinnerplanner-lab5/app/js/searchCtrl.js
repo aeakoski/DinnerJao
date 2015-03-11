@@ -2,6 +2,9 @@
 // and search results
 dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routeParams,Dinner) {
 
+	$scope.setCurrentDish = function(dish){
+		Dinner.setCurrentDish(dish);
+	}
 
 	$scope.search = function(query) {
 
