@@ -87,7 +87,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
     }
     
     currentDish = data;
-    console.log(currentDish['Title']);
   }
 
   this.getCurrentDish = function(){
@@ -174,40 +173,17 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
   this.getFullMenu = function() {
     return menu
   }
-
-/*  this.sortMenu = function(menuItem){
-    var sortedMenu = [];
-    var l = ["starter", "main dish", "dessert"];
-    for(var li = 0; li < 3; li++){
-      for(var lii = 0; lii< menuItem.length; lii++){
-        if (menuItem[lii]['dishType'] === l[li] ){
-          sortedMenu[sortedMenu.length] = menuItem[lii];
-        }
-      }
-    }
-    return sortedMenu;
-  }*/
-
   
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
 
   this.addDishToMenu = function() {
 
-    console.log(currentDish['Title']+" till menyn");
-    menu[menu.length] = currentDish;
-    console.log(menu);
-    /*for (var matIndex = 0; matIndex<menu.length; matIndex++){
-      if (menu[matIndex]['dishType'] === dish['dishType']) {
-        //console.log(menu[matIndex]['Title'],menu[matIndex]['dishType'] + " and " + dish['Title'],dish['dishType']);
-        menu[matIndex] = dish;
-        return;
-      };
-    }
     if (menu.length <= 2) {
-      menu[menu.length] = dish;
+      menu[menu.length] = currentDish;
+    }else{
+      menu[menu.length-1] = currentDish;
     }
-    menu = this.sortMenu(menu);*/
 
     storeMenuInCookie();
   }
@@ -256,8 +232,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
 
   var guestC = $cookieStore.get('guests');
   if (guestC != undefined) {
-    console.log("Hittade en gäst kaka!");
-    console.log(guestC);
+    
     this.setNumberOfGuests(guestC);
   };
 
