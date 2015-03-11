@@ -6,21 +6,38 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routePa
 	$scope.search = function(query) {
 
 	   	$scope.status = "Searching...";
+
+		$scope.showLoad = function () {
+			console.log($scope.status);
+			$("#load").removeClass("ng-hide");
+			$(".jumbotron").addClass("ng-hide");
+			
+		}
+
+		$scope.hide = function () {
+			console.log($scope.status, "i hide");
+			if (status != "Searching...") {
+				$("#load").addClass("ng-hide");
+			}
+		}
+
+		$scope.showError = function () {
+			console.log($scope.status);
+			$("#load").addClass("ng-hide");
+			$(".foodItem").addClass("ng-hide");
+			$(".jumbotron").removeClass("ng-hide");
+		}
+
 	
 	   	Dinner.DishSearch.get({title_kw:query},function(data){
 	    	$scope.dishes = data.Results;
 	    	$scope.status = "Showing " + data.Results.length + " results";
-	    	
+	    	$scope.hide();
 
 	   },function(data){
 
 	    	$scope.status = "There was an error";
-
-	    	$("#dishList").html('\
-			<div class="jumbotron">\
-				 <h2>Something wierd happened!</h2>\
-				 <p></br>The food-server yeald an error. Please check your internet connection and try again.</p>\
-			</div>');
+	    	$scope.showError();
 	    	
 	   });
 	}
