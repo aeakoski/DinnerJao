@@ -27,6 +27,10 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$cookieStore,$routePara
   		Dinner.addDishToMenu(); 
   	}
 
+  	$scope.resetCurrentDish = function(){
+  		Dinner.setCurrentDish(null);
+  	}
+
   	$scope.setCurrentDish = function () {
   		Dinner.setCurrentDish();
   	}
