@@ -1,7 +1,7 @@
 // Search controller that we use whenever we have a search inputs
 // and search results
 dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routeParams,Dinner) {
-
+	
 	$scope.setCurrentDish = function(dish){
 		Dinner.setCurrentDish(dish);
 	}
