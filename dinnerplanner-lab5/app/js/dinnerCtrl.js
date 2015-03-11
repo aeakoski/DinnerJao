@@ -13,7 +13,7 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,$cookieStore,$routePa
 
 	$scope.getIngCost = function () {
 		if (Dinner.getCurrentDish() != null) {
-			Dinner.updateDishCost(Dinner.getCurrentDish())
+			Dinner.updateDishCost(Dinner.getCurrentDish());
 			return (Dinner.getDishCost() * Dinner.getNumberOfGuests()).toFixed(2);
 		}else{
 			return 0.00;
