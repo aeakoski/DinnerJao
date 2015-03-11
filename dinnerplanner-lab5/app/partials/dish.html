@@ -6,7 +6,15 @@ Instructions, Ingredients and total cost. -->
 
 <div id = "rightDivPrep" class="panel panel-default col-xs-8">
 
-		<div id= "leftDivRecepie" class = "panel panel-default col-md-6 col-xs-6">
+	<img class="ng-show" id="load" src="images/puhfood.gif">
+
+	<div class="ng-hide jumbotron">
+ 		<h2>Something wierd happened!</h2>
+ 			<p></br>The food-server yeald an error. Please check your internet connection and try again.</p>
+	</div>
+
+
+		<div id= "leftDivRecepie" class = "ng-hide panel panel-default col-md-6 col-xs-6">
 			<div id="prepDish">
 				<!--Preparation instructions for dish is shown here-->
 
@@ -21,7 +29,7 @@ Instructions, Ingredients and total cost. -->
 		</div><!--rightDivPrep-->
 		
 	
-		<div id= "rightDivRecepie" class = "panel panel-default col-xs-6">
+		<div id= "rightDivRecepie" class = "ng-hide panel panel-default col-xs-6">
 			
 			<p id="headLine">Ingredients For {{getNumberOfGuests()}} People</p>
 
