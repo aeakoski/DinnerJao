@@ -119,7 +119,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
 
 
   this.getDishCost = function(){
-    return dishCost;
+    return dishCost.toFixed(2);
   }
 
 
