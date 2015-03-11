@@ -11,6 +11,7 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routePa
 	   	$scope.status = "Searching...";
 
 		$scope.showLoad = function () {
+			$(".jumbotron").addClass("ng-hide");
 			$("#load").removeClass("ng-hide");
 		}
 

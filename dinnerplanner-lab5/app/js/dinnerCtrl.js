@@ -2,6 +2,7 @@
 // display or modify the dinner menu
 dinnerPlannerApp.controller('DinnerCtrl', function ($scope,$cookieStore,$routeParams,Dinner) {
 
+
 	$scope.setNumberOfGuest = function(number){
 	Dinner.setNumberOfGuests(number);
 	}
@@ -39,9 +40,20 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,$cookieStore,$routePa
 
 	$scope.remove = function (dish) {
 		Dinner.removeDishFromMenu(dish.RecipeID);
+		$scope.updateMenu();
 	}
 
 	$scope.updateMenu = function(){
+
+		if (Dinner.getFullMenu().length != 0) {
+			$("#confirmDinner").removeClass("btn-default");
+			$("#confirmDinner").addClass("btn-warning");
+
+		}else{
+			$("#confirmDinner").removeClass("btn-warning");
+			$("#confirmDinner").addClass("btn-default");
+		}
+
 
 		for( var a = 0 ; a < Dinner.getFullMenu().length ; a++){
 			Dinner.updateDishCost(Dinner.getFullMenu()[a]);
