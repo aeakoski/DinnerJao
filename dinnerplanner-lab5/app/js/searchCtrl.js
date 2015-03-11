@@ -8,21 +8,19 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,$cookieStore,$routePa
 	   	$scope.status = "Searching...";
 
 		$scope.showLoad = function () {
-			console.log($scope.status);
+	
 			$("#load").removeClass("ng-hide");
-			$(".jumbotron").addClass("ng-hide");
-			
 		}
 
 		$scope.hide = function () {
-			console.log($scope.status, "i hide");
+
 			if (status != "Searching...") {
 				$("#load").addClass("ng-hide");
 			}
 		}
 
 		$scope.showError = function () {
-			console.log($scope.status);
+
 			$("#load").addClass("ng-hide");
 			$(".foodItem").addClass("ng-hide");
 			$(".jumbotron").removeClass("ng-hide");

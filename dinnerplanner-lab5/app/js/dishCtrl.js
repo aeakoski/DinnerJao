@@ -33,21 +33,31 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$cookieStore,$routePara
 
 	$scope.status = "Searching...";
 
-	// $("#prepDish").empty();
-	// $("#prepDish").html('\
-	// 		<img id="load" src="images/puhfood.gif">');
-  
+
+	$scope.hide = function () {
+		$("#load").addClass("ng-hide");
+		$("#leftDivRecepie").removeClass("ng-hide");
+		$("#rightDivRecepie").removeClass("ng-hide");
+
+	}
+
+	$scope.showError = function () {
+		$("#load").addClass("ng-hide");
+		$("#leftDivRecepie").addClass("ng-hide");
+		$("#rightDivRecepie").addClass("ng-hide");
+		$(".jumbotron").removeClass("ng-hide");
+	}
 
 	Dinner.Dish.get({id:$routeParams['dishId']},function(data){
     	$scope.dish = data;
     	$scope.status = "found " + data.Results + " result";
-    	
+    	$scope.hide();
     		Dinner.setCurrentDish(data);
 			Dinner.updateDishCost(data);
 
 		},function(data){
 
-	    	$scope.status = "There was an error";
-	    	
+	    $scope.status = "There was an error";
+	    $scope.showError();
 	   });
 	});

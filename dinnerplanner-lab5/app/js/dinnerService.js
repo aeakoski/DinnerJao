@@ -13,7 +13,13 @@ dinnerPlannerApp.factory('Dinner',function ($resource,$routeParams,$cookieStore)
 
   //var apiKey = "dvxveCJB1QugC806d29k1cE6x23Nt64O"; //En stackares API Nycke
 
-  var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1"; //Vår API Nyckel
+  //var apiKey = "dvx41LT6ES1yNzNUPU28Q6Ay04T4q0L1"; //Vår API Nyckel
+
+    var apiKey = "dvxc3XrgajiC58dHf9lJHbgvZI27GI4O";
+  //var apiKey = "dvx57U1rV45liM502t9pBah61xr3X39h";
+  //var apiKey = "dvxfGMr57Q0E7d2rm6HZDY07Xtu63e9Y";
+  //var apiKey = "dvx7fKf6N67hzDI13rDB0k508X7haqCR";
+  //var apiKey = "dvxvL4Ep74ixye3pJGTTNv8USu2J28lP";
 
   this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey});
 
