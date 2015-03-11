@@ -14,7 +14,7 @@ not support it in free version) and list all the dishes that match the search. -
 
 			<input type="text" ng-model="usrInput" id ="mainSearch" class="form-control" maxlength="30" placeholder="Enter key words"/>
 				    		
-			<button ng-click="search(usrInput)" id="sendSearch">Search Jao!</button>
+			<button ng-click="search(usrInput); showLoad()" id="sendSearch">Search Jao!</button>
 
 		</div>
 	</div> <!--RightTop-->
@@ -23,7 +23,14 @@ not support it in free version) and list all the dishes that match the search. -
 
 			<div class="panel panel-default" id="rightBottomInner">
 				<div id = "dishList" class="panel-body">
-					<!--Här sätter javascript in code-->  
+					<!--Här sätter javascript in code-->
+					<img class="ng-hide" id="load" src="images/puhfood.gif">
+
+					<div class="ng-hide jumbotron">
+				 		<h2>Something wierd happened!</h2>
+				 			<p></br>The food-server yeald an error. Please check your internet connection and try again.</p>
+					</div>
+
 					<a ng-repeat="food in dishes" ng-href="#/dish/{{food.RecipeID}}"><div rel = "{{food.RecipeID}}" class="foodItem">
 						<div class="foodHead">
 							<div class = "foodPic">

@@ -41,7 +41,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$cookieStore,$routePara
 	Dinner.Dish.get({id:$routeParams['dishId']},function(data){
     	$scope.dish = data;
     	$scope.status = "found " + data.Results + " result";
-
+    	
     		Dinner.setCurrentDish(data);
 			Dinner.updateDishCost(data);
 
