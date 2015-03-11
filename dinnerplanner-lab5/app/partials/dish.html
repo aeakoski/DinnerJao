@@ -37,10 +37,10 @@ Instructions, Ingredients and total cost. -->
 
 			<table id = "ingredients">
 				<tr ng-repeat = "ingredients in dish.Ingredients">
-					<td class="col-xs-2">{{ingredients.Quantity * getNumberOfGuests()}} {{ingredients.Unit}}</td>
+					<td class="col-xs-2">{{ingredients.Quantity.toFixed(2) * getNumberOfGuests()}} {{ingredients.Unit}}</td>
 					<td class="col-xs-6">{{ingredients.Name}}</td>
 					<td>SEK</td>
-					<td>{{ingredients.Quantity * getNumberOfGuests()}}</td>
+					<td>{{ingredients.Quantity.toFixed(2) * getNumberOfGuests()}}</td>
 				</tr>
 			</table>
 
